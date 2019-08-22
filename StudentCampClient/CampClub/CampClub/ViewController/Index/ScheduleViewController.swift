@@ -163,9 +163,9 @@ class ScheduleViewController: MTBaseViewController {
             let url : URL = URL.init(string: BaseUrl + "downloadImage?imageName=DateImg.jpg")! // 初始化url图片
             MTHUD.showLoading()
             DispatchQueue.global().async {
-                print("begin download")
+                print("开始下载日程表")
                 let data : NSData! = NSData(contentsOf: url)
-                print("end download")
+                print("下载完成")
                 if data != nil { //判断data不为空，这里是因为swift对类型要求很严，如果未空的话，会崩溃
                     DispatchQueue.main.sync {
                         self.imgView.setImage(UIImage.init(data: data as Data, scale: 1), animated: true)
@@ -176,7 +176,7 @@ class ScheduleViewController: MTBaseViewController {
                         print(filePath![0])
                         data.write(toFile: filePath![0], atomically: true)
                         MTHUD.hide()
-                        
+                        showMessage("下载日程表成功")
                         }
                     }
                 }

@@ -101,7 +101,7 @@ public class UploadDateImg {
                 response.setContentType("application/force-download");// 设置强制下载不打开
                 response.addHeader("Content-Disposition",
                         "attachment;fileName=" + imageName);// 设置文件名
-                byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[1024*8];
                 FileInputStream fis = null;
                 BufferedInputStream bis = null;
                 try {
