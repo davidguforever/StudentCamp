@@ -19,9 +19,9 @@ import java.util.Map;
 @RestController
 public class UploadDateImg {
     private static final Logger logger = LoggerFactory.getLogger(UploadDateImg.class);
-  //  private String uploadDir = "/usr/student_camp";
+    private String uploadDir = "/usr/student_camp/pic/";
 
-    private String uploadDir = "/Users/hp/Desktop/Pic/";
+   // private String uploadDir = "/Users/hp/Desktop/Pic/";
     public Map<String, Object> responseBody = new HashMap<String, Object>();
 	public void initres() {
 		this.responseBody.put("result", "SUCCESS");
