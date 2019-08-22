@@ -36,7 +36,7 @@ class LoginViewController: MTBaseViewController {
         //管理员账号
         mobileNoField.text = "doris@apple.com"
         //营员账号
-        //mobileNoField.text = "william2000123@gmail.com"
+        mobileNoField.text = "william2000123@gmail.com"
         //密码统一为123456
         pwdField.text = "123456"
         

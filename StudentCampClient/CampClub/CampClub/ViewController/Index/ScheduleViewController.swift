@@ -91,7 +91,7 @@ class ScheduleViewController: MTBaseViewController {
     {
         let scheduleFileName = "camp"
         let scheduleFileExtension = ".jpg"
-        //print("\(scheduleFilePath!)")
+        print("图片所在目录：\(scheduleFilePath!)")
         do{
             var localFileName:String?
             
@@ -161,7 +161,7 @@ class ScheduleViewController: MTBaseViewController {
             let newName=result!
             print("newName:\(newName)")
             let url : URL = URL.init(string: BaseUrl + "downloadImage?imageName=DateImg.jpg")! // 初始化url图片
-            showMessage("正在下载最新日程表")
+            MTHUD.showLoading()
             DispatchQueue.global().async {
                 print("begin download")
                 let data : NSData! = NSData(contentsOf: url)
@@ -175,7 +175,7 @@ class ScheduleViewController: MTBaseViewController {
                     do {
                         print(filePath![0])
                         data.write(toFile: filePath![0], atomically: true)
-                        showMessage("日程表下载成功")
+                        MTHUD.hide()
                         
                         }
                     }
