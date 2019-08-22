@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Set Applying View Controller-->
+        <scene sceneID="043-fK-RHK">
+            <objects>
+                <viewController storyboardIdentifier="SetApplyingViewController" id="0AO-Qf-ZKw" customClass="SetApplyingViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U4T-Nn-geq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cje-X5-bsz">
+                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前营员实际人数:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L78-GF-k8e">
+                                        <rect key="frame" x="120" y="15" width="135" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.87058823529999996" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="L78-GF-k8e" firstAttribute="centerX" secondItem="Cje-X5-bsz" secondAttribute="centerX" id="6wr-GN-0nl"/>
+                                    <constraint firstAttribute="height" constant="50" id="U7N-QK-qjl"/>
+                                    <constraint firstItem="L78-GF-k8e" firstAttribute="centerY" secondItem="Cje-X5-bsz" secondAttribute="centerY" id="qmu-Ff-2R9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营员总数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEe-va-7Ys">
+                                <rect key="frame" x="16" y="120" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="校人数上限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zb-9T-91f">
+                                <rect key="frame" x="16" y="170" width="82" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="截止时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ma5-KU-pLR">
+                                <rect key="frame" x="16" y="220" width="66" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXn-Zz-h18" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="95" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hMd-n2-hdD"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNU-Ly-3gF" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="145" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m0B-mK-vfF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aab-rP-yPh" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="194.5" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VEs-Mx-fe9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tr-9D-auV">
+                                <rect key="frame" x="30" y="304.5" width="315" height="48"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="OUz-ag-9vR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="开始报名">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="start" destination="0AO-Qf-ZKw" eventType="touchUpInside" id="lzO-kl-0qc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rNU-Ly-3gF" firstAttribute="trailing" secondItem="lXn-Zz-h18" secondAttribute="trailing" id="1Yn-T3-JQ1"/>
+                            <constraint firstItem="5Zb-9T-91f" firstAttribute="top" secondItem="bEe-va-7Ys" secondAttribute="bottom" constant="30" id="5Te-KF-nwE"/>
+                            <constraint firstItem="bEe-va-7Ys" firstAttribute="leading" secondItem="wDh-Lj-byR" secondAttribute="leading" constant="16" id="6Om-uC-D34"/>
+                            <constraint firstItem="5Zb-9T-91f" firstAttribute="leading" secondItem="wDh-Lj-byR" secondAttribute="leading" constant="16" id="6Uf-PI-5y2"/>
+                            <constraint firstItem="8tr-9D-auV" firstAttribute="top" secondItem="aab-rP-yPh" secondAttribute="bottom" constant="60" id="9Ba-Hp-eh6"/>
+                            <constraint firstItem="aab-rP-yPh" firstAttribute="bottom" secondItem="Ma5-KU-pLR" secondAttribute="bottom" constant="5" id="GVy-zX-VBm"/>
+                            <constraint firstItem="wDh-Lj-byR" firstAttribute="trailing" secondItem="Cje-X5-bsz" secondAttribute="trailing" id="Kj6-dV-Sub"/>
+                            <constraint firstItem="lXn-Zz-h18" firstAttribute="bottom" secondItem="bEe-va-7Ys" secondAttribute="bottom" constant="5" id="MnB-xV-UPK"/>
+                            <constraint firstItem="rNU-Ly-3gF" firstAttribute="bottom" secondItem="5Zb-9T-91f" secondAttribute="bottom" constant="5" id="NDp-Hi-6oh"/>
+                            <constraint firstItem="rNU-Ly-3gF" firstAttribute="height" secondItem="lXn-Zz-h18" secondAttribute="height" id="ONu-h8-by0"/>
+                            <constraint firstItem="Cje-X5-bsz" firstAttribute="top" secondItem="wDh-Lj-byR" secondAttribute="top" constant="30" id="WBb-Pj-TBp"/>
+                            <constraint firstItem="aab-rP-yPh" firstAttribute="leading" secondItem="lXn-Zz-h18" secondAttribute="leading" id="WVs-zh-6Jg"/>
+                            <constraint firstItem="8tr-9D-auV" firstAttribute="leading" secondItem="wDh-Lj-byR" secondAttribute="leading" constant="30" id="aRb-cy-UCP"/>
+                            <constraint firstItem="Cje-X5-bsz" firstAttribute="leading" secondItem="wDh-Lj-byR" secondAttribute="leading" id="crK-Ja-rev"/>
+                            <constraint firstItem="rNU-Ly-3gF" firstAttribute="leading" secondItem="lXn-Zz-h18" secondAttribute="leading" id="drr-kb-rgK"/>
+                            <constraint firstItem="bEe-va-7Ys" firstAttribute="top" secondItem="wDh-Lj-byR" secondAttribute="top" constant="100" id="fVf-bI-2my"/>
+                            <constraint firstItem="8tr-9D-auV" firstAttribute="centerX" secondItem="U4T-Nn-geq" secondAttribute="centerX" id="fbH-zx-iai"/>
+                            <constraint firstItem="Ma5-KU-pLR" firstAttribute="leading" secondItem="wDh-Lj-byR" secondAttribute="leading" constant="16" id="g8a-Nm-V8l"/>
+                            <constraint firstItem="aab-rP-yPh" firstAttribute="trailing" secondItem="lXn-Zz-h18" secondAttribute="trailing" id="gyM-za-Zfm"/>
+                            <constraint firstItem="aab-rP-yPh" firstAttribute="height" secondItem="lXn-Zz-h18" secondAttribute="height" id="k4D-JJ-uts"/>
+                            <constraint firstItem="lXn-Zz-h18" firstAttribute="leading" secondItem="U4T-Nn-geq" secondAttribute="leadingMargin" constant="108" id="xLo-B3-06L"/>
+                            <constraint firstItem="wDh-Lj-byR" firstAttribute="trailing" secondItem="lXn-Zz-h18" secondAttribute="trailing" constant="20" id="xrR-2F-xhb"/>
+                            <constraint firstItem="Ma5-KU-pLR" firstAttribute="top" secondItem="5Zb-9T-91f" secondAttribute="bottom" constant="30" id="zYG-LS-EWM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wDh-Lj-byR"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentHeightLayout" destination="U7N-QK-qjl" id="lBr-jR-8bh"/>
+                        <outlet property="currentNumberLabel" destination="L78-GF-k8e" id="y1T-2T-ATU"/>
+                        <outlet property="endTimeFiled" destination="aab-rP-yPh" id="ZOw-sG-nO0"/>
+                        <outlet property="numberFiled" destination="lXn-Zz-h18" id="foP-Pb-nPO"/>
+                        <outlet property="schoolNumberFiled" destination="rNU-Ly-3gF" id="DhZ-Uv-fXT"/>
+                        <outlet property="startApplyButton" destination="8tr-9D-auV" id="nRl-zu-TvN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrw-Tf-b5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="169"/>
+        </scene>
+        <!--Review Stu View Controller-->
+        <scene sceneID="ABU-pK-9z7">
+            <objects>
+                <viewController storyboardIdentifier="ReviewStuViewController" id="KVq-IY-UXY" customClass="ReviewStuViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zny-jj-qYN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoJ-iB-PYO">
+                                <rect key="frame" x="16" y="58" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eju-A0-49l">
+                                <rect key="frame" x="16" y="108" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-8D-eVp">
+                                <rect key="frame" x="16" y="158" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nHO-hv-fhd" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="33" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8I1-hO-3CV"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOZ-Ek-rbn" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="83" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bCu-2m-f6z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p1G-om-Ets" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="133" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VFJ-RG-URp"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4C-NR-Dpz">
+                                <rect key="frame" x="16" y="208" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-g8-TNK">
+                                <rect key="frame" x="16" y="258" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbk-AU-Oa1">
+                                <rect key="frame" x="16" y="308" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vks-BV-uXz" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="183" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="x9m-Kn-Xfe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9Q-EL-y3B" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="233" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ZU3-2f-JBg"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACy-cM-xL8" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="283" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O2w-tT-JVL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrK-F5-A8I">
+                                <rect key="frame" x="16" y="358" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Club 归属" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhI-Kb-6S6">
+                                <rect key="frame" x="16" y="408" width="71" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iwn-jk-BkE" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="333" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bAd-29-con"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="41b-DP-ZCE" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="383" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="t52-Ke-3SH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mif-FK-aBm">
+                                <rect key="frame" x="30" y="471" width="315" height="48"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="dMl-RM-Vls"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="提交报名">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="start" destination="0AO-Qf-ZKw" eventType="touchUpInside" id="c3x-p6-lEx"/>
+                                    <action selector="submit" destination="KVq-IY-UXY" eventType="touchUpInside" id="Vth-hH-VWR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ACy-cM-xL8" firstAttribute="trailing" secondItem="Vks-BV-uXz" secondAttribute="trailing" id="2if-rM-cts"/>
+                            <constraint firstItem="p1G-om-Ets" firstAttribute="trailing" secondItem="nHO-hv-fhd" secondAttribute="trailing" id="33Q-Dr-4kf"/>
+                            <constraint firstItem="vOZ-Ek-rbn" firstAttribute="trailing" secondItem="nHO-hv-fhd" secondAttribute="trailing" id="6j2-PN-tPl"/>
+                            <constraint firstItem="mif-FK-aBm" firstAttribute="top" secondItem="41b-DP-ZCE" secondAttribute="bottom" constant="38" id="7Gl-VY-3U7"/>
+                            <constraint firstItem="I9Q-EL-y3B" firstAttribute="height" secondItem="Vks-BV-uXz" secondAttribute="height" id="7UV-nR-0gF"/>
+                            <constraint firstItem="FoJ-iB-PYO" firstAttribute="top" secondItem="61j-jU-j8s" secondAttribute="top" constant="38" id="7dK-wd-ccc"/>
+                            <constraint firstItem="Vks-BV-uXz" firstAttribute="leading" secondItem="nHO-hv-fhd" secondAttribute="leading" id="8Yn-IZ-vo0"/>
+                            <constraint firstItem="Vks-BV-uXz" firstAttribute="bottom" secondItem="U4C-NR-Dpz" secondAttribute="bottom" constant="5" id="92X-vI-i9Q"/>
+                            <constraint firstItem="Eju-A0-49l" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="93Q-6T-a4p"/>
+                            <constraint firstItem="U4C-NR-Dpz" firstAttribute="top" secondItem="DgV-8D-eVp" secondAttribute="bottom" constant="30" id="9vL-fZ-mWf"/>
+                            <constraint firstItem="DgV-8D-eVp" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="B17-HV-bRr"/>
+                            <constraint firstItem="PrK-F5-A8I" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="BSm-yx-2aI"/>
+                            <constraint firstItem="I9Q-EL-y3B" firstAttribute="trailing" secondItem="Vks-BV-uXz" secondAttribute="trailing" id="BVT-Sv-7Zu"/>
+                            <constraint firstItem="nHO-hv-fhd" firstAttribute="leading" secondItem="Zny-jj-qYN" secondAttribute="leadingMargin" constant="108" id="Bgz-ku-Ejj"/>
+                            <constraint firstItem="I9Q-EL-y3B" firstAttribute="leading" secondItem="Vks-BV-uXz" secondAttribute="leading" id="EhD-9z-CDe"/>
+                            <constraint firstItem="Eju-A0-49l" firstAttribute="top" secondItem="FoJ-iB-PYO" secondAttribute="bottom" constant="30" id="Feg-LJ-Niu"/>
+                            <constraint firstItem="41b-DP-ZCE" firstAttribute="bottom" secondItem="dhI-Kb-6S6" secondAttribute="bottom" constant="5" id="Gfg-Bp-FIL"/>
+                            <constraint firstItem="ACy-cM-xL8" firstAttribute="height" secondItem="Vks-BV-uXz" secondAttribute="height" id="ISb-3C-tSq"/>
+                            <constraint firstItem="41b-DP-ZCE" firstAttribute="trailing" secondItem="iwn-jk-BkE" secondAttribute="trailing" id="KDy-NL-OQK"/>
+                            <constraint firstItem="iwn-jk-BkE" firstAttribute="leading" secondItem="ACy-cM-xL8" secondAttribute="leading" id="LSs-bG-Fe4"/>
+                            <constraint firstItem="Vks-BV-uXz" firstAttribute="height" secondItem="nHO-hv-fhd" secondAttribute="height" id="M2h-s1-Ukv"/>
+                            <constraint firstItem="I9Q-EL-y3B" firstAttribute="bottom" secondItem="eW3-g8-TNK" secondAttribute="bottom" constant="5" id="Mv4-xv-V8Q"/>
+                            <constraint firstItem="mif-FK-aBm" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="30" id="NA3-eW-7tl"/>
+                            <constraint firstItem="FoJ-iB-PYO" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="PIk-je-jNY"/>
+                            <constraint firstItem="ACy-cM-xL8" firstAttribute="leading" secondItem="Vks-BV-uXz" secondAttribute="leading" id="PQe-as-XpW"/>
+                            <constraint firstItem="Kbk-AU-Oa1" firstAttribute="top" secondItem="eW3-g8-TNK" secondAttribute="bottom" constant="30" id="Qhu-uX-UfU"/>
+                            <constraint firstItem="Kbk-AU-Oa1" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="RJu-MA-Luo"/>
+                            <constraint firstItem="nHO-hv-fhd" firstAttribute="bottom" secondItem="FoJ-iB-PYO" secondAttribute="bottom" constant="5" id="U4p-nW-czZ"/>
+                            <constraint firstItem="dhI-Kb-6S6" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="UVS-sX-LTT"/>
+                            <constraint firstItem="41b-DP-ZCE" firstAttribute="leading" secondItem="iwn-jk-BkE" secondAttribute="leading" id="UkM-x2-gj1"/>
+                            <constraint firstItem="p1G-om-Ets" firstAttribute="leading" secondItem="nHO-hv-fhd" secondAttribute="leading" id="aAx-YU-5pa"/>
+                            <constraint firstItem="iwn-jk-BkE" firstAttribute="trailing" secondItem="ACy-cM-xL8" secondAttribute="trailing" id="deU-w4-emw"/>
+                            <constraint firstItem="p1G-om-Ets" firstAttribute="bottom" secondItem="DgV-8D-eVp" secondAttribute="bottom" constant="5" id="dzG-Ob-MjS"/>
+                            <constraint firstItem="41b-DP-ZCE" firstAttribute="height" secondItem="iwn-jk-BkE" secondAttribute="height" id="f9o-Xq-pJq"/>
+                            <constraint firstItem="mif-FK-aBm" firstAttribute="centerX" secondItem="Zny-jj-qYN" secondAttribute="centerX" id="fPg-2q-3Xl"/>
+                            <constraint firstItem="p1G-om-Ets" firstAttribute="height" secondItem="nHO-hv-fhd" secondAttribute="height" id="fVB-fP-Cf1"/>
+                            <constraint firstItem="iwn-jk-BkE" firstAttribute="bottom" secondItem="PrK-F5-A8I" secondAttribute="bottom" constant="5" id="g4g-2B-mYs"/>
+                            <constraint firstItem="PrK-F5-A8I" firstAttribute="top" secondItem="Kbk-AU-Oa1" secondAttribute="bottom" constant="30" id="imS-0e-Pc7"/>
+                            <constraint firstItem="vOZ-Ek-rbn" firstAttribute="height" secondItem="nHO-hv-fhd" secondAttribute="height" id="jLQ-07-c3P"/>
+                            <constraint firstItem="eW3-g8-TNK" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="klW-fF-8cT"/>
+                            <constraint firstItem="dhI-Kb-6S6" firstAttribute="top" secondItem="PrK-F5-A8I" secondAttribute="bottom" constant="30" id="kmh-MN-PGJ"/>
+                            <constraint firstItem="vOZ-Ek-rbn" firstAttribute="leading" secondItem="nHO-hv-fhd" secondAttribute="leading" id="lNF-eQ-28b"/>
+                            <constraint firstItem="DgV-8D-eVp" firstAttribute="top" secondItem="Eju-A0-49l" secondAttribute="bottom" constant="30" id="msX-11-E4a"/>
+                            <constraint firstItem="eW3-g8-TNK" firstAttribute="top" secondItem="U4C-NR-Dpz" secondAttribute="bottom" constant="30" id="see-e6-H2m"/>
+                            <constraint firstItem="Vks-BV-uXz" firstAttribute="trailing" secondItem="nHO-hv-fhd" secondAttribute="trailing" id="t6o-EF-OS2"/>
+                            <constraint firstItem="vOZ-Ek-rbn" firstAttribute="bottom" secondItem="Eju-A0-49l" secondAttribute="bottom" constant="5" id="tec-Th-pEZ"/>
+                            <constraint firstItem="61j-jU-j8s" firstAttribute="trailing" secondItem="nHO-hv-fhd" secondAttribute="trailing" constant="20" id="txB-Fb-ELd"/>
+                            <constraint firstItem="ACy-cM-xL8" firstAttribute="bottom" secondItem="Kbk-AU-Oa1" secondAttribute="bottom" constant="5" id="txC-ms-NKJ"/>
+                            <constraint firstItem="U4C-NR-Dpz" firstAttribute="leading" secondItem="61j-jU-j8s" secondAttribute="leading" constant="16" id="zyb-2t-hpt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="61j-jU-j8s"/>
+                    </view>
+                    <connections>
+                        <outlet property="clubSchoolField" destination="41b-DP-ZCE" id="YiY-SQ-TRc"/>
+                        <outlet property="emailField" destination="iwn-jk-BkE" id="r9F-dp-f3j"/>
+                        <outlet property="goodAtField" destination="ACy-cM-xL8" id="ttY-JM-0dV"/>
+                        <outlet property="gradeField" destination="p1G-om-Ets" id="j6r-Eh-5QL"/>
+                        <outlet property="mobileNoField" destination="I9Q-EL-y3B" id="DZQ-He-9WC"/>
+                        <outlet property="nameField" destination="nHO-hv-fhd" id="fiX-q0-jsH"/>
+                        <outlet property="schoolField" destination="Vks-BV-uXz" id="feX-AL-auT"/>
+                        <outlet property="sexField" destination="vOZ-Ek-rbn" id="0jD-ue-TMO"/>
+                        <outlet property="submitButton" destination="mif-FK-aBm" id="Nhb-Po-irS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V66-if-zWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="169"/>
+        </scene>
+        <!--Apply Numbers View Controller-->
+        <scene sceneID="EQv-AO-qb5">
+            <objects>
+                <viewController storyboardIdentifier="ApplyNumbersViewController" id="6zh-5o-Xmn" customClass="ApplyNumbersViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2JL-GL-eA4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6xi-L5-ZNJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentInfoCell" rowHeight="92" id="aeV-tZ-b1o" customClass="StudentInfoCell" customModule="CampClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aeV-tZ-b1o" id="H71-Mh-T44">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p5u-i8-TZw">
+                                                    <rect key="frame" x="15" y="26" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="qY8-nO-tnl"/>
+                                                        <constraint firstAttribute="width" constant="40" id="znK-a8-7Js"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHX-L7-f3X">
+                                                    <rect key="frame" x="70" y="35.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kq-vm-XgX">
+                                                    <rect key="frame" x="309" y="35.5" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <color key="textColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npa-yF-b39">
+                                                    <rect key="frame" x="15" y="91.5" width="360" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="Vvw-Bw-3Pe"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Npa-yF-b39" firstAttribute="leading" secondItem="H71-Mh-T44" secondAttribute="leading" constant="15" id="OEd-bS-3jx"/>
+                                                <constraint firstItem="4Kq-vm-XgX" firstAttribute="centerY" secondItem="VHX-L7-f3X" secondAttribute="centerY" id="RYg-ZO-1db"/>
+                                                <constraint firstItem="VHX-L7-f3X" firstAttribute="leading" secondItem="p5u-i8-TZw" secondAttribute="trailing" constant="15" id="ePa-el-Maj"/>
+                                                <constraint firstItem="VHX-L7-f3X" firstAttribute="centerY" secondItem="p5u-i8-TZw" secondAttribute="centerY" id="hBk-NR-zJr"/>
+                                                <constraint firstItem="p5u-i8-TZw" firstAttribute="leading" secondItem="H71-Mh-T44" secondAttribute="leading" constant="15" id="kqa-nh-TEF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Npa-yF-b39" secondAttribute="trailing" id="lt6-Io-oVo"/>
+                                                <constraint firstItem="p5u-i8-TZw" firstAttribute="centerY" secondItem="H71-Mh-T44" secondAttribute="centerY" id="msJ-bV-BVd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Npa-yF-b39" secondAttribute="bottom" id="swc-Oa-Eey"/>
+                                                <constraint firstAttribute="trailing" secondItem="4Kq-vm-XgX" secondAttribute="trailing" constant="20" id="v8Z-2j-Glm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverImgView" destination="p5u-i8-TZw" id="2py-ix-fX3"/>
+                                            <outlet property="numberLabel" destination="4Kq-vm-XgX" id="hvJ-n5-NdV"/>
+                                            <outlet property="stuNameLabel" destination="VHX-L7-f3X" id="iHB-5K-tHO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6zh-5o-Xmn" id="rRJ-ec-tS9"/>
+                                    <outlet property="delegate" destination="6zh-5o-Xmn" id="kGZ-1l-yud"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WKy-Ar-f7u" firstAttribute="trailing" secondItem="6xi-L5-ZNJ" secondAttribute="trailing" id="Bl1-gM-kVr"/>
+                            <constraint firstItem="6xi-L5-ZNJ" firstAttribute="top" secondItem="WKy-Ar-f7u" secondAttribute="top" id="C94-qH-QIa"/>
+                            <constraint firstItem="6xi-L5-ZNJ" firstAttribute="leading" secondItem="WKy-Ar-f7u" secondAttribute="leading" id="Y4q-k9-xHR"/>
+                            <constraint firstItem="WKy-Ar-f7u" firstAttribute="bottom" secondItem="6xi-L5-ZNJ" secondAttribute="bottom" id="mJX-IH-amJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WKy-Ar-f7u"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6xi-L5-ZNJ" id="Zz4-uI-5sx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvK-g8-FfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138.4000000000001" y="168.6656671664168"/>
+        </scene>
+        <!--Teacher Applying View Controller-->
+        <scene sceneID="366-7x-lEg">
+            <objects>
+                <viewController storyboardIdentifier="TeacherApplyingViewController" id="yK1-VC-Xb1" customClass="TeacherApplyingViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J3r-rv-XEs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申报学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yw-eH-82e">
+                                <rect key="frame" x="16" y="58" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学生人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STr-sf-NaT">
+                                <rect key="frame" x="16" y="108" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-mf-y63" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="33" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YBO-cD-uTT"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-F3-Sbp" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="83" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mph-QI-joK"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOx-7g-a4e">
+                                <rect key="frame" x="30" y="203" width="315" height="48"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="zjn-e8-Ieg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="开始报名">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="start" destination="yK1-VC-Xb1" eventType="touchUpInside" id="URt-te-KeD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eIw-F3-Sbp" firstAttribute="height" secondItem="YLW-mf-y63" secondAttribute="height" id="2Ft-f6-IGp"/>
+                            <constraint firstItem="9cH-3r-Qzu" firstAttribute="trailing" secondItem="YLW-mf-y63" secondAttribute="trailing" constant="20" id="44X-4u-0Tg"/>
+                            <constraint firstItem="STr-sf-NaT" firstAttribute="top" secondItem="4Yw-eH-82e" secondAttribute="bottom" constant="30" id="8MY-xx-O7U"/>
+                            <constraint firstItem="YLW-mf-y63" firstAttribute="leading" secondItem="J3r-rv-XEs" secondAttribute="leadingMargin" constant="108" id="92w-Jm-A92"/>
+                            <constraint firstItem="AOx-7g-a4e" firstAttribute="top" secondItem="eIw-F3-Sbp" secondAttribute="bottom" constant="70" id="BPa-6R-CSy"/>
+                            <constraint firstItem="eIw-F3-Sbp" firstAttribute="bottom" secondItem="STr-sf-NaT" secondAttribute="bottom" constant="5" id="J4G-ej-lY3"/>
+                            <constraint firstItem="YLW-mf-y63" firstAttribute="bottom" secondItem="4Yw-eH-82e" secondAttribute="bottom" constant="5" id="JPx-Oi-jw8"/>
+                            <constraint firstItem="4Yw-eH-82e" firstAttribute="top" secondItem="9cH-3r-Qzu" secondAttribute="top" constant="38" id="LBh-2M-aVo"/>
+                            <constraint firstItem="eIw-F3-Sbp" firstAttribute="trailing" secondItem="YLW-mf-y63" secondAttribute="trailing" id="PLE-Ub-xZE"/>
+                            <constraint firstItem="AOx-7g-a4e" firstAttribute="leading" secondItem="9cH-3r-Qzu" secondAttribute="leading" constant="30" id="RcE-2k-vmg"/>
+                            <constraint firstItem="AOx-7g-a4e" firstAttribute="centerX" secondItem="J3r-rv-XEs" secondAttribute="centerX" id="Ufz-Pu-oTh"/>
+                            <constraint firstItem="4Yw-eH-82e" firstAttribute="leading" secondItem="9cH-3r-Qzu" secondAttribute="leading" constant="16" id="bEH-wQ-jH1"/>
+                            <constraint firstItem="STr-sf-NaT" firstAttribute="leading" secondItem="9cH-3r-Qzu" secondAttribute="leading" constant="16" id="dBt-vw-tGL"/>
+                            <constraint firstItem="eIw-F3-Sbp" firstAttribute="leading" secondItem="YLW-mf-y63" secondAttribute="leading" id="h3Z-rx-eOb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9cH-3r-Qzu"/>
+                    </view>
+                    <connections>
+                        <outlet property="numberFiled" destination="eIw-F3-Sbp" id="LDt-r6-bUv"/>
+                        <outlet property="schoolFiled" destination="YLW-mf-y63" id="nWY-GH-AHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f77-5Q-DRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="830"/>
+        </scene>
+    </scenes>
+</document>

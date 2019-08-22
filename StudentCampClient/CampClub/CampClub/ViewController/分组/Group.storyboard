@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Group Info View Controller-->
+        <scene sceneID="44d-sg-sH5">
+            <objects>
+                <viewController storyboardIdentifier="MyGroupInfoViewController" id="zuu-7F-F6c" customClass="MyGroupInfoViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bxk-c2-XK9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFd-JF-MML">
+                                <rect key="frame" x="16" y="58" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分组" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-CD-fM2">
+                                <rect key="frame" x="16" y="108" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="指导教师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1P-un-dfb">
+                                <rect key="frame" x="16" y="158" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XpO-kv-C8K" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="106" y="48" width="249" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JWX-qE-MNN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rbr-eM-FoW" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="106" y="98" width="249" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CA7-2V-npe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhm-gM-6KD" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="106" y="148" width="249" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="flu-bD-sKc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rbr-eM-FoW" firstAttribute="leading" secondItem="XpO-kv-C8K" secondAttribute="leading" id="2X5-QN-1gq"/>
+                            <constraint firstItem="2sb-tu-b1V" firstAttribute="trailing" secondItem="XpO-kv-C8K" secondAttribute="trailing" constant="20" id="7bj-Ti-Czp"/>
+                            <constraint firstItem="rbr-eM-FoW" firstAttribute="height" secondItem="XpO-kv-C8K" secondAttribute="height" id="Ajo-oX-GHv"/>
+                            <constraint firstItem="rbr-eM-FoW" firstAttribute="centerY" secondItem="Dlx-CD-fM2" secondAttribute="centerY" id="Az1-Kt-Jny"/>
+                            <constraint firstItem="zFd-JF-MML" firstAttribute="leading" secondItem="2sb-tu-b1V" secondAttribute="leading" constant="16" id="CHk-TW-bk5"/>
+                            <constraint firstItem="XpO-kv-C8K" firstAttribute="leading" secondItem="bxk-c2-XK9" secondAttribute="leadingMargin" constant="90" id="ChD-kC-zil"/>
+                            <constraint firstItem="h1P-un-dfb" firstAttribute="top" secondItem="Dlx-CD-fM2" secondAttribute="bottom" constant="30" id="KQN-eS-UYa"/>
+                            <constraint firstItem="h1P-un-dfb" firstAttribute="leading" secondItem="2sb-tu-b1V" secondAttribute="leading" constant="16" id="O2p-D3-eUh"/>
+                            <constraint firstItem="hhm-gM-6KD" firstAttribute="trailing" secondItem="XpO-kv-C8K" secondAttribute="trailing" id="OjT-Lh-7yk"/>
+                            <constraint firstItem="hhm-gM-6KD" firstAttribute="height" secondItem="XpO-kv-C8K" secondAttribute="height" id="TPe-OV-A0l"/>
+                            <constraint firstItem="hhm-gM-6KD" firstAttribute="leading" secondItem="XpO-kv-C8K" secondAttribute="leading" id="UNO-rl-P7n"/>
+                            <constraint firstItem="Dlx-CD-fM2" firstAttribute="leading" secondItem="2sb-tu-b1V" secondAttribute="leading" constant="16" id="aHg-hY-xlT"/>
+                            <constraint firstItem="Dlx-CD-fM2" firstAttribute="top" secondItem="zFd-JF-MML" secondAttribute="bottom" constant="30" id="nha-a4-Ksy"/>
+                            <constraint firstItem="hhm-gM-6KD" firstAttribute="centerY" secondItem="h1P-un-dfb" secondAttribute="centerY" id="wLq-JQ-RvY"/>
+                            <constraint firstItem="zFd-JF-MML" firstAttribute="top" secondItem="2sb-tu-b1V" secondAttribute="top" constant="38" id="wcW-M8-Hln"/>
+                            <constraint firstItem="XpO-kv-C8K" firstAttribute="centerY" secondItem="zFd-JF-MML" secondAttribute="centerY" id="yry-2A-y5D"/>
+                            <constraint firstItem="rbr-eM-FoW" firstAttribute="trailing" secondItem="XpO-kv-C8K" secondAttribute="trailing" id="yxk-yK-PeB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2sb-tu-b1V"/>
+                    </view>
+                    <connections>
+                        <outlet property="groupNoField" destination="rbr-eM-FoW" id="9rS-JA-cu0"/>
+                        <outlet property="nameField" destination="XpO-kv-C8K" id="dzL-Zu-8bO"/>
+                        <outlet property="teacherField" destination="hhm-gM-6KD" id="euz-a1-eII"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKb-py-Ij3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="169"/>
+        </scene>
+        <!--Set Group View Controller-->
+        <scene sceneID="WpW-ZY-pZN">
+            <objects>
+                <viewController storyboardIdentifier="SetGroupViewController" id="RGE-OC-w69" customClass="SetGroupViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TYP-yD-e7O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-yC-RxQ">
+                                <rect key="frame" x="16" y="70" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组人员上线" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-aj-UM4">
+                                <rect key="frame" x="16" y="120" width="82" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学校" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNF-wb-18U">
+                                <rect key="frame" x="16" y="170" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fkn-ox-bdg" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="40" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Uk7-Wi-qAM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rmH-T7-wfQ" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="90" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A46-x1-LqJ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m4o-N7-DIN" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="140" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gTv-kQ-yfp"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="RGE-OC-w69" id="Ys7-51-LyJ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhq-qf-eAv">
+                                <rect key="frame" x="16" y="220" width="33" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIX-qz-fbx">
+                                <rect key="frame" x="16" y="269.5" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="特长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tol-JB-eRJ">
+                                <rect key="frame" x="16" y="319.5" width="33" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fi5-rq-KBM" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="189.5" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sOd-vd-JYe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="RGE-OC-w69" id="2Qb-Bd-Wd2"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rN-9e-3Jn" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="239.5" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5pZ-iP-6hG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="RGE-OC-w69" id="eil-1N-gdn"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0BM-L9-ALf" customClass="HoshiTextField" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="124" y="289.5" width="231" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Yw0-kg-K2z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="RGE-OC-w69" id="ciu-dg-zQZ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nF-d1-KzP">
+                                <rect key="frame" x="30" y="389.5" width="315" height="48"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="zuR-vU-lnr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="提交">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginGroup" destination="RGE-OC-w69" eventType="touchUpInside" id="zgI-JV-BPa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5rN-9e-3Jn" firstAttribute="bottom" secondItem="xIX-qz-fbx" secondAttribute="bottom" id="0Qd-IF-PIq"/>
+                            <constraint firstItem="xIX-qz-fbx" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="1od-aS-naC"/>
+                            <constraint firstItem="xIX-qz-fbx" firstAttribute="top" secondItem="Hhq-qf-eAv" secondAttribute="bottom" constant="30" id="6Ez-sd-AmR"/>
+                            <constraint firstItem="7nF-d1-KzP" firstAttribute="top" secondItem="0BM-L9-ALf" secondAttribute="bottom" constant="50" id="9xV-AD-OMl"/>
+                            <constraint firstItem="PUX-yC-RxQ" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="A8C-2C-wdD"/>
+                            <constraint firstItem="ldY-aj-UM4" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="Bnh-dG-mZh"/>
+                            <constraint firstItem="Fkn-ox-bdg" firstAttribute="leading" secondItem="TYP-yD-e7O" secondAttribute="leadingMargin" constant="108" id="CAA-c5-Gxk"/>
+                            <constraint firstItem="fi5-rq-KBM" firstAttribute="trailing" secondItem="Fkn-ox-bdg" secondAttribute="trailing" id="Fgq-8Q-s7g"/>
+                            <constraint firstItem="rmH-T7-wfQ" firstAttribute="trailing" secondItem="Fkn-ox-bdg" secondAttribute="trailing" id="GT8-DN-5eg"/>
+                            <constraint firstItem="Hhq-qf-eAv" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="HGm-Vo-VNT"/>
+                            <constraint firstItem="NNF-wb-18U" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="LSk-ou-MNs"/>
+                            <constraint firstItem="rmH-T7-wfQ" firstAttribute="bottom" secondItem="ldY-aj-UM4" secondAttribute="bottom" id="MAw-BG-88W"/>
+                            <constraint firstItem="m4o-N7-DIN" firstAttribute="bottom" secondItem="NNF-wb-18U" secondAttribute="bottom" id="MJ2-Gu-zin"/>
+                            <constraint firstItem="5rN-9e-3Jn" firstAttribute="trailing" secondItem="fi5-rq-KBM" secondAttribute="trailing" id="Nrl-aT-mjs"/>
+                            <constraint firstItem="rmH-T7-wfQ" firstAttribute="height" secondItem="Fkn-ox-bdg" secondAttribute="height" id="OCC-7g-Uqi"/>
+                            <constraint firstItem="0BM-L9-ALf" firstAttribute="height" secondItem="fi5-rq-KBM" secondAttribute="height" id="OVn-we-JXC"/>
+                            <constraint firstItem="m4o-N7-DIN" firstAttribute="height" secondItem="Fkn-ox-bdg" secondAttribute="height" id="PRD-9m-ZXC"/>
+                            <constraint firstItem="Tol-JB-eRJ" firstAttribute="top" secondItem="xIX-qz-fbx" secondAttribute="bottom" constant="30" id="QHu-lh-qqF"/>
+                            <constraint firstItem="PUX-yC-RxQ" firstAttribute="top" secondItem="Ru9-5G-uhD" secondAttribute="top" constant="50" id="QPZ-Yn-11s"/>
+                            <constraint firstItem="fi5-rq-KBM" firstAttribute="leading" secondItem="Fkn-ox-bdg" secondAttribute="leading" id="RMe-5j-Gba"/>
+                            <constraint firstItem="Fkn-ox-bdg" firstAttribute="bottom" secondItem="PUX-yC-RxQ" secondAttribute="bottom" id="RqH-jx-7eP"/>
+                            <constraint firstItem="NNF-wb-18U" firstAttribute="top" secondItem="ldY-aj-UM4" secondAttribute="bottom" constant="30" id="W8J-Vb-dqJ"/>
+                            <constraint firstItem="Tol-JB-eRJ" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="16" id="YMe-xS-KZR"/>
+                            <constraint firstItem="ldY-aj-UM4" firstAttribute="top" secondItem="PUX-yC-RxQ" secondAttribute="bottom" constant="30" id="aeS-ju-2ll"/>
+                            <constraint firstItem="fi5-rq-KBM" firstAttribute="height" secondItem="Fkn-ox-bdg" secondAttribute="height" id="d6D-N3-fH2"/>
+                            <constraint firstItem="m4o-N7-DIN" firstAttribute="leading" secondItem="Fkn-ox-bdg" secondAttribute="leading" id="d6U-Us-Hje"/>
+                            <constraint firstItem="7nF-d1-KzP" firstAttribute="centerX" secondItem="TYP-yD-e7O" secondAttribute="centerX" id="dQL-G0-IDQ"/>
+                            <constraint firstItem="5rN-9e-3Jn" firstAttribute="leading" secondItem="fi5-rq-KBM" secondAttribute="leading" id="fcY-c3-jBc"/>
+                            <constraint firstItem="5rN-9e-3Jn" firstAttribute="height" secondItem="fi5-rq-KBM" secondAttribute="height" id="gkQ-Kr-zS5"/>
+                            <constraint firstItem="0BM-L9-ALf" firstAttribute="bottom" secondItem="Tol-JB-eRJ" secondAttribute="bottom" id="iaV-Ly-Dmk"/>
+                            <constraint firstItem="Ru9-5G-uhD" firstAttribute="trailing" secondItem="Fkn-ox-bdg" secondAttribute="trailing" constant="20" id="j5t-ac-wC5"/>
+                            <constraint firstItem="Hhq-qf-eAv" firstAttribute="top" secondItem="NNF-wb-18U" secondAttribute="bottom" constant="30" id="kuh-Mz-i4g"/>
+                            <constraint firstItem="0BM-L9-ALf" firstAttribute="leading" secondItem="fi5-rq-KBM" secondAttribute="leading" id="lbb-ty-eFc"/>
+                            <constraint firstItem="0BM-L9-ALf" firstAttribute="trailing" secondItem="fi5-rq-KBM" secondAttribute="trailing" id="mGU-BI-cli"/>
+                            <constraint firstItem="7nF-d1-KzP" firstAttribute="leading" secondItem="Ru9-5G-uhD" secondAttribute="leading" constant="30" id="oOO-fh-qrW"/>
+                            <constraint firstItem="m4o-N7-DIN" firstAttribute="trailing" secondItem="Fkn-ox-bdg" secondAttribute="trailing" id="reZ-6w-O6L"/>
+                            <constraint firstItem="fi5-rq-KBM" firstAttribute="bottom" secondItem="Hhq-qf-eAv" secondAttribute="bottom" id="sP6-Yr-V6i"/>
+                            <constraint firstItem="rmH-T7-wfQ" firstAttribute="leading" secondItem="Fkn-ox-bdg" secondAttribute="leading" id="ubo-fl-AEy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ru9-5G-uhD"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageField" destination="5rN-9e-3Jn" id="0kf-Uo-IZb"/>
+                        <outlet property="beginButton" destination="7nF-d1-KzP" id="4Gk-Gv-1Lf"/>
+                        <outlet property="goodAtField" destination="0BM-L9-ALf" id="pxb-SZ-mJw"/>
+                        <outlet property="groupNoField" destination="Fkn-ox-bdg" id="pd3-ET-mvd"/>
+                        <outlet property="maxNoField" destination="rmH-T7-wfQ" id="GyN-6e-Pbi"/>
+                        <outlet property="schoolTypeField" destination="m4o-N7-DIN" id="Zb2-Z9-RDK"/>
+                        <outlet property="sexField" destination="fi5-rq-KBM" id="eFv-fp-1C9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIr-bZ-Xqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="169"/>
+        </scene>
+        <!--Grouping View Controller-->
+        <scene sceneID="FUf-Bq-CfA">
+            <objects>
+                <viewController storyboardIdentifier="GroupingViewController" id="tPw-aK-tng" customClass="GroupingViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NpH-LD-bop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Khx-sM-Vl0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <view key="tableHeaderView" clipsSubviews="YES" contentMode="scaleToFill" id="UNu-BX-q4E">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dif-3I-ZCM">
+                                            <rect key="frame" x="47.5" y="10" width="120" height="36"/>
+                                            <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="cyh-Yf-gTa"/>
+                                                <constraint firstAttribute="height" constant="36" id="hlw-bI-HJ7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="重新分组">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="beginGroup" destination="RGE-OC-w69" eventType="touchUpInside" id="ut9-Rd-0bu"/>
+                                                <action selector="retoSet" destination="tPw-aK-tng" eventType="touchUpInside" id="iVY-ul-2Wy"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-Cz-VtV">
+                                            <rect key="frame" x="207.5" y="10" width="120" height="36"/>
+                                            <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="LaH-vM-N4T"/>
+                                                <constraint firstAttribute="width" constant="120" id="dh1-DG-hvB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="确认分组">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="beginGroup" destination="RGE-OC-w69" eventType="touchUpInside" id="7Wb-yx-Ja9"/>
+                                                <action selector="confirmGroup" destination="tPw-aK-tng" eventType="touchUpInside" id="47s-bN-caR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Dif-3I-ZCM" firstAttribute="centerX" secondItem="UNu-BX-q4E" secondAttribute="centerX" constant="-80" id="QUB-XD-S24"/>
+                                        <constraint firstItem="dNq-Cz-VtV" firstAttribute="centerY" secondItem="UNu-BX-q4E" secondAttribute="centerY" id="l1S-hT-sm4"/>
+                                        <constraint firstItem="Dif-3I-ZCM" firstAttribute="centerY" secondItem="UNu-BX-q4E" secondAttribute="centerY" id="q6T-BW-KmJ"/>
+                                        <constraint firstItem="dNq-Cz-VtV" firstAttribute="centerX" secondItem="UNu-BX-q4E" secondAttribute="centerX" constant="80" id="rdO-7b-c5Q"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupStuCell" rowHeight="92" id="NSM-53-G6h" customClass="GroupStuCell" customModule="CampClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="111.5" width="375" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NSM-53-G6h" id="urq-VX-shO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SmP-2D-2iQ">
+                                                    <rect key="frame" x="15" y="31" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="VEC-xx-XPi"/>
+                                                        <constraint firstAttribute="height" constant="30" id="hZ5-GW-Z5p"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smj-Aj-HjD">
+                                                    <rect key="frame" x="60" y="35.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Smj-Aj-HjD" firstAttribute="leading" secondItem="SmP-2D-2iQ" secondAttribute="trailing" constant="15" id="3Ib-ev-Fot"/>
+                                                <constraint firstItem="SmP-2D-2iQ" firstAttribute="leading" secondItem="urq-VX-shO" secondAttribute="leading" constant="15" id="GaN-en-02B"/>
+                                                <constraint firstItem="SmP-2D-2iQ" firstAttribute="centerY" secondItem="urq-VX-shO" secondAttribute="centerY" id="SI1-s4-kBX"/>
+                                                <constraint firstItem="Smj-Aj-HjD" firstAttribute="centerY" secondItem="SmP-2D-2iQ" secondAttribute="centerY" id="gY1-pU-f6E"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverImgView" destination="SmP-2D-2iQ" id="pJp-hN-RuK"/>
+                                            <outlet property="stuNameLabel" destination="Smj-Aj-HjD" id="2zZ-wq-VOl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tPw-aK-tng" id="9bZ-4Y-oiv"/>
+                                    <outlet property="delegate" destination="tPw-aK-tng" id="3xy-Bt-40r"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0qV-zJ-nm3" firstAttribute="bottom" secondItem="Khx-sM-Vl0" secondAttribute="bottom" id="E1H-JZ-OiK"/>
+                            <constraint firstItem="Khx-sM-Vl0" firstAttribute="top" secondItem="0qV-zJ-nm3" secondAttribute="top" id="bJv-Xg-VSP"/>
+                            <constraint firstItem="0qV-zJ-nm3" firstAttribute="trailing" secondItem="Khx-sM-Vl0" secondAttribute="trailing" id="cAL-9v-Wx1"/>
+                            <constraint firstItem="Khx-sM-Vl0" firstAttribute="leading" secondItem="0qV-zJ-nm3" secondAttribute="leading" id="tmh-L6-lmH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0qV-zJ-nm3"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Khx-sM-Vl0" id="FjE-9G-eQ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5If-yO-aAf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138.4000000000001" y="168.6656671664168"/>
+        </scene>
+    </scenes>
+</document>

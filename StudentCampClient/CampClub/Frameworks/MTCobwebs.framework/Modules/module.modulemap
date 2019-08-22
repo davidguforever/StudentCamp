@@ -1,0 +1,11 @@
+framework module MTCobwebs {
+  umbrella header "MTCobwebs.h"
+
+  export *
+  module * { export * }
+}
+
+module MTCobwebs.Swift {
+    header "MTCobwebs-Swift.h"
+    requires objc
+}

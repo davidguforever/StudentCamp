@@ -1,0 +1,11 @@
+framework module MTUIFlash {
+  umbrella header "MTUIFlash.h"
+
+  export *
+  module * { export * }
+}
+
+module MTUIFlash.Swift {
+    header "MTUIFlash-Swift.h"
+    requires objc
+}
