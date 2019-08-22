@@ -65,12 +65,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frh-dG-jJR">
-                                <rect key="frame" x="30" y="237.5" width="315" height="48"/>
+                                <rect key="frame" x="30" y="237.5" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="8rB-x1-dD2"/>
+                                    <constraint firstAttribute="height" constant="44" id="8rB-x1-dD2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="开始抽签">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -84,12 +84,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sG-bg-4EQ">
-                                <rect key="frame" x="30" y="335.5" width="315" height="48"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="331.5" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.16774368286132812" green="0.3371739387512207" blue="0.6027674674987793" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="0er-Ob-Oej"/>
+                                    <constraint firstAttribute="height" constant="44" id="0er-Ob-Oej"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="下一轮">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

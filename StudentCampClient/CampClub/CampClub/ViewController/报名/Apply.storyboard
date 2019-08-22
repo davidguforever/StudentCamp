@@ -105,10 +105,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tr-9D-auV">
-                                <rect key="frame" x="30" y="304.5" width="315" height="48"/>
+                                <rect key="frame" x="30" y="304.5" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="OUz-ag-9vR"/>
+                                    <constraint firstAttribute="height" constant="44" id="OUz-ag-9vR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="开始报名">
@@ -358,10 +358,10 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mif-FK-aBm">
-                                <rect key="frame" x="30" y="471" width="315" height="48"/>
+                                <rect key="frame" x="30" y="471" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="dMl-RM-Vls"/>
+                                    <constraint firstAttribute="height" constant="44" id="dMl-RM-Vls"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="提交报名">

@@ -237,11 +237,10 @@
                                     <constraint firstAttribute="trailing" secondItem="jLw-cd-9nx" secondAttribute="trailing" id="wvt-K9-OQZ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-S7-Oc7">
-                                <rect key="frame" x="37.5" y="500" width="315" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-S7-Oc7">
+                                <rect key="frame" x="30" y="500" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="315" id="C1j-cQ-aKM"/>
                                     <constraint firstAttribute="height" constant="44" id="IOh-vy-72t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -250,18 +249,17 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="sign" destination="RxX-kL-mNA" eventType="touchUpInside" id="sTr-n0-VkW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-89-IOb">
-                                <rect key="frame" x="37.5" y="565" width="315" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-89-IOb">
+                                <rect key="frame" x="30" y="559" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="315" id="Ez6-6o-e7W"/>
                                     <constraint firstAttribute="height" constant="44" id="HAS-bq-fLu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -270,7 +268,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -283,9 +281,11 @@
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="top" secondItem="QNz-S7-Oc7" secondAttribute="bottom" constant="15" id="3TP-0A-uBL"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="leading" secondItem="d7g-aL-LC5" secondAttribute="leading" id="7bJ-aJ-oTG"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="top" secondItem="Njj-LT-aHl" secondAttribute="top" id="FGT-Cn-bxJ"/>
+                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="LgE-Rv-XXg"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="40" id="Q7s-gg-okI"/>
                             <constraint firstItem="Njj-LT-aHl" firstAttribute="trailing" secondItem="gIO-3c-5Kd" secondAttribute="trailing" id="VHB-6h-ySf"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="centerX" secondItem="d7g-aL-LC5" secondAttribute="centerX" id="hzK-el-USv"/>
+                            <constraint firstItem="Ae1-89-IOb" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="jcK-d9-oJ9"/>
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="centerX" secondItem="QNz-S7-Oc7" secondAttribute="centerX" id="z07-nc-yt7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Njj-LT-aHl"/>
@@ -477,8 +477,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-zF-bNB">
-                                <rect key="frame" x="50" y="178" width="295" height="44"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="30" y="178" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.21474048495292664" green="0.41952556371688843" blue="0.66767781972885132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Hj5-ua-nwy"/>
                                 </constraints>
@@ -488,10 +488,10 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -503,7 +503,7 @@
                         <constraints>
                             <constraint firstItem="7yl-C8-egt" firstAttribute="leading" secondItem="5UL-mO-Isd" secondAttribute="leading" constant="30" id="0bX-sd-h3V"/>
                             <constraint firstItem="7yl-C8-egt" firstAttribute="top" secondItem="5UL-mO-Isd" secondAttribute="top" constant="30" id="4Ma-Rk-4Kg"/>
-                            <constraint firstItem="Swm-zF-bNB" firstAttribute="leading" secondItem="5UL-mO-Isd" secondAttribute="leading" constant="50" id="5eR-bh-rRN"/>
+                            <constraint firstItem="Swm-zF-bNB" firstAttribute="leading" secondItem="5UL-mO-Isd" secondAttribute="leading" constant="30" id="5eR-bh-rRN"/>
                             <constraint firstItem="5UL-mO-Isd" firstAttribute="trailing" secondItem="Swm-zF-bNB" secondAttribute="trailing" constant="30" id="QA3-xg-7wc"/>
                             <constraint firstItem="Swm-zF-bNB" firstAttribute="top" secondItem="7yl-C8-egt" secondAttribute="bottom" constant="80" id="Xug-cs-Jfz"/>
                             <constraint firstItem="5UL-mO-Isd" firstAttribute="trailing" secondItem="7yl-C8-egt" secondAttribute="trailing" constant="30" id="oDQ-Fs-pgc"/>
@@ -588,10 +588,10 @@
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="1"/>
+                                                    <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="4"/>
+                                                    <real key="value" value="8"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -663,7 +663,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g70-xA-rov">
                                 <rect key="frame" x="30" y="597" width="315" height="44"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.21474048495292664" green="0.41952556371688843" blue="0.66767781972885132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="stg-Lx-RTh"/>
                                 </constraints>
@@ -673,7 +673,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -792,10 +792,10 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
