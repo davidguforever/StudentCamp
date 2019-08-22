@@ -97,10 +97,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o16-8Q-vcI">
-                                <rect key="frame" x="50" y="540" width="275" height="45"/>
+                                <rect key="frame" x="50" y="540" width="275" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="nn9-fg-0tW"/>
+                                    <constraint firstAttribute="height" constant="44" id="nn9-fg-0tW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="登录"/>
@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdu-nF-9Rf">
-                                <rect key="frame" x="245" y="610" width="80" height="30"/>
+                                <rect key="frame" x="245" y="609" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sr4-nW-hh0"/>
                                     <constraint firstAttribute="width" constant="80" id="wT8-Zz-40v"/>
@@ -268,10 +268,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-7p-BNf">
-                                <rect key="frame" x="33" y="381.5" width="309" height="45"/>
+                                <rect key="frame" x="33" y="381.5" width="309" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="e7Q-s6-MjY"/>
+                                    <constraint firstAttribute="height" constant="44" id="e7Q-s6-MjY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="提交"/>
