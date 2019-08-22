@@ -58,7 +58,7 @@ public class UploadDateImg {
         //删除之前的图片
         FileUtil.removePic(uploadDir);
         //生成新的时间的戳文件名
-        fileName="camp"+System.currentTimeMillis()+"."+suffixName;
+        fileName="camp"+System.currentTimeMillis()+suffixName;
 
         File dest = new File(filePath + fileName);
         // 检测是否存在目录
@@ -84,11 +84,12 @@ public class UploadDateImg {
     @RequestMapping(value = "/downloadImage")
     public String downloadImage(String imageName,HttpServletRequest request, HttpServletResponse response) {
         //String fileName = "123.JPG";
+        // 文件名改为直接获取，不再利用参数
+        imageName= FileUtil.getPicName(uploadDir);
         logger.debug("the imageName is : "+imageName);
         String fileUrl = uploadDir+imageName;
 
-        //文件名改为直接获取，不再利用参数
-        imageName= FileUtil.getPicName(uploadDir);
+
 
         if (fileUrl != null) {
             //当前是从该工程的WEB-INF//File//下获取文件(该目录可以在下面一行代码配置)然后下载到C:\\users\\downloads即本机的默认下载的目录
@@ -136,7 +137,7 @@ public class UploadDateImg {
         return null;
     }
     //询问是否有新图片
-    @RequestMapping(value="/new_pic_name")
+    @RequestMapping(value="/newPicName")
     public String getImageTime(HttpServletRequest request, HttpServletResponse response) {
 	    String new_pic_name=FileUtil.getPicName(uploadDir);
 	    if(new_pic_name==null){

@@ -12,8 +12,8 @@ class ScheduleViewController: MTBaseViewController {
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var upButton: UIButton!
-    
-    
+    //cache目录
+    let scheduleFilePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +36,8 @@ class ScheduleViewController: MTBaseViewController {
             let image=UIImage(contentsOfFile: oldpicPath!)
             imgView.setImage(image, animated: false)
         }
-        //与服务器比较与请求
-        let localname=getLocalFileName() ?? "nofile"
-        print("localname:\(localname)")
-        HttpApi.getImageTime(oldname: localname, completion: self.downloadPic)
+        //向与服务器请求
+        HttpApi.getImageTime(completion: self.downloadPic)
         
     }
     
@@ -52,8 +50,22 @@ class ScheduleViewController: MTBaseViewController {
                 MTHUD.hide()
                 if let result = res["result"] as? String, result == "SUCCESS" {
                     showMessage("上传成功")
+                    //0.设置图片
                     self.imgView.setImage(img, animated: true)
-                    self.flashpic()
+                    //保存图片
+                    do{
+                        //1.先删除本地的图片
+                        self.deleteLocalPic()
+                        //2.保存图片
+                        let filePath = self.scheduleFilePath?.toNSString.strings(byAppendingPaths: ["campxxxx.jpg"])
+                        print(filePath![0])
+                        try img.jpegData(compressionQuality: 1)?.write(to: URL(fileURLWithPath: filePath![0]))
+                        
+                    }catch{
+                        
+                    }
+                    //3.向服务器请求，利用结果给本地图片命名
+                    HttpApi.getImageTime(completion: self.setlocalpic)
                 } else {
                     showMessage(res["error"] as! String)
                 }
@@ -61,11 +73,23 @@ class ScheduleViewController: MTBaseViewController {
         }
     }
     
-    let scheduleFileName = "campSchedule"
-    let scheduleFileExtension = ".jpg"
-    let scheduleFilePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
+    func setlocalpic(newName:String?){
+        //1.重命名文件
+        do{
+           try  FileManager.default.moveItem(atPath: scheduleFilePath!+"campxxxx.jpg", toPath: scheduleFilePath!+newName!)
+            print("正在重命名，工作目录："+scheduleFilePath!)
+        }catch{
+            
+        }
+        
+    }
+
+
+
     func getLocalFileName()->String?
     {
+        let scheduleFileName = "camp"
+        let scheduleFileExtension = ".jpg"
         //print("\(scheduleFilePath!)")
         do{
             var localFileName:String?
@@ -100,28 +124,40 @@ class ScheduleViewController: MTBaseViewController {
         return nil
         
     }
+    
+    func deleteLocalPic(){
+        //删除本地的（一张）图片
+        if let oldname=getLocalFileName(){
+            let oldpicPath=scheduleFilePath?.toNSString.strings(byAppendingPaths: [oldname])[0]
+            do{
+                print("begin delete")
+                try FileManager.default.removeItem(atPath: oldpicPath!)
+                
+            }catch{
+                print("delete error")
+            }
+        }
+    }
+    
     func downloadPic( result:String?){
-        //服务器返回的结果：1.nil 2. 0（与服务器相同）3. 新文件名-需要下载
+        //服务器返回的结果：1.null 2.campxxx.jpg
         if result==nil {
             print("nil")
             return
         }
-        if (result!.starts(with: "0") || result!.contains("错误")){
+        if (result!.starts(with: "no") || result!.contains("错误")){
             print(result!)
             return
         }
         else {
-            //删除旧图片
-            if let oldname=getLocalFileName(){
-                let oldpicPath=scheduleFilePath?.toNSString.strings(byAppendingPaths: [oldname])[0]
-                do{
-                    print("begin delete")
-                    try FileManager.default.removeItem(atPath: oldpicPath!)
-                    
-                }catch{
-                    print("delete error")
-                }
+            //获取本地图片名
+            let localname=getLocalFileName() ?? "nofile"
+            print("localname:\(localname)")
+            if(localname==result){
+                return;
             }
+            //删除旧图片
+            deleteLocalPic()
             //建立新图片
             let newName=result!
             print("newName:\(newName)")
@@ -129,17 +165,20 @@ class ScheduleViewController: MTBaseViewController {
             showMessage("正在下载最新日程表")
             DispatchQueue.global().async {
                 print("begin download")
-                let data : NSData! = NSData(contentsOf: url) //转为data类型
+                let data : NSData! = NSData(contentsOf: url)
                 print("end download")
                 if data != nil { //判断data不为空，这里是因为swift对类型要求很严，如果未空的话，会崩溃
-                    self.imgView.setImage(UIImage.init(data: data as Data, scale: 1), animated: true)
+                    DispatchQueue.main.sync {
+                        self.imgView.setImage(UIImage.init(data: data as Data, scale: 1), animated: true)
+                        
+                    
                     let filePath = self.scheduleFilePath?.toNSString.strings(byAppendingPaths: [newName])
                     do {
                         print(filePath![0])
                         data.write(toFile: filePath![0], atomically: true)
                         showMessage("日程表下载成功")
                         
-                        
+                        }
                     }
                 }
             }

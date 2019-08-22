@@ -1001,9 +1001,8 @@ extension HttpApi {
     
     
     
-    static func getImageTime(oldname:String,completion:@escaping (String?) -> Void)  {
-        Alamofire.request(BaseUrl + "hasNew", method: .get ,
-                          parameters: ["oldName": oldname]).responseString{response in
+    static func getImageTime(completion:@escaping (String?) -> Void)  {
+        Alamofire.request(BaseUrl + "newPicName").responseString{response in
                             //print("result:\(response.value!)")
                             //atime = response.value
                             //print(atime)
