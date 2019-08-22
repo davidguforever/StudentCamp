@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.util.FileUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,8 +19,9 @@ import java.util.Map;
 @RestController
 public class UploadDateImg {
     private static final Logger logger = LoggerFactory.getLogger(UploadDateImg.class);
-    private String uploadDir = "/usr/student_camp/pics";
-    
+  //  private String uploadDir = "/usr/student_camp";
+
+    private String uploadDir = "/Users/hp/Desktop/Pic/";
     public Map<String, Object> responseBody = new HashMap<String, Object>();
 	public void initres() {
 		this.responseBody.put("result", "SUCCESS");
@@ -52,6 +54,12 @@ public class UploadDateImg {
         String filePath = uploadDir;
         // 解决中文问题，liunx下中文路径，图片显示问题
         // fileName = UUID.randomUUID() + suffixName;
+
+        //删除之前的图片
+        FileUtil.removePic(uploadDir);
+        //生成新的时间的戳文件名
+        fileName="camp"+System.currentTimeMillis()+"."+suffixName;
+
         File dest = new File(filePath + fileName);
         // 检测是否存在目录
         if (!dest.getParentFile().exists()) {
@@ -78,6 +86,10 @@ public class UploadDateImg {
         //String fileName = "123.JPG";
         logger.debug("the imageName is : "+imageName);
         String fileUrl = uploadDir+imageName;
+
+        //文件名改为直接获取，不再利用参数
+        imageName= FileUtil.getPicName(uploadDir);
+
         if (fileUrl != null) {
             //当前是从该工程的WEB-INF//File//下获取文件(该目录可以在下面一行代码配置)然后下载到C:\\users\\downloads即本机的默认下载的目录
            /* String realPath = request.getServletContext().getRealPath(
@@ -123,5 +135,16 @@ public class UploadDateImg {
         }
         return null;
     }
- 
+    //询问是否有新图片
+    @RequestMapping(value="/new_pic_name")
+    public String getImageTime(HttpServletRequest request, HttpServletResponse response) {
+	    String new_pic_name=FileUtil.getPicName(uploadDir);
+	    if(new_pic_name==null){
+	        return "no";
+        }
+
+        return new_pic_name;
+    }
+
+
 }
