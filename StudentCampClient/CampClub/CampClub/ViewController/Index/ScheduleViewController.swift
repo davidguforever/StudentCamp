@@ -45,7 +45,7 @@ class ScheduleViewController: MTBaseViewController {
     
     @IBAction func upload(_ sender: UIButton) {
         self.selectPhoto { (img) in
-            MTHUD.showLoading()
+            MTHUD.showLoading("上传中...")
             HttpApi.uploadImage(img.jpegData(compressionQuality: 1)!, completion: { (res) in
                 MTHUD.hide()
                 if let result = res["result"] as? String, result == "SUCCESS" {
@@ -161,7 +161,7 @@ class ScheduleViewController: MTBaseViewController {
             let newName=result!
             print("newName:\(newName)")
             let url : URL = URL.init(string: BaseUrl + "downloadImage?imageName=DateImg.jpg")! // 初始化url图片
-            MTHUD.showLoading()
+            MTHUD.showLoading("下载日程表中...")
             DispatchQueue.global().async {
                 print("开始下载日程表")
                 let data : NSData! = NSData(contentsOf: url)

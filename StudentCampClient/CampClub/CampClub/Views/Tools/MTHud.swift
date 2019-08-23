@@ -18,7 +18,11 @@ struct MTHUD {
         KRProgressHUD.set(style: .black)
         KRProgressHUD.shared.show(withMessage: "Loading...", isLoading: true, completion: nil)
     }
-    
+    static func showLoading(_ message:String) {
+        KRProgressHUD.set(viewOffset: -40)
+        KRProgressHUD.set(style: .black)
+        KRProgressHUD.shared.show(withMessage: message, isLoading: true, completion: nil)
+    }
     static func hide(_ completion: (() -> Void)? = nil)  {
         KRProgressHUD.dismiss {
             completion?()
