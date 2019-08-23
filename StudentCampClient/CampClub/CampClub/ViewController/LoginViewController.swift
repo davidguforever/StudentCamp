@@ -34,7 +34,7 @@ class LoginViewController: MTBaseViewController {
         
         #if DEBUG
         
-            let mode=1
+            let mode=3
             switch mode {
             case 1:
                 //管理员账号
