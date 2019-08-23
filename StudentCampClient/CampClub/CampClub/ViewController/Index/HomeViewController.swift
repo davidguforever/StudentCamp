@@ -34,14 +34,14 @@ class HomeViewController: MTBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //addNavigationBarLeftButton(self, action: #selector(messgae(_:)), image: UIImage(named: "message")!)
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-        button.setImage(UIImage(named: "message")!, for: .normal)
-        button.addTarget(self, action: #selector(messgae(_:)), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.title222
+//        //addNavigationBarLeftButton(self, action: #selector(messgae(_:)), image: UIImage(named: "message")!)
+//        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+//        button.setImage(UIImage(named: "message")!, for: .normal)
+//        button.addTarget(self, action: #selector(messgae(_:)), for: .touchUpInside)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+//        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.title222
         
-        addNavigationBarRightButton(self, action: #selector(add(_:)), image: UIImage(named: "add")!)
+        addNavigationBarRightButton(self, action: #selector(messgae(_:)), image:UIImage(named: "menu")!)
         
         MTConfiguration.shared.menuWidth = 150
         MTConfiguration.shared.textFont = UIFont.systemFont(ofSize: 16)
@@ -62,108 +62,85 @@ class HomeViewController: MTBaseViewController {
     }
     
     @objc func messgae(_ sender: UIButton) {
-        MTPopOverMenu.showForSender(sender: sender, with: ["分组", "查看分组信息"], done: { (index) in
-            switch index {
-            case 0:
-                if User.shared.role == .manager {
+        
+        switch User.shared.role {
+        case .manager:
+            MTPopOverMenu.showForSender(sender: sender, with: ["分组", "分组情况","设置报名信息", "学校报名营员"], done: { (index) in
+                switch index{
+                case 0:
                     let vc = UIStoryboard.Scene.setGroup
                     vc.hidesBottomBarWhenPushed = true
                     self.pushVC(vc)
-                } else if User.shared.role == .teacher {
+                case 1:
                     let vc = UIStoryboard.Scene.grouping
                     vc.hidesBottomBarWhenPushed = true
                     self.pushVC(vc)
-                } else if User.shared.role == .student {
-                    showMessage("无权限")
+                case 2:
+                    let vc = UIStoryboard.Scene.setApply
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                case 3:
+                    let vc = UIStoryboard.Scene.applyNumbers
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                default:
+                    break
                 }
-            case 1:
-                if User.shared.role == .manager {
-                    let vc = UIStoryboard.Scene.grouping
-                    vc.hidesBottomBarWhenPushed = true
-                    self.pushVC(vc)
-                } else if User.shared.role == .teacher {
-                    let vc = UIStoryboard.Scene.grouping
-                    vc.hidesBottomBarWhenPushed = true
-                    self.pushVC(vc)
-                } else if User.shared.role == .student {
-                    //let vc = UIStoryboard.Scene.myGroup
-                    let vc = UIStoryboard.Scene.grouping
-                    vc.hidesBottomBarWhenPushed = true
-                    self.pushVC(vc)
-                }
-                
-            default:
-                break
-                
-            }
-        }) {
-            // cancel
-            
-        }
-
-    }
-    
-    @objc func add(_ sender: UIButton) {
-        if viewPager.pageControlIndex == 0 {
-            MTPopOverMenu.showForSender(sender: sender, with: ["报名", "查看报名情况"], done: { (index) in
-                switch index {
+                }, cancel: {})
+        case .teacher:
+            MTPopOverMenu.showForSender(sender: sender, with: [ "分组情况","设置报名信息", "报名学生"], done: { (index) in
+                switch index{
                 case 0:
-                    
-                    if User.shared.role == .student {
-                        HttpApi.queryIsBeginEnter({ (v, err) in
-                            if let va = v, va == "0" {
-                                showMessage("活动未开始")
-                            } else {
-                                let vc = UIStoryboard.Scene.review
-                                vc.hidesBottomBarWhenPushed = true
-                                self.pushVC(vc)
-                            }
-                        })
-                        
-                    } else {
-                        if User.shared.role == .manager {
-                            let vc = UIStoryboard.Scene.setApply
-                            vc.hidesBottomBarWhenPushed = true
-                            self.pushVC(vc)
-                        } else if User.shared.role == .teacher {
-                            let vc = UIStoryboard.Scene.teacherApply
+                    let vc = UIStoryboard.Scene.grouping
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                case 1:
+                    let vc = UIStoryboard.Scene.teacherApply
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                case 2:
+                    let vc = UIStoryboard.Scene.applyNumbers
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                default:
+                    break
+                }
+            }, cancel: {})
+        case .student:
+            MTPopOverMenu.showForSender(sender: sender, with: ["分组情况","报名", "查看报名情况"], done: { (index) in
+                switch index{
+                case 0:
+                    let vc = UIStoryboard.Scene.grouping
+                    vc.hidesBottomBarWhenPushed = true
+                    self.pushVC(vc)
+                case 1:
+                    HttpApi.queryIsBeginEnter({ (v, err) in
+                        if let va = v, va == "0" {
+                            showMessage("活动未开始")
+                        } else {
+                            let vc = UIStoryboard.Scene.review
                             vc.hidesBottomBarWhenPushed = true
                             self.pushVC(vc)
                         }
-                    }
-                    
-                case 1:
-                    if User.shared.role == .student {
-                        MTHUD.showLoading()
-                        HttpApi.queryInfoStudent(User.shared.userName!, handle: { (res, err) in
-                            MTHUD.hide()
-                            if let v = res, let list = v["list"] as? String {
-                                showMessage( list == "1"  ? "报名成功，已通过审核": "报名未审核")
-                            } else {
-                                showMessage(err)
-                            }
-                        })
-                    } else {
-                        let vc = UIStoryboard.Scene.applyNumbers
-                        vc.hidesBottomBarWhenPushed = true
-                        self.pushVC(vc)
-                    }
-                    
+                    })
+                case 2:
+                    MTHUD.showLoading()
+                    HttpApi.queryInfoStudent(User.shared.userName!, handle: { (res, err) in
+                        MTHUD.hide()
+                        if let v = res, let list = v["list"] as? String {
+                            showMessage( list == "1"  ? "报名成功，已通过审核": "报名未审核")
+                        } else {
+                            showMessage(err)
+                        }
+                })
                 default:
                     break
-                    
                 }
-            }) {
-                // cancel
-                
-            }
-        } else {
-            self.selectPhoto { (img) in
-                
-            }
+            }, cancel: {})
+
         }
+
     }
-    
     
 }
 

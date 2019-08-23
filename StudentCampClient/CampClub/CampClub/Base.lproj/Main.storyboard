@@ -53,8 +53,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-3c-5Kd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="440"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-3c-5Kd">
+                                <rect key="frame" x="-2" y="20" width="375" height="440"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcI-2W-HIZ">
                                         <rect key="frame" x="0.0" y="20" width="375" height="60"/>
@@ -238,18 +238,18 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-S7-Oc7">
-                                <rect key="frame" x="37.5" y="500" width="300" height="50"/>
+                                <rect key="frame" x="30" y="500" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="C1j-cQ-aKM"/>
-                                    <constraint firstAttribute="height" constant="50" id="IOh-vy-72t"/>
+                                    <constraint firstAttribute="height" constant="44" id="IOh-vy-72t"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="今日签到">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -257,18 +257,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-89-IOb">
-                                <rect key="frame" x="37.5" y="565" width="300" height="50"/>
+                                <rect key="frame" x="30" y="559" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Ez6-6o-e7W"/>
-                                    <constraint firstAttribute="height" constant="50" id="HAS-bq-fLu"/>
+                                    <constraint firstAttribute="height" constant="44" id="HAS-bq-fLu"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="答辩">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -281,9 +281,11 @@
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="top" secondItem="QNz-S7-Oc7" secondAttribute="bottom" constant="15" id="3TP-0A-uBL"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="leading" secondItem="d7g-aL-LC5" secondAttribute="leading" id="7bJ-aJ-oTG"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="top" secondItem="Njj-LT-aHl" secondAttribute="top" id="FGT-Cn-bxJ"/>
+                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="LgE-Rv-XXg"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="40" id="Q7s-gg-okI"/>
                             <constraint firstItem="Njj-LT-aHl" firstAttribute="trailing" secondItem="gIO-3c-5Kd" secondAttribute="trailing" id="VHB-6h-ySf"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="centerX" secondItem="d7g-aL-LC5" secondAttribute="centerX" id="hzK-el-USv"/>
+                            <constraint firstItem="Ae1-89-IOb" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="jcK-d9-oJ9"/>
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="centerX" secondItem="QNz-S7-Oc7" secondAttribute="centerX" id="z07-nc-yt7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Njj-LT-aHl"/>
@@ -475,21 +477,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-zF-bNB">
-                                <rect key="frame" x="30" y="178" width="315" height="45"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="30" y="178" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.21474048495292664" green="0.41952556371688843" blue="0.66767781972885132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Hj5-ua-nwy"/>
+                                    <constraint firstAttribute="height" constant="44" id="Hj5-ua-nwy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="确定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -575,21 +577,21 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyp-v2-iQs">
-                                            <rect key="frame" x="30" y="92.5" width="315" height="45"/>
+                                            <rect key="frame" x="30" y="93" width="315" height="44"/>
                                             <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="45" id="p3j-mr-9HQ"/>
+                                                <constraint firstAttribute="height" constant="44" id="p3j-mr-9HQ"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="退出登录">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="1"/>
+                                                    <real key="value" value="0.0"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="4"/>
+                                                    <real key="value" value="8"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
@@ -660,18 +662,18 @@
                                 <rect key="frame" x="10" y="30" width="355" height="537"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g70-xA-rov">
-                                <rect key="frame" x="30" y="597" width="315" height="50"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="597" width="315" height="44"/>
+                                <color key="backgroundColor" red="0.21474048495292664" green="0.41952556371688843" blue="0.66767781972885132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="stg-Lx-RTh"/>
+                                    <constraint firstAttribute="height" constant="44" id="stg-Lx-RTh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="上传">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -779,21 +781,21 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhn-vY-ms0">
-                                <rect key="frame" x="30" y="178" width="315" height="45"/>
+                                <rect key="frame" x="30" y="178" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="RVQ-en-BXf"/>
+                                    <constraint firstAttribute="height" constant="44" id="RVQ-en-BXf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="确定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>

@@ -33,12 +33,22 @@ class LoginViewController: MTBaseViewController {
         self.view.backgroundColor  = .white
         
         #if DEBUG
-              mobileNoField.text = "XinQ"
-            pwdField.text = "SAAA"
-        mobileNoField.text = "william2000123@gmail.com"
-        pwdField.text = "123456"
-//        mobileNoField.text = "Mr.Qiu"
-//        pwdField.text = "cherry"
+        
+            let mode=3
+            switch mode {
+            case 1:
+                //管理员账号
+                mobileNoField.text = "doris@apple.com"
+            case 2:
+                //营员账号
+                mobileNoField.text = "william2000123@gmail.com"
+            default:
+                //教师账号
+                mobileNoField.text = "13578700066"
+            }
+            //密码统一为123456
+            pwdField.text = "123456"
+        
         #endif
         view.addTapToCloseEditing()
         
@@ -81,6 +91,14 @@ class LoginViewController: MTBaseViewController {
                 AppDelegate.shared.loginSuccess()
             } else {
                 print(error!)
+                var errorTxt:String
+                if((error?.contains("未能连接到服务器"))!){
+                    errorTxt = "网络错误，请重试"
+                }
+                else{
+                    errorTxt = error!
+                }
+                showMessage(errorTxt)
             }
         }
         
