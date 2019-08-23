@@ -88,21 +88,17 @@ class HomeViewController: MTBaseViewController {
                 }
                 }, cancel: {})
         case .teacher:
-            MTPopOverMenu.showForSender(sender: sender, with: ["分组", "查看分组信息","报名", "查看报名情况"], done: { (index) in
+            MTPopOverMenu.showForSender(sender: sender, with: [ "分组情况","设置报名信息", "报名学生"], done: { (index) in
                 switch index{
                 case 0:
                     let vc = UIStoryboard.Scene.grouping
                     vc.hidesBottomBarWhenPushed = true
                     self.pushVC(vc)
                 case 1:
-                    let vc = UIStoryboard.Scene.grouping
-                    vc.hidesBottomBarWhenPushed = true
-                    self.pushVC(vc)
-                case 2:
                     let vc = UIStoryboard.Scene.teacherApply
                     vc.hidesBottomBarWhenPushed = true
                     self.pushVC(vc)
-                case 3:
+                case 2:
                     let vc = UIStoryboard.Scene.applyNumbers
                     vc.hidesBottomBarWhenPushed = true
                     self.pushVC(vc)
@@ -111,7 +107,7 @@ class HomeViewController: MTBaseViewController {
                 }
             }, cancel: {})
         case .student:
-            MTPopOverMenu.showForSender(sender: sender, with: ["查看分组信息","报名", "查看报名情况"], done: { (index) in
+            MTPopOverMenu.showForSender(sender: sender, with: ["分组情况","报名", "查看报名情况"], done: { (index) in
                 switch index{
                 case 0:
                     let vc = UIStoryboard.Scene.grouping
