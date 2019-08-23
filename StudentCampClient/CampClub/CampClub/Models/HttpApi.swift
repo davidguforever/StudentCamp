@@ -938,7 +938,7 @@ extension HttpApi {
     // MARK: - 修改密码
     static func changePwd(_ name: String, pwd: String, handle: @escaping ((_ info: JSONMap?, _ error: String?)->())) {
         Alamofire.request(BaseUrl + "changePassword", method: .post ,
-                          parameters: ["userName": name, "newPassword": pwd])
+                          parameters: ["userName": name, "newPassWord": pwd])
             .responseJSON { (dataRequest) in
                 if let JSON = dataRequest.result.value as? JSONMap {
                     
