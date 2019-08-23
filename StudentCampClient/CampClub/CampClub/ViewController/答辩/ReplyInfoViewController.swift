@@ -70,7 +70,7 @@ extension ReplyInfoViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
-        cell.textLabel?.textColor = MTColor.main
+        cell.textLabel?.textColor = UIColor.black
         
         cell.textLabel?.text = infos[indexPath.row] + "组"
         

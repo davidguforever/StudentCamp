@@ -162,6 +162,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
