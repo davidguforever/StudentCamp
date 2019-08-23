@@ -11,7 +11,7 @@ import Foundation
 
 let kUserInfo = "loginedUser"
 
-let groupShare = "group.com.lc.camp"
+let groupShare = "group.com.lc.studentcamp"
 
 
 

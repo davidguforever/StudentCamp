@@ -105,7 +105,7 @@ class ShareViewController: SLComposeServiceViewController {
 
     
     var userName: String {
-        if let user :JSONMap = UserDefaults(suiteName: "group.com.lc.camp")?.dictionary(forKey: "loginedUser") {
+        if let user :JSONMap = UserDefaults(suiteName: "group.com.lc.studentcamp")?.dictionary(forKey: "loginedUser") {
             if let userName = user["username"] as? String {
                 return userName
             }
