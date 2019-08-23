@@ -33,14 +33,21 @@ class LoginViewController: MTBaseViewController {
         self.view.backgroundColor  = .white
         
         #if DEBUG
-        //管理员账号
-        mobileNoField.text = "doris@apple.com"
-        //营员账号
-        mobileNoField.text = "william2000123@gmail.com"
-        //教师账号
-        mobileNoField.text = "13578700066"
-        //密码统一为123456
-        pwdField.text = "123456"
+        
+            let mode=2
+            switch mode {
+            case 1:
+                //管理员账号
+                mobileNoField.text = "doris@apple.com"
+            case 2:
+                //营员账号
+                mobileNoField.text = "william2000123@gmail.com"
+            default:
+                //教师账号
+                mobileNoField.text = "13578700066"
+            }
+            //密码统一为123456
+            pwdField.text = "123456"
         
         #endif
         view.addTapToCloseEditing()
