@@ -7,17 +7,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.HashMap;
+
+import com.example.model.*;
+import com.example.util.GroupUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.model.GroupMsg;
-import com.example.model.CampusStudent;
-import com.example.model.GroupStudent;
-import com.example.model.PunchClockManager;
-import com.example.model.PunchClockStudent;
 import com.example.modelInterface.PunchClockMapper;
 import com.example.modelInterface.StuGroupMapper;
 
@@ -195,9 +193,26 @@ public class GroupDao extends SuperDao{
 			int groupNum = Integer.parseInt(groupMsg.get(0).getGroupNum());   		 //组数
 			int groupStuNum = Integer.parseInt(groupMsg.get(0).getGroupStuNum());   //每组学生数量
 
-			List<CampusStudent> students = stuGroupMapper.queryAllStudent();		//所有学生
+			List<CampusStudent> raw_students = stuGroupMapper.queryAllStudent();		//所有学生
+			List<Student> students=new ArrayList<Student>();
+
 			//0. 数据预处理
+			int i=0;
+			GroupUtil groupUtil = new GroupUtil();
+			for(CampusStudent raw_student:raw_students){
+				Student student = new Student();
+				student.setNo(i);
+				student.setSchool(groupUtil.getSchoolId(raw_student.getStuSchool()));
+				student.setSchoolLevel(groupUtil.getSchoolLevel(raw_student.getStuSchool()));
+				student.setGender(groupUtil.getGender(raw_student.getStuSex()));
+				student.setGrade(groupUtil.getGrade(raw_student.getStuGrade()));
+				student.setMajor(groupUtil.getMajor(raw_student.getStuHobby()));
+				students.add(student);
+			}
+			System.out.println("数据预处理后的学生数"+students.size());
+
 			//1. 计算平均数
+			
 			//2. 排序
 			//3. 贪心法先生成一个解
 			//4. 调整N次
