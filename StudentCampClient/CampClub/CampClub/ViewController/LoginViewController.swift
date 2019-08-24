@@ -90,15 +90,20 @@ class LoginViewController: MTBaseViewController {
                 User.shared.bind(r)
                 AppDelegate.shared.loginSuccess()
             } else {
-                print(error!)
-                var errorTxt:String
-                if((error?.contains("未能连接到服务器"))!){
-                    errorTxt = "网络错误，请重试"
+                if let errm=error{
+                    print(errm)
+                    var errorTxt:String
+                    if((error?.contains("未能连接到服务器"))!){
+                        errorTxt = "网络错误，请重试"
+                    }
+                    else{
+                        errorTxt = error!
+                    }
+                    showMessage(errorTxt)
+                }else{
+                    showMessage("未能连接到服务器,可能是网络错误或服务器维护")
                 }
-                else{
-                    errorTxt = error!
-                }
-                showMessage(errorTxt)
+
             }
         }
         
