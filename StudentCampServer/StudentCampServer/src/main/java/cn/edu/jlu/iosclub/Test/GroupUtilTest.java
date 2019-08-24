@@ -31,8 +31,9 @@ class GroupUtilTest {
 
     @Test
     void getGrade() {
-        Assert.assertEquals(1,groupUtil.getGrade("大一"));
+        Assert.assertEquals(1,groupUtil.getGrade("大一    "));
         Assert.assertEquals(2,groupUtil.getGrade("大三"));
+        Assert.assertEquals(0,groupUtil.getGrade("高中"));
 
     }
 

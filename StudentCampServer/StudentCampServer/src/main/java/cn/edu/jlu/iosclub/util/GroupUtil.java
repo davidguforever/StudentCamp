@@ -55,7 +55,7 @@ public class GroupUtil {
     }
     public int getGender(String gender)
     {
-        if(gender == "女")
+        if(gender .indexOf("女")!=-1 )
             return 0;
         else return 1;
     }
@@ -73,16 +73,16 @@ public class GroupUtil {
 
     public int getGrade(String grade)
     {
-        if(grade == "大一")
+        if(grade .indexOf("大一")!=-1||grade .indexOf("1")!=-1 )
             return 1;
-        else if(grade == "大二")
+        else if(grade .indexOf("大二")!=-1 ||grade .indexOf("2")!=-1)
             return 2;
-        else if(grade == "大三")
+        else if(grade .indexOf("大三")!=-1 ||grade .indexOf("3")!=-1 )
             return 2;
-        else if(grade == "大四")
+        else if(grade .indexOf("大四")!=-1 ||grade .indexOf("4")!=-1)
             return 2;
         else
-            return 3;
+            return 0;
     }
     public int getSchoolLevel(String schoolname){
         int index=goodSchoolList.indexOf(schoolname);
@@ -92,5 +92,17 @@ public class GroupUtil {
             return 0;
         return  2;//一般学校
 
+    }
+    public void getAvgInt(int[] sum,int[] avg,int groupNum){
+        for(int i=0;i<sum.length;i++){
+            avg[i]=sum[i]/groupNum;
+            if(avg[i]*groupNum<sum[i])
+                avg[i]++;
+        }
+    }
+    public void getAvgDouble(int[] sum,double[] avg,int groupNum){
+        for(int i=0;i<sum.length;i++){
+            avg[i]=sum[i]*1.0/groupNum;
+        }
     }
 }

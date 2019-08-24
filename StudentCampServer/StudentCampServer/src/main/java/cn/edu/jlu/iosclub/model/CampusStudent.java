@@ -89,9 +89,28 @@ public class CampusStudent {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+	@Override
+	public String toString() {
+		return "CampusStudent{" +
+				"tableId='" + tableId + '\'' +
+				", stuName='" + stuName + '\'' +
+				", stuSex='" + stuSex + '\'' +
+				", stuSchool='" + stuSchool + '\'' +
+				", stuTel='" + stuTel + '\'' +
+				", stuHobby='" + stuHobby + '\'' +
+				", stuMail='" + stuMail + '\'' +
+				", stuClub='" + stuClub + '\'' +
+				", isCheck='" + isCheck + '\'' +
+				", createTime='" + createTime + '\'' +
+				", userName='" + userName + '\'' +
+				", stuGrade='" + stuGrade + '\'' +
+				'}';
+	}
 	/*public String getGroupId() {
 		return groupId;
 	}
+
 	public void setGroupId(String groupId) {
 		this.groupId = groupId;
 	}*/

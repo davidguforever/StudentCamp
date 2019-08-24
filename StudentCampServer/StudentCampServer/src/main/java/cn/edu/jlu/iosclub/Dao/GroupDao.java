@@ -21,7 +21,7 @@ import cn.edu.jlu.iosclub.mapper.StuGroupMapper;
 @Service
 @MapperScan("com.example.mapper.stuGroupMapper")
 public class GroupDao extends SuperDao{
-	//@Autowired
+	@Autowired
 	private StuGroupMapper stuGroupMapper;
 	public GroupDao() {
 		super();
@@ -189,17 +189,19 @@ public class GroupDao extends SuperDao{
 		this.responseBody.remove("list");
 		List<GroupMsg> groupMsg = stuGroupMapper.queryMsg();
 		if(!groupMsg.isEmpty()) {
+			//0.获取数据
+			// int groupStuNum = Integer.parseInt(groupMsg.get(0).getGroupStuNum());   //每组学生数量
 			int groupNum = Integer.parseInt(groupMsg.get(0).getGroupNum());   		 //组数
-			int groupStuNum = Integer.parseInt(groupMsg.get(0).getGroupStuNum());   //每组学生数量
-
 			List<CampusStudent> raw_students = stuGroupMapper.queryAllStudent();		//所有学生
-			List<Student> students=new ArrayList<Student>();
+			int studentNum=raw_students.size() ;//学生总数
 
-			//0. 数据预处理
-			int i=0;
+			//1. 数据预处理
+			List<Student> students=new ArrayList<Student>();
 			GroupUtil groupUtil = new GroupUtil();
+			int i=0;
 			for(CampusStudent raw_student:raw_students){
 				Student student = new Student();
+				//System.out.println(raw_student.toString());
 				student.setNo(i);
 				student.setSchool(groupUtil.getSchoolId(raw_student.getStuSchool()));
 				student.setSchoolLevel(groupUtil.getSchoolLevel(raw_student.getStuSchool()));
@@ -207,15 +209,61 @@ public class GroupDao extends SuperDao{
 				student.setGrade(groupUtil.getGrade(raw_student.getStuGrade()));
 				student.setMajor(groupUtil.getMajor(raw_student.getStuHobby()));
 				students.add(student);
+				i++;
 			}
-			System.out.println("数据预处理后的学生数"+students.size());
 
-			//1. 计算平均数
+			System.out.println("数据预处理后的学生数："+students.size());
 
-			//2. 排序
-			//3. 贪心法先生成一个解
-			//4. 调整N次
-			//5. 提交到数据库
+			//2. 计算平均数
+			int  MAJOR_NUM=3,GENDER_NUM=3,GRADE_NUM=3,SCHOOL_LEVEL_NUM=3;
+			int[] sum_schoolLevel=new int[SCHOOL_LEVEL_NUM];//每类学校各有多少学生
+			int[] sum_majors=new int[MAJOR_NUM];//每类专业各有多少学生
+			int[] sum_gender=new int[GENDER_NUM];//每类性别各有多少学生
+			int[] sum_grade=new int[GRADE_NUM];//每类班级各有多少学生
+
+			int[] mean_schoolLevelPerGroup=new int[SCHOOL_LEVEL_NUM];//每类学校各有多少学生/每组
+			int[] mean_majorsPerGroup=new int[MAJOR_NUM];//每类专业各有多少学生/每组
+			int[] mean_genderPerGroup=new int[GENDER_NUM];//每类性别各有多少学生/每组
+			int[] mean_gradePerGroup=new int[GRADE_NUM];//每类班级各有多少学生/每组
+
+			double[] dmean_schoolLevelPerGroup=new double[SCHOOL_LEVEL_NUM];//每类学校各有多少学生/每组
+			double[] dmean_majorsPerGroup=new double[MAJOR_NUM];//每类专业各有多少学生/每组
+			double[] dmean_genderPerGroup=new double[GENDER_NUM];//每类性别各有多少学生/每组
+			double[] dmean_gradePerGroup=new double[GRADE_NUM];//每类班级各有多少学生/每组
+
+			for(Student student:students){
+				sum_schoolLevel[student.getSchoolLevel()]++;
+				sum_gender[student.getGender()]++;
+				//System.out.println(student.getGender());
+				sum_majors[student.getMajor()]++;
+				sum_grade[student.getGrade()]++;
+			}
+			groupUtil.getAvgInt(sum_gender,mean_genderPerGroup,groupNum);
+			groupUtil.getAvgInt(sum_grade,mean_gradePerGroup,groupNum);
+			groupUtil.getAvgInt(sum_majors,mean_majorsPerGroup,groupNum);
+			groupUtil.getAvgInt(sum_schoolLevel,mean_schoolLevelPerGroup,groupNum);
+
+			groupUtil.getAvgDouble(sum_gender,dmean_genderPerGroup,groupNum);
+			groupUtil.getAvgDouble(sum_grade,dmean_gradePerGroup,groupNum);
+			groupUtil.getAvgDouble(sum_majors,dmean_majorsPerGroup,groupNum);
+			groupUtil.getAvgDouble(sum_schoolLevel,dmean_schoolLevelPerGroup,groupNum);
+
+			System.out.printf("%10s,%10s,%10s,%10s,%10s,%10s\n","type","group_num","gender" ,"grade","major","schoollevel");
+			for(int j=0;j<3;j++){
+				System.out.printf("%10s,%10d,%10d,%10d,%10d,%10d\n","sum",j,sum_gender[j],sum_grade[j] ,sum_majors[j],sum_schoolLevel[j]);
+			}
+			for(int j=0;j<3;j++) {
+				System.out.printf("%10s,%10d,%10d,%10d,%10d,%10d\n", "avg_int",j, mean_genderPerGroup[j], mean_gradePerGroup[j], mean_majorsPerGroup[j], mean_schoolLevelPerGroup[j]);
+			}
+			for(int j=0;j<3;j++) {
+				System.out.printf("%10s,%10d,%10f,%10f,%10f,%10f\n", "avg_double",j, dmean_genderPerGroup[j], dmean_gradePerGroup[j], dmean_majorsPerGroup[j], dmean_schoolLevelPerGroup[j]);
+			}
+
+			//3. 排序
+
+			//4. 贪心法先生成一个解
+			//5. 调整N次
+			//6. 提交到数据库
 
 
 		}
