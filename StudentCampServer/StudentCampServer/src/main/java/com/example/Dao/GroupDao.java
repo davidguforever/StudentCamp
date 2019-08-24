@@ -186,209 +186,24 @@ public class GroupDao extends SuperDao{
 		}
 		return this.responseBody;
 	}
-	
-	int exchangeSex(String str)
-	{
-		if(str == "男")
-			return 0;
-		else return 1;
-	}
-	
-	int exchangeHobby(String str)
-	{
-		if((str.indexOf("计算机") != -1) || (str.indexOf("软件") != -1)||(str.indexOf("通信") != -1)
-				||(str.indexOf("大数据") != -1)||(str.indexOf("网络") != -1)||(str.indexOf("移动") != -1)||(str.indexOf("資管") != -1)
-				||(str.indexOf("物联网") != -1)||(str.indexOf("信息") != -1)||(str.indexOf("資訊") != -1))
-			return 0;
-		else if((str.indexOf("设计") != -1) || (str.indexOf("媒体") != -1) )
-			return 1;
-		else return 2;
-	}
-	
-	int exchangeGrade(String str)
-	{
-		if(str == "大一")
-			return 0;
-		else if(str == "大二")
-			return 1;
-		else if(str == "大三")
-			return 2;
-		else if(str == "大四")
-			return 3;
-		else 
-			return 4;
-	}
-	
+
 	//学生分组
 	public Map<String, Object> 	divide() throws DataAccessException {
 		this.responseBody.remove("list");
 		List<GroupMsg> groupMsg = stuGroupMapper.queryMsg();
 		if(!groupMsg.isEmpty()) {
-			
-			int stuSchool = Integer.parseInt(groupMsg.get(0).getStuSchool());
-			int stuGrade = Integer.parseInt(groupMsg.get(0).getStuGrade());
-			int stuHobby = Integer.parseInt(groupMsg.get(0).getStuHobby());
-			int stuSex = Integer.parseInt(groupMsg.get(0).getStuSex());
-			int maxScore = 4 * stuSchool + 2 * stuGrade + 3 * stuHobby + stuSex;
-			
 			int groupNum = Integer.parseInt(groupMsg.get(0).getGroupNum());   		 //组数
 			int groupStuNum = Integer.parseInt(groupMsg.get(0).getGroupStuNum());   //每组学生数量
-			
+
 			List<CampusStudent> students = stuGroupMapper.queryAllStudent();		//所有学生
-			Collections.shuffle(students);
-			List<CampusStudent> modelStudents = new ArrayList();					//模板学生
-			Random random =new Random();
-				
-			int sex_man = 0,sex_woman = 1;											//对应映射 性别 专业  年级
-			int hobby_program = 0,hobby_art = 2,hobby_else = 3;
-			int grade_one = 0,grade_two = 2,grade_three = 3,grade_four = 4;
-			
-			int[][] groupSex = new int[groupNum][groupStuNum];                                    //每组的响应情况存储结构
-			int[][] groupHobby = new int[groupNum][groupStuNum];
-			int[][] groupGrade = new int[groupNum][groupStuNum];
-			String[][] groupSchool = new String[groupNum][groupStuNum];
-			
-			int sexMax = groupStuNum / 2;														  //每组各项数据的上限
-			int groupHobbyMax = groupStuNum / 3;
-			int groupGradeMax = groupStuNum / 4;
-			
-			int[] index = new int[groupNum];
-			
-			for(int i = 0 ;i < groupStuNum;i++)
-				index[i] = 0;
-			
-			for(int i = 0;i < groupNum;++i)
-			{
-				int tmp = random.nextInt(students.size());
-				CampusStudent tmpStu = students.get(tmp);
-				modelStudents.add(tmpStu);
-				Integer groupId = i + 1;
-				
-				groupSex[i][index[i]] = exchangeSex(tmpStu.getStuSex());
-				groupHobby[i][index[i]] = exchangeHobby(tmpStu.getStuHobby());
-				groupGrade[i][index[i]] = exchangeGrade(tmpStu.getStuGrade());
-				groupSchool[i][index[i]++] = tmpStu.getStuSchool();
-                //每组放进去第一个学生
-				stuGroupMapper.insertGroupStu(tmpStu.getUserName(), tmpStu.getStuName(), groupId.toString(), tmpStu.getStuSchool());
-				students.remove(tmp);
-			}
-			
-			//将同学分到组中
-			for(int i = 0; i < groupNum;++i)
-			{
-				for(int j = 1; j < groupStuNum;++j)
-				{
-					int max_j = 0;
-					int max_sc = 0;
-					int k;
-					
-					for(k = 0; k < students.size();++k)
-					{
-						CampusStudent tmpStu = students.get(k);
-						int tmpStuSex = exchangeSex(tmpStu.getStuSex());
-						int tmpStuHobby = exchangeHobby(tmpStu.getStuHobby());
-						int tmpStuGrade = exchangeGrade(tmpStu.getStuGrade());
-						// 性别 in
-						int countSex = 0;
-						int countHobby = 0;
-						int countGrade = 0;
-						
-						int scoreSex = 0;
-						int scoreHobby = 0;
-						int scoreGrade = 0;
-						int scoreSch = 0;
-						
-						
-						for(int i2 = 0;i2 < j; i2++)
-						{
-							if(groupSex[i][i2] == tmpStuSex)
-								countSex++;
-						}
-						if(countSex < sexMax)
-							scoreSex = 1 * stuSex;
-						// 年级 in
-						for(int i2 = 0; i2 < j; i2++)
-						{
-							if(groupGrade[i][i2] == tmpStuGrade)
-								countGrade++;
-						}
-						if(countGrade < groupGradeMax)
-							scoreGrade = 2 * stuGrade;
-						// 专业 in 
-						for(int i2 = 0; i2 < j;i2++)
-						{
-							if(groupHobby[i][i2] == tmpStuHobby)
-								countHobby++;
-						}
-						if(countHobby < groupHobbyMax)
-							scoreHobby = 3 * stuHobby;
-						// 学校 in
-						boolean jump = false;
-						for(int i2 = 0;i2 <j; i2++)
-						{
-							if(groupSchool[i][i2].equals(tmpStu.getStuSchool()))
-							{
-								jump = true;
-								break;
-							}
-						}
-						if(jump == false)
-							scoreSch = 4 * stuSchool;
-				
-						int tmpStuScore = scoreSch + scoreSex + scoreGrade + scoreHobby;
-						
-						if(tmpStuScore == maxScore)
-						{
-							break;
-						}
-						if(max_sc < tmpStuScore)
-						{
-							max_j = k;
-							max_sc = tmpStuScore;
-						}
-					}
-					
-					if(k == students.size())
-					{
-						CampusStudent tmpStu = students.get(max_j);
-						Integer groupId = i + 1;
-						
-						groupSex[i][index[i]] = exchangeSex(tmpStu.getStuSex());
-						groupHobby[i][index[i]] = exchangeHobby(tmpStu.getStuHobby());
-						groupGrade[i][index[i]] = exchangeGrade(tmpStu.getStuGrade());
-						groupSchool[i][index[i]++] = tmpStu.getStuSchool();
-						
-						stuGroupMapper.insertGroupStu(tmpStu.getUserName(), tmpStu.getStuName(), groupId.toString(), tmpStu.getStuSchool());
-					//	stuGroupMapper.updateGroup(groupId.toString(), tmpStu.getUserName());
-						students.remove(max_j);
-					}
-					else 
-					{
-						CampusStudent tmpStu = students.get(k);
-						Integer groupId = i + 1;
-						
-						groupSex[i][index[i]] = exchangeSex(tmpStu.getStuSex());
-						groupHobby[i][index[i]] = exchangeHobby(tmpStu.getStuHobby());
-						groupGrade[i][index[i]] = exchangeGrade(tmpStu.getStuGrade());
-						groupSchool[i][index[i]++] = tmpStu.getStuSchool();
-						
-						stuGroupMapper.insertGroupStu(tmpStu.getUserName(), tmpStu.getStuName(), groupId.toString(), tmpStu.getStuSchool());
-					//	stuGroupMapper.updateGroup(groupId.toString(), tmpStu.getUserName());
-						students.remove(k);
-					}
-				}
-			}
-			//处理剩余同学
-			while(!students.isEmpty())
-			{
-				int tmp = random.nextInt(groupNum);
-				CampusStudent tmpStu = students.get(0);
-				Integer groupId = tmp + 1;
-				stuGroupMapper.insertGroupStu(tmpStu.getUserName(), tmpStu.getStuName(), groupId.toString(), tmpStu.getStuSchool());
-				//stuGroupMapper.updateGroup(groupId.toString(), tmpStu.getUserName());
-				students.remove(0);
-			}
-			this.SetSuccess();
+			//0. 数据预处理
+			//1. 计算平均数
+			//2. 排序
+			//3. 贪心法先生成一个解
+			//4. 调整N次
+			//5. 提交到数据库
+
+
 		}
 		else {
 			this.SetError();
