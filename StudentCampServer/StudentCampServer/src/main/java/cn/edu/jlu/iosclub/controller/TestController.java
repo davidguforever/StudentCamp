@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
+//@RestController
 public class TestController {
     @Autowired
     private GroupDao groupDao;

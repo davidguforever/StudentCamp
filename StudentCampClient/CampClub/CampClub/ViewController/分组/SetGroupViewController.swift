@@ -55,10 +55,10 @@ class SetGroupViewController: MTBaseViewController {
     
     @objc func divide() {
         MTHUD.showLoading()
-        HttpApi.queryCampusManager { (res, error) in
+        HttpApi.divide() { (res, error) in
             MTHUD.hide()
-            if let r = res, let _ = r["list"] as? JSONMap {
-                showMessage("已经开始")
+            if let r = res, let _ = r as? JSONMap {
+                showMessage("分组完成")
                 delay(1, work: {
                     self.popVC()
                 })
