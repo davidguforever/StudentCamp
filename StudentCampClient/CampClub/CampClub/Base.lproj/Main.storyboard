@@ -238,7 +238,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-S7-Oc7">
-                                <rect key="frame" x="30" y="500" width="315" height="44"/>
+                                <rect key="frame" x="30" y="465" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IOh-vy-72t"/>
@@ -257,7 +257,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-89-IOb">
-                                <rect key="frame" x="30" y="559" width="315" height="44"/>
+                                <rect key="frame" x="30" y="524" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HAS-bq-fLu"/>
@@ -282,7 +282,7 @@
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="leading" secondItem="d7g-aL-LC5" secondAttribute="leading" id="7bJ-aJ-oTG"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="top" secondItem="Njj-LT-aHl" secondAttribute="top" id="FGT-Cn-bxJ"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="LgE-Rv-XXg"/>
-                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="40" id="Q7s-gg-okI"/>
+                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="5" id="Q7s-gg-okI"/>
                             <constraint firstItem="Njj-LT-aHl" firstAttribute="trailing" secondItem="gIO-3c-5Kd" secondAttribute="trailing" id="VHB-6h-ySf"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="centerX" secondItem="d7g-aL-LC5" secondAttribute="centerX" id="hzK-el-USv"/>
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="jcK-d9-oJ9"/>
