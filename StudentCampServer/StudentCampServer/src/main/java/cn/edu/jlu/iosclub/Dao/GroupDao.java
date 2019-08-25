@@ -234,7 +234,6 @@ public class GroupDao extends SuperDao{
 			for(Student student:students){
 				sum_schoolLevel[student.getSchoolLevel()]++;
 				sum_gender[student.getGender()]++;
-				//System.out.println(student.getGender());
 				sum_majors[student.getMajor()]++;
 				sum_grade[student.getGrade()]++;
 			}
@@ -247,19 +246,30 @@ public class GroupDao extends SuperDao{
 			groupUtil.getAvgDouble(sum_grade,dmean_gradePerGroup,groupNum);
 			groupUtil.getAvgDouble(sum_majors,dmean_majorsPerGroup,groupNum);
 			groupUtil.getAvgDouble(sum_schoolLevel,dmean_schoolLevelPerGroup,groupNum);
+				//打印统计结果
+			System.out.println("---------------------------------------------------------------");
+			System.out.println("				sum统计");
+			System.out.printf("%15s,%10s,%10s,%10s\n","\\","0","1" ,"2");
+			System.out.printf("%15s,%10d,%10d,%10d\n","gender",sum_gender[0],sum_gender[1] ,0);
+			System.out.printf("%15s,%10d,%10d,%10d\n","grade",sum_grade[0],sum_grade[1] ,sum_grade[2]);
+			System.out.printf("%15s,%10d,%10d,%10d\n","majors",sum_majors[0],sum_majors[1] ,sum_majors[2]);
+			System.out.printf("%15s,%10d,%10d,%10d\n","schoollevel",sum_schoolLevel[0],sum_schoolLevel[1] ,sum_schoolLevel[2]);
 
-			System.out.printf("%10s,%10s,%10s,%10s,%10s,%10s\n","type","group_num","gender" ,"grade","major","schoollevel");
-			for(int j=0;j<3;j++){
-				System.out.printf("%10s,%10d,%10d,%10d,%10d,%10d\n","sum",j,sum_gender[j],sum_grade[j] ,sum_majors[j],sum_schoolLevel[j]);
-			}
-			for(int j=0;j<3;j++) {
-				System.out.printf("%10s,%10d,%10d,%10d,%10d,%10d\n", "avg_int",j, mean_genderPerGroup[j], mean_gradePerGroup[j], mean_majorsPerGroup[j], mean_schoolLevelPerGroup[j]);
-			}
-			for(int j=0;j<3;j++) {
-				System.out.printf("%10s,%10d,%10f,%10f,%10f,%10f\n", "avg_double",j, dmean_genderPerGroup[j], dmean_gradePerGroup[j], dmean_majorsPerGroup[j], dmean_schoolLevelPerGroup[j]);
-			}
+			System.out.println("				mean统计");
+			System.out.printf("%15s,%10s,%10s,%10s\n","\\","0","1" ,"2");
+			System.out.printf("%15s,%10d,%10d,%10d\n","gender",mean_genderPerGroup[0],mean_genderPerGroup[1] ,0);
+			System.out.printf("%15s,%10d,%10d,%10d\n","grade",mean_gradePerGroup[0],mean_gradePerGroup[1] ,mean_gradePerGroup[2]);
+			System.out.printf("%15s,%10d,%10d,%10d\n","majors",mean_majorsPerGroup[0],mean_majorsPerGroup[1] ,mean_majorsPerGroup[2]);
+			System.out.printf("%15s,%10d,%10d,%10d\n","schoollevel",mean_schoolLevelPerGroup[0],mean_schoolLevelPerGroup[1] ,mean_schoolLevelPerGroup[2]);
 
+			System.out.println("				mean-double统计");
+			System.out.printf("%15s,%10s,%10s,%10s\n","\\","0","1" ,"2");
+			System.out.printf("%15s,%10f,%10f,%10d\n","gender",dmean_genderPerGroup[0],dmean_genderPerGroup[1] ,0);
+			System.out.printf("%15s,%10f,%10f,%10f\n","grade",dmean_gradePerGroup[0],dmean_gradePerGroup[1] ,dmean_gradePerGroup[2]);
+			System.out.printf("%15s,%10f,%10f,%10f\n","majors",dmean_majorsPerGroup[0],dmean_majorsPerGroup[1] ,dmean_majorsPerGroup[2]);
+			System.out.printf("%15s,%10f,%10f,%10f\n","schoollevel",dmean_schoolLevelPerGroup[0],dmean_schoolLevelPerGroup[1] ,dmean_schoolLevelPerGroup[2]);
 			//3. 排序
+
 
 			//4. 贪心法先生成一个解
 			//5. 调整N次
