@@ -9,7 +9,7 @@ import java.util.*;
 
 public class GroupUtil {
     private int CHECK_STRICT_LEVEL=5;
-    private int ADJUST_NUM=1000;
+    private int ADJUST_NUM=1;
     private int SCHOOL_W=10000,SCHOOL_LEVEL_W=1000,MAJOR_W=100,GRADE_W=10,GENDER_W=1;
     private List<String> schools = new ArrayList<String>();
     private int  MAJOR_NUM=3,GENDER_NUM=3,GRADE_NUM=3,SCHOOL_LEVEL_NUM=3;
@@ -76,15 +76,12 @@ public class GroupUtil {
             return schools.size()-1;
         }
     }
-    public int getGender(String gender)
-    {
+    public int getGender(String gender) {
         if(gender.contains("女"))
             return 0;
         else return 1;
     }
-
-    public int getMajor(String major)
-    {
+    public int getMajor(String major) {
         if((major.contains("设计")) || (major.contains("媒体")) )
             return 0;
         else  if((major.contains("计算机")) || (major.contains("软件"))||(major.contains("通信"))
@@ -93,9 +90,7 @@ public class GroupUtil {
             return 1;
         else return 2;
     }
-
-    public int getGrade(String grade)
-    {
+    public int getGrade(String grade) {
         if(grade.contains("大一") || grade.contains("1"))
             return 1;
         else if(grade.contains("大二") || grade.contains("2"))
@@ -110,10 +105,11 @@ public class GroupUtil {
     public int getSchoolLevel(String schoolname){
         int index=goodSchoolList.indexOf(schoolname);
         if(index!=-1)
-            return 1;//重点学校
-        else if(schoolname.contains("职业") || schoolname.contains("学院"))
-            return 0;
-        return  2;//一般学校
+            return 0;//重点学校
+        else if(schoolname.contains("职业")
+        ||(schoolname.contains("学院")))
+            return 2;//职业学院
+        return  1;//一般学校
 
     }
     public void getAvgInt(int[] sum,int[] avg,int groupNum){
@@ -155,7 +151,7 @@ public class GroupUtil {
         getStaticsMean(students,groupNum);
         //打印统计结果
         {
-            printStaticSum("所有学生");
+            printStaticSum("所有学生",students);
             printStaticMean("所有学生");
         }
         //3.初始化group
@@ -172,14 +168,14 @@ public class GroupUtil {
         students.sort(new Comparator<Student>() {
             @Override
             public int compare(Student a, Student b) {
-                if(a.getSchoolLevel() < b.getSchoolLevel()) return 1;
+                if(a.getSchoolLevel() < b.getSchoolLevel()) return -1;
                 if(a.getSchoolLevel() == b.getSchoolLevel()){
-                    if (a.getGrade() > b.getGrade() ) return 1;
+                    if (a.getGrade() > b.getGrade() ) return -1;
                     if (a.getGrade() == b.getGrade()
-                            && a.getMajor() < b.getMajor() ) return 1;
+                            && a.getMajor() < b.getMajor() ) return -1;
                 }
 
-                return 0;
+                return 1;
             }
         });
 
@@ -204,7 +200,7 @@ public class GroupUtil {
 
             if(k >= studentNum) {
                 strict--;//如果没有满足条件的学生，则降低要求
-                System.out.println("降低要求");
+                System.out.println("降低要求，当前级别："+strict);
             }
             else h++;
             if(strict<0) {
@@ -260,7 +256,7 @@ public class GroupUtil {
             getStaticsSum(group.students);
             //打印统计结果
             {
-                printStaticSum("第"+k+"组学生"+group.students.size()+"人   ");
+                printStaticSum("第"+k+"组学生"+group.students.size()+"人   ",group.students);
             }
             k++;
         }
@@ -272,6 +268,17 @@ public class GroupUtil {
     void printStaticSum(String title){
         System.out.println("---------------------------------------------------------------");
         System.out.println("				"+title+"Sum");
+        System.out.printf("%15s,%10s,%10s,%10s\n", "\\", "0", "1", "2");
+        System.out.printf("%15s,%10d,%10d,%10d\n", "gender", sum_gender[0], sum_gender[1], 0);
+        System.out.printf("%15s,%10d,%10d,%10d\n", "grade", sum_grade[0], sum_grade[1], sum_grade[2]);
+        System.out.printf("%15s,%10d,%10d,%10d\n", "majors", sum_majors[0], sum_majors[1], sum_majors[2]);
+        System.out.printf("%15s,%10d,%10d,%10d\n", "schoollevel", sum_schoolLevel[0], sum_schoolLevel[1], sum_schoolLevel[2]);
+
+    }
+    void printStaticSum(String title,List<Student> students){
+        getStaticsSum(students);
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("				"+title+"Sum,不同学校个数"+getSchoolNum(students));
         System.out.printf("%15s,%10s,%10s,%10s\n", "\\", "0", "1", "2");
         System.out.printf("%15s,%10d,%10d,%10d\n", "gender", sum_gender[0], sum_gender[1], 0);
         System.out.printf("%15s,%10d,%10d,%10d\n", "grade", sum_grade[0], sum_grade[1], sum_grade[2]);
@@ -296,6 +303,10 @@ public class GroupUtil {
 
     }
 
+    /**
+     * 获得统计数据
+     * @param students 传入待统计的学生列表
+     */
     void getStaticsSum(List<Student> students) {
         int j;
         for (j = 0; j < SCHOOL_LEVEL_NUM; j++)
@@ -314,7 +325,14 @@ public class GroupUtil {
         }
 
     }
+
+    /**
+     * 获得平均数数据
+     * @param students 待统计的学生列表
+     * @param groupNum 一共有多少组
+     */
     void getStaticsMean(List<Student> students ,int groupNum){
+        getStaticsSum(students);
         getAvgInt(sum_gender, mean_genderPerGroup, groupNum);
         getAvgInt(sum_grade, mean_gradePerGroup, groupNum);
         getAvgInt(sum_majors, mean_majorsPerGroup, groupNum);
@@ -326,8 +344,28 @@ public class GroupUtil {
         getAvgDouble(sum_schoolLevel, dmean_schoolLevelPerGroup, groupNum);
     }
 
-    double sq(double x){
+    /**
+     * 平方
+     * @param x 要计算的数
+     * @return x的平方
+     */
+    private double sq(double x){
         return x*x;
+    }
+
+    /**
+     * 获得列表内不同学校的个数
+     * @param students
+     * @return
+     */
+    private int getSchoolNum(List<Student> students){
+        ArrayList<Integer> schools = new ArrayList<Integer>();
+        for(Student student:students){
+            if(!schools.contains(student.getSchool())){
+                schools.add(student.getSchool());
+            }
+        }
+        return schools.size();
     }
 
     /**
@@ -343,14 +381,7 @@ public class GroupUtil {
         int j,k;
 
         //school
-        schoolEFV = 0;
-        ArrayList<Integer> schools = new ArrayList<Integer>();
-        for(Student student:studentsInGroupG){
-            if(!schools.contains(student.getSchool())){
-                schools.add(student.getSchool());
-                schoolEFV++;
-            }
-        }
+        schoolEFV = getSchoolNum(studentsInGroupG);
         schoolEFV = sq(studentsInGroupG.size() - schoolEFV);
 
         //school level

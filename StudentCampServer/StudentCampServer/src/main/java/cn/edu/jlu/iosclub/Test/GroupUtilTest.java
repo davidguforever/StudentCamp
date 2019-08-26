@@ -39,10 +39,10 @@ class GroupUtilTest {
 
     @Test
     void getSchoolLevel() {
-       Assert.assertEquals(1,groupUtil.getSchoolLevel("吉林大学"));
-       Assert.assertEquals(1,groupUtil.getSchoolLevel("浙江大学"));
-       Assert.assertEquals(0,groupUtil.getSchoolLevel("浙江学院"));
-       Assert.assertEquals(2,groupUtil.getSchoolLevel("浙江超能力大学"));
+       Assert.assertEquals(0,groupUtil.getSchoolLevel("吉林大学"));
+       Assert.assertEquals(0,groupUtil.getSchoolLevel("浙江大学"));
+       Assert.assertEquals(2,groupUtil.getSchoolLevel("浙江学院"));
+       Assert.assertEquals(1,groupUtil.getSchoolLevel("浙江超能力大学"));
 
 
     }

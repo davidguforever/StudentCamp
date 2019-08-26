@@ -55,7 +55,7 @@ class SetGroupViewController: MTBaseViewController {
     
     @objc func divide() {
         MTHUD.showLoading()
-        HttpApi.divide() { (res, error) in
+        HttpApi.resetDivide() { (res, error) in
             MTHUD.hide()
             if let r = res, let _ = r as? JSONMap {
                 showMessage("分组完成")

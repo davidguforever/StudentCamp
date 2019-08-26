@@ -191,7 +191,7 @@ public class GroupDao extends SuperDao{
 			int groupNum = Integer.parseInt(groupMsg.get(0).getGroupNum());   		 //组数
 			List<CampusStudent> raw_students = stuGroupMapper.queryAllStudent();		//所有学生
             List<Student> students = new GroupUtil().grouping(raw_students, groupNum);
-            System.out.println("begin");
+            System.out.println("end");
             //写入到数据库
             for(Student student:students){
                 CampusStudent campusStudent=raw_students.get(student.getNo());

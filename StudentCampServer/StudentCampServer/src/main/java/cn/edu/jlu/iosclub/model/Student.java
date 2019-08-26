@@ -6,7 +6,7 @@ public class Student {
     int major; // 0: UI设计类; 1: 技术编程类;2: 其它;
     int gender; //0 : 女; 1 :男; 2: 其它（未填写或错误）
     int grade;// 0: 其它; 1: 大一; 2: 大二~大四
-    int schoolLevel;// 1: 重点; 2: 一般; 3: 职院或独立本科
+    int schoolLevel;// 0: 重点; 1: 一般; 2: 职院或独立本科
     int group;
 
     public Student() {
