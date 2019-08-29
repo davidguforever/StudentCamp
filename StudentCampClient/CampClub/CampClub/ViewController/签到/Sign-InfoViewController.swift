@@ -78,7 +78,7 @@ extension Sign_InfoViewController : UITableViewDataSource {
             let tipsLabel = UILabel(frame: CGRect(x: 20, y: 00, width: tableView.width, height: 40))
             let key = Array(infos.keys)[section]
             tipsLabel.text  = key
-            tipsLabel.textColor = MTColor.des666
+            tipsLabel.textColor = MTColor.getDarkGray()
             //tipsLabel.textAlignment = .center
             tipsLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
             view.addSubview(tipsLabel)
@@ -115,7 +115,7 @@ extension Sign_InfoViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
-        cell.textLabel?.textColor = MTColor.main
+        cell.textLabel?.textColor = MTColor.getMainColor()
         
         
         if User.shared.role == .teacher {

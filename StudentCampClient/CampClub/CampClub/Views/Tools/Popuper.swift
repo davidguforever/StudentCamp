@@ -64,28 +64,28 @@ extension UIViewController {
         switch style {
         case .oneCancel:
             
-            let cancelAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.main), handler: {
+            let cancelAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.getMainColor()), handler: {
                 competion(0)
             })
             
             alertController.addAction(cancelAction)
         case .twoAction:
             presenter.dismissOnSwipe = false
-            let leftAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.main), handler: {
+            let leftAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.getMainColor()), handler: {
                 competion(0)
             })
             alertController.addAction(leftAction)
-            let rightAction = AlertAction(title: actions[1], style:  .custom(textColor: MTColor.main), handler: {
+            let rightAction = AlertAction(title: actions[1], style:  .custom(textColor: MTColor.getMainColor()), handler: {
                 competion(1)
             })
             alertController.addAction(rightAction)
         case .leftCancelRightAction:
             presenter.dismissOnSwipe = false
-            let cancelAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.des666), handler: {
+            let cancelAction = AlertAction(title: actions[0], style:  .custom(textColor: MTColor.getDarkGray()), handler: {
                 competion(0)
             })
             alertController.addAction(cancelAction)
-            let rightAction = AlertAction(title: actions[1], style:  .custom(textColor: MTColor.main), handler: {
+            let rightAction = AlertAction(title: actions[1], style:  .custom(textColor: MTColor.getMainColor()), handler: {
                 competion(1)
             })
             alertController.addAction(rightAction)

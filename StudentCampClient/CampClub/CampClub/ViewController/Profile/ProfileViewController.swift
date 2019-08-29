@@ -90,7 +90,7 @@ extension ProfileViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
-        cell.textLabel?.textColor = MTColor.main
+        cell.textLabel?.textColor = MTColor.getMainColor()
         
         cell.textLabel?.text = titles[indexPath.row]
         

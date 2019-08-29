@@ -223,6 +223,8 @@
 		4B931FE2227194C000AA948E /* HttpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B931FE1227194C000AA948E /* HttpApi.swift */; };
 		4B95E46522E40EEC0098CBB6 /* ChangePwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B95E46422E40EEC0098CBB6 /* ChangePwdViewController.swift */; };
 		4BBDA6AC22A51BAA003CC3F4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBDA6AB22A51BAA003CC3F4 /* WebViewController.swift */; };
+		E60BB3E62317BD8B0008CAE8 /* MTColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E52317BD8B0008CAE8 /* MTColorProtocol.swift */; };
+		E60BB3E82317C2E30008CAE8 /* MTColorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E52317BD8B0008CAE8 /* MTColorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -469,6 +471,7 @@
 		4B931FE1227194C000AA948E /* HttpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApi.swift; sourceTree = "<group>"; };
 		4B95E46422E40EEC0098CBB6 /* ChangePwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwdViewController.swift; sourceTree = "<group>"; };
 		4BBDA6AB22A51BAA003CC3F4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		E60BB3E52317BD8B0008CAE8 /* MTColorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTColorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -715,6 +718,7 @@
 		4B931DFD2271871100AA948E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E60BB3E52317BD8B0008CAE8 /* MTColorProtocol.swift */,
 				4B931DFC2271871100AA948E /* Helper.swift */,
 				4B931DFE2271871100AA948E /* Pro+Ext.swift */,
 				4B931E002271871100AA948E /* UIViewController+Camera.swift */,
@@ -1222,6 +1226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1630E422A4B56F00D97B17 /* config.swift in Sources */,
+				E60BB3E82317C2E30008CAE8 /* MTColorProtocol.swift in Sources */,
 				4B1630EC22A4B73900D97B17 /* Pro+Ext.swift in Sources */,
 				4B1630E222A4B54100D97B17 /* HttpApi.swift in Sources */,
 				4B1630D522A40C0700D97B17 /* ShareViewController.swift in Sources */,
@@ -1242,6 +1247,7 @@
 				4B2825B9227C0B2C00058419 /* SetReplyViewController.swift in Sources */,
 				4B931F6A22718AFF00AA948E /* UIViewController+STPopup.swift in Sources */,
 				4B931EA92271871300AA948E /* PPBadgeLabel.swift in Sources */,
+				E60BB3E62317BD8B0008CAE8 /* MTColorProtocol.swift in Sources */,
 				4B931EB32271871300AA948E /* MTHub.swift in Sources */,
 				4B931ED42271871300AA948E /* CoverVerticalAnimation.swift in Sources */,
 				4B931EE82271871300AA948E /* ModalSize.swift in Sources */,

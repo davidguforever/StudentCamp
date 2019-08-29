@@ -21,7 +21,7 @@ class MTBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = MTColor.pageback
+        view.backgroundColor = MTColor.getPageBack()
         
         if #available(iOS 11.0, *) {
             if let view = self.view.subviews.first {
@@ -54,10 +54,10 @@ class MTBaseViewController: UIViewController {
         super.viewWillAppear(animated)
         if style == .white {
             navigationController?.navigationBar.setBackgroundImage(UIImage.image(withColor: MTNavigationBarBackgroundColor), for: .default)
-            (navigationController as? MTNavigationController)?.titleColor = MTColor.title111
+            (navigationController as? MTNavigationController)?.titleColor = MTColor.getTitileColor1()
         } else {
             navigationController?.navigationBar.setBackgroundImage(UIImage.image(withColor: MTNavigationBarBackgroundColor), for: .default)
-            (navigationController as? MTNavigationController)?.titleColor = MTColor.title111
+            (navigationController as? MTNavigationController)?.titleColor = MTColor.getTitileColor1()
         }
     }
     
@@ -115,13 +115,13 @@ extension MTBaseViewController {
         rightButton.setImage(image, for: .normal)
         rightButton.addTarget(taget, action: action, for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
-        self.navigationItem.rightBarButtonItem?.tintColor = MTColor.title222
+        self.navigationItem.rightBarButtonItem?.tintColor = MTColor.getTitleColor2()
         return rightButton
     }
     
     // 添加导航右侧按钮
     @discardableResult
-    func addNavigationBarRightButton(_ taget: Any, action: Selector, text: String, color: UIColor? = MTColor.main) -> UIButton {
+    func addNavigationBarRightButton(_ taget: Any, action: Selector, text: String, color: UIColor? = MTColor.getMainColor()) -> UIButton {
         let rightButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 68, height: 36))
         rightButton.contentHorizontalAlignment = .right
         rightButton.setTitle(text, for: .normal)

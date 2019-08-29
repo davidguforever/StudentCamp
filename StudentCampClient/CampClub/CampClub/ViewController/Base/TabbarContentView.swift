@@ -130,7 +130,7 @@ class IrregularityBasicContentView: BouncesContentView {
         super.init(frame: frame)
         
         textColor = UIColor(hex: 0x666666)
-        highlightTextColor = MTColor.main
+        highlightTextColor = MTColor.getMainColor()
         //iconColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.00)
         //highlightIconColor = MTNavigationBarBackgroundColor
         backdropColor = .white

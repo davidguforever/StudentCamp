@@ -157,7 +157,7 @@ extension GroupingViewController : UITableViewDataSource {
         view.backgroundColor = .clear
         
         let groupLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 300, height: 30))
-        groupLabel.textColor = MTColor.main
+        groupLabel.textColor = MTColor.getMainColor()
         groupLabel.font = UIFont.systemFont(ofSize: 14)
         let key = groups[section]
         groupLabel.text = "\(key)组"

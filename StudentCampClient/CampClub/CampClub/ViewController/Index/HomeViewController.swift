@@ -39,7 +39,7 @@ class HomeViewController: MTBaseViewController {
 //        button.setImage(UIImage(named: "message")!, for: .normal)
 //        button.addTarget(self, action: #selector(messgae(_:)), for: .touchUpInside)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.title222
+//        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.getTitleColor2()
         
         addNavigationBarRightButton(self, action: #selector(messgae(_:)), image:UIImage(named: "menu")!)
         
@@ -157,7 +157,7 @@ extension HomeViewController: BmoViewPagerDataSource {
     @objc func bmoViewPagerDataSourceNaviagtionBarItemHighlightedAttributed(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> [NSAttributedString.Key : Any]? {
         return [
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20.0),
-            NSAttributedString.Key.foregroundColor : MTColor.main
+            NSAttributedString.Key.foregroundColor : MTColor.getMainColor()
         ]
     }
     
@@ -409,9 +409,9 @@ extension IndexViewController {
     func handleCellColor(cell: TestRangeSelectionViewControllerCell, cellState: CellState) {
         /// 判断在当月及大于今日
         if cellState.dateBelongsTo == .thisMonth {
-            cell.label.textColor = MTColor.title222
+            cell.label.textColor = MTColor.getTitleColor2()
         } else {
-            cell.label.textColor = MTColor.des999
+            cell.label.textColor = MTColor.getLightGray()
         }
         
         if cellState.dateBelongsTo == .thisMonth {
