@@ -19,6 +19,7 @@ class LoginViewController: MTBaseViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var registerButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +31,7 @@ class LoginViewController: MTBaseViewController {
 
     override func setColors() {
         loginButton.backgroundColor = MTTheme.getButtonColor()
+        registerButton.setTitleColorForAllStates(MTTheme.getFontColor())
     }
 
     override func viewDidLoad() {

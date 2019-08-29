@@ -17,6 +17,7 @@ protocol MTThemeProtocol {
     func getTitleColor1() -> UIColor
     func getTitleColor2() -> UIColor
     
+    func getFontColor()-> UIColor
 }
 extension MTThemeProtocol{//一些默认实现和拓展（不需要改变的颜色）
     func getDarkGray()->UIColor{ //深灰
@@ -34,7 +35,9 @@ extension MTThemeProtocol{//一些默认实现和拓展（不需要改变的颜�
     func getTitleColor2() -> UIColor {
         return UIColor(hex: 0x222222)
     }
-
+    func getFontColor()-> UIColor{
+        return UIColor.red
+    }
     
 }
 struct MTThemeBoy :MTThemeProtocol{
@@ -46,6 +49,9 @@ struct MTThemeBoy :MTThemeProtocol{
     
     func getButtonColor() -> UIColor {
         return UIColor.yellow
+    }
+    func getFontColor() -> UIColor {
+        return getButtonColor()
     }
     
 }

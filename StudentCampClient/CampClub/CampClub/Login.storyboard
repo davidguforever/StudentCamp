@@ -160,6 +160,7 @@
                         <outlet property="loginButton" destination="o16-8Q-vcI" id="XSO-o3-biD"/>
                         <outlet property="mobileNoField" destination="VsP-KU-77t" id="MFh-KZ-qKZ"/>
                         <outlet property="pwdField" destination="zjs-g0-eaX" id="KbI-rV-vpM"/>
+                        <outlet property="registerButton" destination="Mdu-nF-9Rf" id="odh-ss-UnI"/>
                         <outlet property="smsLoginView" destination="z8c-0j-jFv" id="vX6-IX-KND"/>
                     </connections>
                 </viewController>
