@@ -47,7 +47,7 @@ extension UIViewController {
         let blurEffect = UIBlurEffect(style: .dark)
         popupController.backgroundView = UIVisualEffectView(effect: blurEffect)
         popupController.backgroundView?.alpha = 0.5
-        popupController.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: MTColor.getMainColor(), NSAttributedString.Key.font: pingFang_SC.medium(16)]
+        popupController.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: MTTheme.getMainColor(), NSAttributedString.Key.font: pingFang_SC.medium(16)]
         
         popupController.style = .bottomSheet
         popupController.present(in: self)
@@ -61,7 +61,7 @@ class DateLinkageViewController: UIViewController {
     
     fileprivate var headView = UIView()
     fileprivate var titleButtons : [UIButton] = []
-    fileprivate var lineView = UIView().then{$0.backgroundColor = MTColor.getMainColor()}
+    fileprivate var lineView = UIView().then{$0.backgroundColor = MTTheme.getMainColor()}
     
     fileprivate var contentScrollView :UIScrollView = UIScrollView().then {
         $0.showsHorizontalScrollIndicator = false
@@ -139,8 +139,8 @@ class DateLinkageViewController: UIViewController {
             let btn = UIButton(type: .custom)
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
             btn.setTitle("请选择", for: .selected)
-            btn.setTitleColor(MTColor.getTitleColor2(), for: .normal)
-            btn.setTitleColor(MTColor.getMainColor(), for: .selected)
+            btn.setTitleColor(MTTheme.getTitleColor2(), for: .normal)
+            btn.setTitleColor(MTTheme.getMainColor(), for: .selected)
             btn.tag = index
             btn.addTarget(self, action: #selector(changeSelecter(_:)), for: .touchUpInside)
             titleButtons.append(btn)
@@ -346,30 +346,30 @@ extension DateLinkageViewController : UITableViewDataSource {
             let title = String(years[indexPath.row])
             cell.titleLabel.text = title
             if let xx = selectYear {
-                cell.titleLabel.textColor =  title == String(xx) ? MTColor.getMainColor() : MTColor.getDarkGray()
+                cell.titleLabel.textColor =  title == String(xx) ? MTTheme.getMainColor() : MTTheme.getDarkGray()
                 cell.markImageView.isHidden = title != String(xx)
             } else {
-                cell.titleLabel.textColor = MTColor.getDarkGray()
+                cell.titleLabel.textColor = MTTheme.getDarkGray()
                 cell.markImageView.isHidden = true
             }
         case 2:
             let title = String(months[indexPath.row])
             cell.titleLabel.text = title
             if let xx = selectMonth {
-                cell.titleLabel.textColor =  title == String(xx) ? MTColor.getMainColor() : MTColor.getDarkGray()
+                cell.titleLabel.textColor =  title == String(xx) ? MTTheme.getMainColor() : MTTheme.getDarkGray()
                 cell.markImageView.isHidden = title != String(xx)
             } else {
-                cell.titleLabel.textColor = MTColor.getDarkGray()
+                cell.titleLabel.textColor = MTTheme.getDarkGray()
                 cell.markImageView.isHidden = true
             }
         case 3:
             let title =  String(days[indexPath.row])
             cell.titleLabel.text = title
             if let xx = selectDay {
-                cell.titleLabel.textColor =  title == String(xx) ? MTColor.getMainColor() : MTColor.getDarkGray()
+                cell.titleLabel.textColor =  title == String(xx) ? MTTheme.getMainColor() : MTTheme.getDarkGray()
                 cell.markImageView.isHidden = title != String(xx)
             } else {
-                cell.titleLabel.textColor = MTColor.getDarkGray()
+                cell.titleLabel.textColor = MTTheme.getDarkGray()
                 cell.markImageView.isHidden = true
             }
         default:
@@ -395,7 +395,7 @@ fileprivate class DateCell: UITableViewCell {
         self.addSubview(titleLabel)
         self.addSubview(markImageView)
         
-        titleLabel.textColor = MTColor.getDarkGray()
+        titleLabel.textColor = MTTheme.getDarkGray()
         titleLabel.font = pingFang_SC.medium(14)
         
         markImageView.image = #imageLiteral(resourceName: "勾")

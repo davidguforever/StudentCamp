@@ -1,5 +1,5 @@
 //
-//  MTColorProtocol.swift
+//  MTThemeProtocol.swift
 //  CampClub
 //
 //  Created by HP on 2019/8/29.
@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 
-protocol MTColorProtocol {
-    func getMainColor()->UIColor;
+protocol MTThemeProtocol {
+    func getMainColor()->UIColor
+    func getButtonColor() -> UIColor
+    
+    func getPageBack()->UIColor
+    func getTitleColor1() -> UIColor
+    func getTitleColor2() -> UIColor
     
 }
-extension MTColorProtocol{
+extension MTThemeProtocol{//一些默认实现和拓展（不需要改变的颜色）
     func getDarkGray()->UIColor{ //深灰
         return UIColor(hex: 0x666666)
     }
@@ -23,18 +28,30 @@ extension MTColorProtocol{
     func getPageBack()->UIColor{
         return UIColor.white
     }
-    func getTitileColor1() -> UIColor {
+    func getTitleColor1() -> UIColor {
         return UIColor(red:0.07, green:0.07, blue:0.07, alpha:1.00)
     }
     func getTitleColor2() -> UIColor {
         return UIColor(hex: 0x222222)
     }
+
+    
+}
+struct MTThemeBoy :MTThemeProtocol{
+
+    
+    func getMainColor()->UIColor {
+        return UIColor(red:0.17, green:0.34, blue:0.60, alpha:1.00)
+    }
+    
     func getButtonColor() -> UIColor {
-        return UIColor(hex: 0x235390)
+        return UIColor.yellow
     }
     
 }
-struct MTColorblue :MTColorProtocol{
+struct MTThemeGirl :MTThemeProtocol{
+    
+    
     func getMainColor()->UIColor {
         return UIColor(red:0.17, green:0.34, blue:0.60, alpha:1.00)
     }
@@ -44,5 +61,5 @@ struct MTColorblue :MTColorProtocol{
     }
     
 }
-
-var MTColor:MTColorProtocol = MTColorblue();
+//全体颜色的配置
+var MTTheme:MTThemeProtocol = MTThemeBoy();

@@ -17,7 +17,7 @@ let BaseUrl = "http://39.100.87.191:8080/"
 public typealias JSONMap = [String: Any]
 
 struct AppConfig {
-    static let closeImage = CAShapeLayer.closeShape(edgeLength: 15, fillColor: MTColor.getMainColor()).toImage()
+    static let closeImage = CAShapeLayer.closeShape(edgeLength: 15, fillColor: MTTheme.getMainColor()).toImage()
     static let backImage = CAShapeLayer.backShape(edgeLength: 16).toImage()
 }
 

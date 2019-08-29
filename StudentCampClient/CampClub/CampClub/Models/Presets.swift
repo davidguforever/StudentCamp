@@ -133,10 +133,10 @@ extension UIViewController {
         let attributes = Presets.bottomAlertAttributes
         
 
-        let titleColor = MTColor.getTitleColor2()
-        let descriptionColor = MTColor.getDarkGray()
+        let titleColor = MTTheme.getTitleColor2()
+        let descriptionColor = MTTheme.getDarkGray()
         let buttonTitleColor = UIColor.white
-        //let buttonBackgroundColor = MTColor.getMainColor()X //没见到过这个界面。。。。先整能用了再说
+        //let buttonBackgroundColor = MTTheme.getMainColor()X //没见到过这个界面。。。。先整能用了再说
         let buttonBackgroundColor = UIColor(hex: 0xFF4F00)
 
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let titles: [String] = [ "权限变更", "修改密码"]
+private let titles: [String] = [ "权限变更", "修改密码","更换皮肤"]
 
 class ProfileViewController: MTBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +70,9 @@ extension ProfileViewController : UITableViewDelegate {
             let vc = self.storyboard?.instantiateVC(ChangePwdViewController.self)
             vc?.hidesBottomBarWhenPushed  = true
             self.navigationController?.pushViewController(vc!, animated: true)
+        case 2:
+            MTTheme=MTThemeGirl()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)
         default:
             print("")
         }
@@ -90,7 +93,7 @@ extension ProfileViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
-        cell.textLabel?.textColor = MTColor.getMainColor()
+        cell.textLabel?.textColor = MTTheme.getMainColor()
         
         cell.textLabel?.text = titles[indexPath.row]
         

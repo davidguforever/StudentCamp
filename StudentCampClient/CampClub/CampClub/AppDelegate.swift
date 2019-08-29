@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.frame  = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width + 0.01, height: UIScreen.main.bounds.height + 0.01)
         window!.backgroundColor = UIColor.white
         
-        UITextField.appearance().tintColor = MTColor.getMainColor()
-        UITextView.appearance().tintColor = MTColor.getMainColor()
+        UITextField.appearance().tintColor = MTTheme.getMainColor()
+        UITextView.appearance().tintColor = MTTheme.getMainColor()
         
         IQKeyboardManager.shared.enable = true
         

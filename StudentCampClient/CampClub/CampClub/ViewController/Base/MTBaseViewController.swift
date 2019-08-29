@@ -9,19 +9,31 @@ enum navigationBarStyle {
     case main
 }
 
-class MTBaseViewController: UIViewController {
+class MTBaseViewController: UIViewController,ThemeProtocol {
     
     var animatedOnNavigationBar = true
     
     deinit {
         print("👻👻👻------------\(String(describing: self)) deinit")
+        //移除主题监听器
+        removeThemeObserver()
     }
     
     
+    func setColors(){
+        
+    }
+    override func updateTheme() {
+        super.updateTheme()
+        setColors()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = MTColor.getPageBack()
+        //增加主题监听器
+        addThemeObserver()
+        setColors()
+        view.backgroundColor = MTTheme.getPageBack()
         
         if #available(iOS 11.0, *) {
             if let view = self.view.subviews.first {
@@ -54,10 +66,10 @@ class MTBaseViewController: UIViewController {
         super.viewWillAppear(animated)
         if style == .white {
             navigationController?.navigationBar.setBackgroundImage(UIImage.image(withColor: MTNavigationBarBackgroundColor), for: .default)
-            (navigationController as? MTNavigationController)?.titleColor = MTColor.getTitileColor1()
+            (navigationController as? MTNavigationController)?.titleColor = MTTheme.getTitleColor1()
         } else {
             navigationController?.navigationBar.setBackgroundImage(UIImage.image(withColor: MTNavigationBarBackgroundColor), for: .default)
-            (navigationController as? MTNavigationController)?.titleColor = MTColor.getTitileColor1()
+            (navigationController as? MTNavigationController)?.titleColor = MTTheme.getTitleColor1()
         }
     }
     
@@ -115,13 +127,13 @@ extension MTBaseViewController {
         rightButton.setImage(image, for: .normal)
         rightButton.addTarget(taget, action: action, for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
-        self.navigationItem.rightBarButtonItem?.tintColor = MTColor.getTitleColor2()
+        self.navigationItem.rightBarButtonItem?.tintColor = MTTheme.getTitleColor2()
         return rightButton
     }
     
     // 添加导航右侧按钮
     @discardableResult
-    func addNavigationBarRightButton(_ taget: Any, action: Selector, text: String, color: UIColor? = MTColor.getMainColor()) -> UIButton {
+    func addNavigationBarRightButton(_ taget: Any, action: Selector, text: String, color: UIColor? = MTTheme.getMainColor()) -> UIButton {
         let rightButton: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 68, height: 36))
         rightButton.contentHorizontalAlignment = .right
         rightButton.setTitle(text, for: .normal)

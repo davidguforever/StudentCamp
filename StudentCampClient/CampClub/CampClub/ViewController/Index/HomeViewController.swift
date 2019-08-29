@@ -39,7 +39,7 @@ class HomeViewController: MTBaseViewController {
 //        button.setImage(UIImage(named: "message")!, for: .normal)
 //        button.addTarget(self, action: #selector(messgae(_:)), for: .touchUpInside)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.getTitleColor2()
+//        self.navigationItem.leftBarButtonItem?.tintColor = MTTheme.getTitleColor2()
         
         addNavigationBarRightButton(self, action: #selector(messgae(_:)), image:UIImage(named: "menu")!)
         
@@ -157,7 +157,7 @@ extension HomeViewController: BmoViewPagerDataSource {
     @objc func bmoViewPagerDataSourceNaviagtionBarItemHighlightedAttributed(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> [NSAttributedString.Key : Any]? {
         return [
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20.0),
-            NSAttributedString.Key.foregroundColor : MTColor.getMainColor()
+            NSAttributedString.Key.foregroundColor : MTTheme.getMainColor()
         ]
     }
     
@@ -210,6 +210,11 @@ class IndexViewController: MTBaseViewController {
     var endLine: Date?  /// 结束日期
     
     var xy: (Float,Float) = (0.0, 0.0)
+    
+    override func setColors() {
+        signButton.backgroundColor = MTTheme.getButtonColor()
+        dabianButton.backgroundColor = MTTheme.getButtonColor()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -409,9 +414,9 @@ extension IndexViewController {
     func handleCellColor(cell: TestRangeSelectionViewControllerCell, cellState: CellState) {
         /// 判断在当月及大于今日
         if cellState.dateBelongsTo == .thisMonth {
-            cell.label.textColor = MTColor.getTitleColor2()
+            cell.label.textColor = MTTheme.getTitleColor2()
         } else {
-            cell.label.textColor = MTColor.getLightGray()
+            cell.label.textColor = MTTheme.getLightGray()
         }
         
         if cellState.dateBelongsTo == .thisMonth {

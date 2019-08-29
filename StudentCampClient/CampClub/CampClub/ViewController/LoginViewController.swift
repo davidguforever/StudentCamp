@@ -24,14 +24,17 @@ class LoginViewController: MTBaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+    
         
     }
 
+    override func setColors() {
+        loginButton.backgroundColor = MTTheme.getButtonColor()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor  = .white
-        
         #if DEBUG
         
             let mode=3

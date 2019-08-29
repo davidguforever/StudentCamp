@@ -26,9 +26,11 @@ class BindPwdViewController: MTBaseViewController {
         @IBOutlet weak var ibSegment: PinterestSegment!
         @IBOutlet weak var tokenHeightLayout: NSLayoutConstraint!
     
+    override func setColors() {
+        loginButton.backgroundColor = MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         title = "注册"
         
         
