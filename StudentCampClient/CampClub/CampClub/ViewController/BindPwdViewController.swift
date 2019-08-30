@@ -28,6 +28,7 @@ class BindPwdViewController: MTBaseViewController {
     
     override func setColors() {
         loginButton.backgroundColor = MTTheme.getButtonColor()
+        ibSegment.indicatorColor=MTTheme.getButtonColor()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
