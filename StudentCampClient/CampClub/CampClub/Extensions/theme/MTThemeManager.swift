@@ -9,6 +9,23 @@
 import Foundation
 import UIKit
 
+
+extension UIImage{
+    
+    /// 更改图片颜色
+    public func imageWithTintColor(color : UIColor) -> UIImage{
+        UIGraphicsBeginImageContext(self.size)
+        color.setFill()
+        let bounds = CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        UIRectFill(bounds)
+        self.draw(in: bounds, blendMode: CGBlendMode.destinationIn, alpha: 1.0)
+        
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage!
+    }
+}
+
 protocol MTThemeProtocol {
     //主要的颜色
     func getMainColor()->UIColor
@@ -121,17 +138,16 @@ class ThemeManager {
     }
     func changetheme() {
         //获取主题名，并设为另一个主题
-        if let theme=userDefault.string(forKey: "themeName"){
-            switch theme {
-            case "boy":
-                MTTheme=MTThemeGirl()
-                storeTheme()
-            case "girl":
-                MTTheme=MTThemeBoy()
-                storeTheme()
-            default:
-                MTTheme=MTThemeBoy()
-            }
+        let theme=getThemeName()
+        switch theme {
+        case "boy":
+            MTTheme=MTThemeGirl()
+            storeTheme()
+        case "girl":
+            MTTheme=MTThemeBoy()
+            storeTheme()
+        default:
+            MTTheme=MTThemeBoy()
         }
         //通知所有view更新
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)

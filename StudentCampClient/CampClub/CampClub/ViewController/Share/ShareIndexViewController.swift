@@ -20,6 +20,9 @@ class ShareIndexViewController: MTBaseViewController {
         
     }
     
+    override func setColors() {
+        table.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,6 +122,7 @@ class ShareCell: UITableViewCell ,ThemeProtocol{
     override func updateTheme() {
         super.updateTheme()
         nameLabel.textColor=MTTheme.getFontColor()
+        
     }
     var info: JSONMap? {
         didSet {
@@ -129,11 +133,11 @@ class ShareCell: UITableViewCell ,ThemeProtocol{
                 textDesLabel.text = m["content"] as? String
                 if let role = m["type_id"] as? String {
                     if role == "3" {
-                        coverImageView.image = UIImage(named: "manager_")
+                        coverImageView.image = UIImage(named: "manager_")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }else  if role == "2" {
-                        coverImageView.image = UIImage(named: "teacher_")
+                        coverImageView.image = UIImage(named: "teacher_")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }else  if role == "1" {
-                        coverImageView.image = UIImage(named: "学生")
+                        coverImageView.image = UIImage(named: "学生")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }
                 }
             }

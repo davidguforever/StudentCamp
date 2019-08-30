@@ -512,6 +512,7 @@
                     </view>
                     <connections>
                         <outlet property="nameField" destination="7yl-C8-egt" id="Z6O-AU-6Al"/>
+                        <outlet property="saveButton" destination="Swm-zF-bNB" id="rgQ-3h-oX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Aw-gA-VUX" sceneMemberID="firstResponder"/>
@@ -817,6 +818,7 @@
                     </view>
                     <connections>
                         <outlet property="pwdField" destination="PkJ-K3-vex" id="Axi-Rm-Uw1"/>
+                        <outlet property="saveButton" destination="hhn-vY-ms0" id="mjg-61-kNm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRq-ub-G4r" sceneMemberID="firstResponder"/>

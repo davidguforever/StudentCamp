@@ -199,7 +199,7 @@ class GroupStuCell: UITableViewCell {
     func setInfo(_ info: JSONMap) {
 
         if let v = info["stuName"] as? String {
-            coverImgView.image = UIImage(named: "学生")
+            coverImgView.image = UIImage(named: "学生")?.imageWithTintColor(color: MTTheme.getMainColor())
             stuNameLabel.text = v
         }
     }

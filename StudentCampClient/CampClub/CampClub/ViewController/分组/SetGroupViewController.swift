@@ -25,6 +25,14 @@ class SetGroupViewController: MTBaseViewController {
     
     override func setColors() {
         beginButton.backgroundColor=MTTheme.getButtonColor()
+        groupNoField.borderActiveColor=MTTheme.getFontColor()
+        maxNoField.borderActiveColor=MTTheme.getFontColor()
+        schoolTypeField.borderActiveColor=MTTheme.getFontColor()
+        sexField.borderActiveColor=MTTheme.getFontColor()
+        ageField.borderActiveColor=MTTheme.getFontColor()
+        goodAtField.borderActiveColor=MTTheme.getFontColor()
+       
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

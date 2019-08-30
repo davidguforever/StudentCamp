@@ -17,6 +17,13 @@ class SetReplyViewController: MTBaseViewController {
     
     @IBOutlet weak var nextBtn: UIButton!
     
+    
+    override func setColors() {
+        bBtn.backgroundColor=MTTheme.getButtonColor()
+        nextBtn.backgroundColor=MTTheme.getButtonColor()
+        lunField.borderActiveColor=MTTheme.getFontColor()
+        groupsField.borderActiveColor=MTTheme.getFontColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,7 +15,9 @@ class ApplyNumbersViewController: MTBaseViewController {
     
     var students: [JSONMap] = []
     
-    
+    override func setColors() {
+        tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLeftButton(self)
@@ -112,7 +114,7 @@ class StudentInfoCell: UITableViewCell,ThemeProtocol {
     
     func setInfo(_ info: JSONMap) {
         if let v = info["tecSchool"] as? String {
-            coverImgView.image = UIImage(named: "学校")
+            coverImgView.image = UIImage(named: "学校")?.imageWithTintColor(color: MTTheme.getMainColor())
             stuNameLabel.text = v
         }
         if let v = info["tecStuNum"] as? String {
@@ -120,7 +122,7 @@ class StudentInfoCell: UITableViewCell,ThemeProtocol {
         }
         
         if let v = info["stuName"] as? String {
-            coverImgView.image = UIImage(named: "学生")
+            coverImgView.image = UIImage(named: "学生")?.imageWithTintColor(color: MTTheme.getMainColor())
             stuNameLabel.text = v
             numberLabel.text = ""
         }
