@@ -79,8 +79,7 @@ extension ProfileViewController : UITableViewDelegate {
             vc?.hidesBottomBarWhenPushed  = true
             self.navigationController?.pushViewController(vc!, animated: true)
         case 2:
-            MTTheme=MTThemeGirl()
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)
+            ThemeManager.defaults.changetheme()
         default:
             print("")
         }

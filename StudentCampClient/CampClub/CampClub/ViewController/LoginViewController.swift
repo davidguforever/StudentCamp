@@ -59,7 +59,10 @@ class LoginViewController: MTBaseViewController {
         
         closeButton.setImage(AppConfig.closeImage, for: .normal)
         
+        ThemeManager.defaults.initTheme()//根据之前的设置初始化主题
+        
         mobileNoField.becomeFirstResponder()
+        
     }
 
     @IBAction func colse() {

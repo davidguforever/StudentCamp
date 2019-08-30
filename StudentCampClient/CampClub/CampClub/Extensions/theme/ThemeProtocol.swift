@@ -8,6 +8,7 @@
 
 // Protocols.swift
 import UIKit
+//用于通知的识别
 let kUpdateTheme = "kUpdateTheme"
 protocol ThemeProtocol {
 }
