@@ -44,8 +44,8 @@ struct MTThemeBoy :MTThemeProtocol{
 
     
     func getMainColor()->UIColor {
-        //return UIColor(red:0.17, green:0.34, blue:0.60, alpha:1.00)
-        return UIColor.green
+        return UIColor(red:0.17, green:0.34, blue:0.60, alpha:1.00)
+        //return UIColor.green
     }
     
     func getButtonColor() -> UIColor {
