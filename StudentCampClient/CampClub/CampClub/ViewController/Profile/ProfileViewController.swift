@@ -29,6 +29,7 @@ class ProfileViewController: MTBaseViewController {
         }
     }
     
+    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var topImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -36,6 +37,13 @@ class ProfileViewController: MTBaseViewController {
         
     @IBOutlet weak var table: UITableView!
     
+    
+    override func setColors() {
+        for cell in table.visibleCells{
+            cell.textLabel?.textColor=MTTheme.getFontColor()
+        }
+        signOutButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor  = .white

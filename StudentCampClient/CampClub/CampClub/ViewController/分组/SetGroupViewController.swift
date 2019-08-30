@@ -22,6 +22,10 @@ class SetGroupViewController: MTBaseViewController {
     
     @IBOutlet weak var beginButton: UIButton!
     
+    
+    override func setColors() {
+        beginButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

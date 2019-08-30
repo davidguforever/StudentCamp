@@ -103,7 +103,7 @@ extension ApplyNumbersViewController : UITableViewDataSource {
 
 
 
-class StudentInfoCell: UITableViewCell {
+class StudentInfoCell: UITableViewCell,ThemeProtocol {
     
     @IBOutlet weak var coverImgView: UIImageView!
     @IBOutlet weak var stuNameLabel: UILabel!
@@ -126,10 +126,14 @@ class StudentInfoCell: UITableViewCell {
         }
     }
     
-    
+    override func updateTheme() {
+        numberLabel.textColor=MTTheme.getFontColor()
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        addThemeObserver()
+        updateTheme()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

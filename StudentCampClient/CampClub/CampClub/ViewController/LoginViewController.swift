@@ -39,7 +39,7 @@ class LoginViewController: MTBaseViewController {
         self.view.backgroundColor  = .white
         #if DEBUG
         
-            let mode=3
+            let mode=1
             switch mode {
             case 1:
                 //管理员账号

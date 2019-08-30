@@ -16,6 +16,13 @@ class GroupingViewController: MTBaseViewController {
     
     var students: [Int : [JSONMap]] = [:]
     
+    @IBOutlet weak var resetGroupButton: UIButton!
+    @IBOutlet weak var confirmGroupButton: UIButton!
+    
+    override func setColors() {
+        resetGroupButton.backgroundColor=MTTheme.getButtonColor()
+        confirmGroupButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

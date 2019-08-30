@@ -12,6 +12,10 @@ class ScheduleViewController: MTBaseViewController {
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var upButton: UIButton!
+    
+    override func setColors() {
+        upButton.backgroundColor = MTTheme.getButtonColor()
+    }
     //cache目录
     let scheduleFilePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
     override func viewDidLoad() {

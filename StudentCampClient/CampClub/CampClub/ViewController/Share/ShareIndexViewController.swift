@@ -98,7 +98,7 @@ extension ShareIndexViewController : UITableViewDataSource {
 }
 
 
-class ShareCell: UITableViewCell {
+class ShareCell: UITableViewCell ,ThemeProtocol{
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -112,8 +112,14 @@ class ShareCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        updateTheme()
+        addThemeObserver()
     }
     
+    override func updateTheme() {
+        super.updateTheme()
+        nameLabel.textColor=MTTheme.getFontColor()
+    }
     var info: JSONMap? {
         didSet {
             if let m = info {

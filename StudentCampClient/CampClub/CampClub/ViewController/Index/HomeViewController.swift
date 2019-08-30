@@ -21,6 +21,9 @@ class HomeViewController: MTBaseViewController {
     
     @IBOutlet weak var viewPager: BmoViewPager!
     
+    override func setColors() {
+        viewPagerNavigationBar.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -151,13 +154,12 @@ extension HomeViewController: BmoViewPagerDataSource {
         return [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 2)),
             NSAttributedString.Key.foregroundColor : UIColor(hex: 0xbbbbbb)
-            //NSForegroundColorAttributeName : UIColor.groupTableViewBackground
         ]
     }
     @objc func bmoViewPagerDataSourceNaviagtionBarItemHighlightedAttributed(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> [NSAttributedString.Key : Any]? {
         return [
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20.0),
-            NSAttributedString.Key.foregroundColor : MTTheme.getMainColor()
+            NSAttributedString.Key.foregroundColor : MTTheme.getFontColor()
         ]
     }
     
@@ -172,8 +174,7 @@ extension HomeViewController: BmoViewPagerDataSource {
     }
     
     @objc func bmoViewPagerDataSourceNaviagtionBarItemSize(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> CGSize {
-        //let str =  Titles[page]
-        //return CGSize(width: str.widthWithFont(font: UIFont.boldSystemFont(ofSize: 16)) + 16 , height: navigationBar.height)
+
         return CGSize(width: 70 , height: navigationBar.height)
     }
     
