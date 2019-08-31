@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             signout()
         }
         
-        
+        ThemeManager.defaults.initTheme()
         self.window?.makeKeyAndVisible()
         return true
     }

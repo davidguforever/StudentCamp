@@ -27,6 +27,7 @@ extension UIImage{
 }
 
 protocol MTThemeProtocol {
+    func getName()->String//获取主题名字
     //主要的颜色
     func getMainColor()->UIColor
     func getButtonColor() -> UIColor
@@ -58,6 +59,10 @@ extension MTThemeProtocol{//一些默认实现和拓展（不需要改变的颜�
     
 }
 struct MTThemeBoy :MTThemeProtocol{
+    func getName() -> String {
+        return "boy"
+    }
+    
 
     
     func getMainColor()->UIColor {
@@ -74,6 +79,10 @@ struct MTThemeBoy :MTThemeProtocol{
     
 }
 struct MTThemeGirl :MTThemeProtocol{
+    func getName() -> String {
+        return "girl"
+    }
+    
     
     
     func getMainColor()->UIColor {
@@ -113,14 +122,7 @@ class ThemeManager {
         }
     }
     func getThemeName() -> String {
-        switch  MTTheme {
-        case is MTThemeBoy:
-            return "boy"
-        case is MTThemeGirl:
-            return "girl"
-        default:
-            return "boy"
-        }
+        return MTTheme.getName()
     }
     
     
