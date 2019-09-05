@@ -13,8 +13,19 @@ class ThemeTableViewCell: UITableViewCell ,ThemeProtocol{
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initSegment()
+        
         addThemeObserver()
         segementControl.tintColor=MTTheme.getMainColor()
+    }
+   func initSegment(){
+        let themeName=ThemeManager.defaults.getThemeName()
+        switch themeName {
+        case "boy":
+            segementControl.selectedSegmentIndex=0
+        default:
+            segementControl.selectedSegmentIndex=1
+        }
     }
     override func updateTheme() {
         super.updateTheme()

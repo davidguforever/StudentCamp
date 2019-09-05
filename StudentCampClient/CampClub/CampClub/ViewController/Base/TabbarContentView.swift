@@ -53,8 +53,8 @@ class MTBasicContentView: ESTabBarItemContentView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.00)
-        highlightTextColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.00)
+        textColor = MTTheme.getFontColor()
+        highlightTextColor = MTTheme.getFontColor()
 
         
         backdropColor = .white

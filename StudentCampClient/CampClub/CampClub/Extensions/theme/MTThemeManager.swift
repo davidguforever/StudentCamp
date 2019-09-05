@@ -157,6 +157,8 @@ class ThemeManager {
     func updatetheme(){
         //通知所有view更新
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)
+        //保存到本地
+        storeTheme()
     }
     
 }
