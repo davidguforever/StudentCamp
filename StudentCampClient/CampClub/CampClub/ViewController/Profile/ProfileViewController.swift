@@ -16,8 +16,6 @@ class ProfileViewController: MTBaseViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         
-//        nameLabel.text = "Name: "
-//        ageLabel.text = "Age: "
         
         if let user = UserDefaults(suiteName: groupShare)?.dictionary(forKey: kUserInfo) {
             if let v =  user["username"] as? String {
@@ -78,8 +76,6 @@ extension ProfileViewController : UITableViewDelegate {
             let vc = self.storyboard?.instantiateVC(ChangePwdViewController.self)
             vc?.hidesBottomBarWhenPushed  = true
             self.navigationController?.pushViewController(vc!, animated: true)
-        case 2:
-            ThemeManager.defaults.changethemeToAnother()
         default:
             print("")
         }
@@ -97,8 +93,14 @@ extension ProfileViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:UITableViewCell
+        switch indexPath.row {
+        case 2:
+            cell=tableView.dequeueReusableCell(withIdentifier: "themeCell")!
+        default:
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
         cell.textLabel?.textColor = MTTheme.getMainColor()
         

@@ -574,7 +574,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ccF-QB-JH2">
-                                    <rect key="frame" x="0.0" y="302" width="375" height="230"/>
+                                    <rect key="frame" x="0.0" y="346" width="375" height="230"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyp-v2-iQs">
@@ -624,6 +624,41 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="themeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeCell" id="hdL-Tb-pqg" customClass="ThemeTableViewCell" customModule="CampClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="302" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdL-Tb-pqg" id="BeY-NS-Npt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U3h-49-g4C">
+                                                    <rect key="frame" x="210" y="15" width="150" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="ISB-ON-QCz"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="帅男"/>
+                                                        <segment title="靓女"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="SegmentChange:" destination="hdL-Tb-pqg" eventType="valueChanged" id="Jjd-mf-r6d"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U3h-49-g4C" firstAttribute="centerY" secondItem="BeY-NS-Npt" secondAttribute="centerY" constant="7" id="gn9-hZ-JL4"/>
+                                                <constraint firstAttribute="trailing" secondItem="U3h-49-g4C" secondAttribute="trailing" constant="15" id="x8o-pV-oav"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="segementControl" destination="U3h-49-g4C" id="MOe-fy-Vsh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

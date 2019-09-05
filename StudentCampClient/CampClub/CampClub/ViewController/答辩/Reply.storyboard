@@ -135,6 +135,21 @@
             </objects>
             <point key="canvasLocation" x="-124" y="169"/>
         </scene>
+        <!--Get Reply Order View Controller-->
+        <scene sceneID="K3Q-h9-WN7">
+            <objects>
+                <viewController id="cHm-lE-Wnw" customClass="GetReplyOrderViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Hi-NT-Zzh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hH1-Z0-8Zf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmz-sM-yTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="858"/>
+        </scene>
         <!--Reply Info View Controller-->
         <scene sceneID="KBB-tS-YvJ">
             <objects>
