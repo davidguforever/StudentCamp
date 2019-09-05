@@ -138,7 +138,7 @@ class ThemeManager {
         //通知所有view更新
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)
     }
-    func changetheme() {
+    func changethemeToAnother() {
         //获取主题名，并设为另一个主题
         let theme=getThemeName()
         switch theme {
@@ -151,9 +151,12 @@ class ThemeManager {
         default:
             MTTheme=MTThemeBoy()
         }
+        
+        updatetheme()
+    }
+    func updatetheme(){
         //通知所有view更新
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kUpdateTheme), object: nil)
-        
     }
     
 }

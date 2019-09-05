@@ -79,7 +79,7 @@ extension ProfileViewController : UITableViewDelegate {
             vc?.hidesBottomBarWhenPushed  = true
             self.navigationController?.pushViewController(vc!, animated: true)
         case 2:
-            ThemeManager.defaults.changetheme()
+            ThemeManager.defaults.changethemeToAnother()
         default:
             print("")
         }
