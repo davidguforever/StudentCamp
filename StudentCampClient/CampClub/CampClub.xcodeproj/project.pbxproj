@@ -749,8 +749,7 @@
 				4B931FCD22718E1600AA948E /* Profile */,
 				4B931FCC22718E0D00AA948E /* Share */,
 				4B931FC922718DF800AA948E /* Index */,
-				4B931E112271871100AA948E /* LoginViewController.swift */,
-				4B931E0C2271871100AA948E /* BindPwdViewController.swift */,
+				E650274B23228BA800F6C60C /* 登录与注册 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1064,6 +1063,15 @@
 				E6C060932321215400BEA411 /* ThemeTableViewCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		E650274B23228BA800F6C60C /* 登录与注册 */ = {
+			isa = PBXGroup;
+			children = (
+				4B931E112271871100AA948E /* LoginViewController.swift */,
+				4B931E0C2271871100AA948E /* BindPwdViewController.swift */,
+			);
+			path = "登录与注册";
 			sourceTree = "<group>";
 		};
 		E6716890231965BC004B6A30 /* theme */ = {
