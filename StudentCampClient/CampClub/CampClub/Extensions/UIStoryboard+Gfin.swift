@@ -89,8 +89,11 @@ public extension UIStoryboard {
         static var replyInfo: ReplyInfoViewController {
             return UIStoryboard(name: "Reply", bundle: nil).instantiateVC(ReplyInfoViewController.self)!
         }
-        
-
+        /// 抽取答辩界面
+        static var getReply:GetReplyOrderViewController{
+            return UIStoryboard(name: "Reply", bundle: nil)
+        .instantiateVC(GetReplyOrderViewController.self)!
+        }
         // MARK: - Setting
 
         static var login: LoginViewController {

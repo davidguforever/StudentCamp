@@ -16,6 +16,14 @@ class GetReplyOrderViewController: MTBaseViewController {
         // Do any additional setup after loading the view.
         //添加主题监控
         addThemeObserver()
+        //设置导航栏标题
+        title = "答辩顺序"
+        addNavigationBarLeftButton(self)
+        //测试扇形
+        let sectorCell = DiskView()
+        sectorCell.frame=self.view.bounds
+        view.addSubview(sectorCell)
+        
     }
     
 

@@ -227,6 +227,8 @@
 		E60BB3E82317C2E30008CAE8 /* MTThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E52317BD8B0008CAE8 /* MTThemeManager.swift */; };
 		E60BB3EA2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
 		E60BB3EB2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
+		E650274E23228E3100F6C60C /* SectorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650274D23228E3100F6C60C /* SectorCellView.swift */; };
+		E65027502322971E00F6C60C /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650274F2322971E00F6C60C /* DiskView.swift */; };
 		E6C060902321109600BEA411 /* GetReplyOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0608F2321109600BEA411 /* GetReplyOrderViewController.swift */; };
 		E6C060942321215400BEA411 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C060932321215400BEA411 /* ThemeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -477,6 +479,8 @@
 		4BBDA6AB22A51BAA003CC3F4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E60BB3E52317BD8B0008CAE8 /* MTThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTThemeManager.swift; sourceTree = "<group>"; };
 		E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		E650274D23228E3100F6C60C /* SectorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorCellView.swift; sourceTree = "<group>"; };
+		E650274F2322971E00F6C60C /* DiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
 		E6C0608F2321109600BEA411 /* GetReplyOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReplyOrderViewController.swift; sourceTree = "<group>"; };
 		E6C060932321215400BEA411 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -768,6 +772,7 @@
 		4B931E1A2271871100AA948E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E650274C23228DA400F6C60C /* 抽奖 */,
 				4B931E1B2271871100AA948E /* Tools */,
 				4B931E2D2271871200AA948E /* Cell */,
 				4B931E2F2271871200AA948E /* MTHub.swift */,
@@ -1074,6 +1079,15 @@
 			path = "登录与注册";
 			sourceTree = "<group>";
 		};
+		E650274C23228DA400F6C60C /* 抽奖 */ = {
+			isa = PBXGroup;
+			children = (
+				E650274D23228E3100F6C60C /* SectorCellView.swift */,
+				E650274F2322971E00F6C60C /* DiskView.swift */,
+			);
+			path = "抽奖";
+			sourceTree = "<group>";
+		};
 		E6716890231965BC004B6A30 /* theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,6 +1314,7 @@
 				4B931E9F2271871300AA948E /* TabbarContentView.swift in Sources */,
 				4B2825DA227C938B00058419 /* ScheduleViewController.swift in Sources */,
 				4B931E9D2271871300AA948E /* ProfileViewController.swift in Sources */,
+				E650274E23228E3100F6C60C /* SectorCellView.swift in Sources */,
 				4B931EA72271871300AA948E /* PPBadgeView.swift in Sources */,
 				4B931EE72271871300AA948E /* Presentr+Equatable.swift in Sources */,
 				4B931ED72271871300AA948E /* PresentrShadow.swift in Sources */,
@@ -1368,6 +1383,7 @@
 				4B931EF22271871300AA948E /* ESTabBarItemBadgeView.swift in Sources */,
 				4B931EAF2271871300AA948E /* PaddingLabel.swift in Sources */,
 				4B28263A227C94F500058419 /* PermissionsView.swift in Sources */,
+				E65027502322971E00F6C60C /* DiskView.swift in Sources */,
 				4B931ED62271871300AA948E /* Presentr.swift in Sources */,
 				4B931EB72271871300AA948E /* KRProgressHUDViewController.swift in Sources */,
 				4B931F6422718AFF00AA948E /* STPopupControllerTransitioningFade.swift in Sources */,

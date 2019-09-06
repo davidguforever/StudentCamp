@@ -138,7 +138,7 @@
         <!--Get Reply Order View Controller-->
         <scene sceneID="K3Q-h9-WN7">
             <objects>
-                <viewController id="cHm-lE-Wnw" customClass="GetReplyOrderViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetReplyOrderViewController" id="cHm-lE-Wnw" customClass="GetReplyOrderViewController" customModule="CampClub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Hi-NT-Zzh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

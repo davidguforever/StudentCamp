@@ -336,11 +336,11 @@ class IndexViewController: MTBaseViewController {
     
     @IBAction func dabian() {
         if User.shared.role == .manager {
-            let vc = UIStoryboard.Scene.setReply
+            let vc = UIStoryboard.Scene.getReply
             vc.hidesBottomBarWhenPushed = true
             pushVC(vc)
         } else {
-            let vc = UIStoryboard.Scene.replyInfo
+            let vc = UIStoryboard.Scene.getReply
             vc.hidesBottomBarWhenPushed = true
             pushVC(vc)
         }
