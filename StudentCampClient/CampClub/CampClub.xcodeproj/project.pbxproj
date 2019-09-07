@@ -227,8 +227,9 @@
 		E60BB3E82317C2E30008CAE8 /* MTThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E52317BD8B0008CAE8 /* MTThemeManager.swift */; };
 		E60BB3EA2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
 		E60BB3EB2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
-		E650274E23228E3100F6C60C /* SectorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650274D23228E3100F6C60C /* SectorCellView.swift */; };
-		E65027502322971E00F6C60C /* DiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650274F2322971E00F6C60C /* DiskView.swift */; };
+		E6B796D42323FEC400DF8731 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796CE2323FEC300DF8731 /* Sector.swift */; };
+		E6B796D82323FEC400DF8731 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796D22323FEC400DF8731 /* Disk.swift */; };
+		E6B796DB232403BF00DF8731 /* AwardDisk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796DA232403BF00DF8731 /* AwardDisk.swift */; };
 		E6C060902321109600BEA411 /* GetReplyOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0608F2321109600BEA411 /* GetReplyOrderViewController.swift */; };
 		E6C060942321215400BEA411 /* ThemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C060932321215400BEA411 /* ThemeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -479,8 +480,9 @@
 		4BBDA6AB22A51BAA003CC3F4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E60BB3E52317BD8B0008CAE8 /* MTThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTThemeManager.swift; sourceTree = "<group>"; };
 		E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
-		E650274D23228E3100F6C60C /* SectorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorCellView.swift; sourceTree = "<group>"; };
-		E650274F2322971E00F6C60C /* DiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskView.swift; sourceTree = "<group>"; };
+		E6B796CE2323FEC300DF8731 /* Sector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
+		E6B796D22323FEC400DF8731 /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		E6B796DA232403BF00DF8731 /* AwardDisk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardDisk.swift; sourceTree = "<group>"; };
 		E6C0608F2321109600BEA411 /* GetReplyOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReplyOrderViewController.swift; sourceTree = "<group>"; };
 		E6C060932321215400BEA411 /* ThemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -772,7 +774,7 @@
 		4B931E1A2271871100AA948E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E650274C23228DA400F6C60C /* 抽奖 */,
+				E650274C23228DA400F6C60C /* 抽奖转盘 */,
 				4B931E1B2271871100AA948E /* Tools */,
 				4B931E2D2271871200AA948E /* Cell */,
 				4B931E2F2271871200AA948E /* MTHub.swift */,
@@ -1079,13 +1081,14 @@
 			path = "登录与注册";
 			sourceTree = "<group>";
 		};
-		E650274C23228DA400F6C60C /* 抽奖 */ = {
+		E650274C23228DA400F6C60C /* 抽奖转盘 */ = {
 			isa = PBXGroup;
 			children = (
-				E650274D23228E3100F6C60C /* SectorCellView.swift */,
-				E650274F2322971E00F6C60C /* DiskView.swift */,
+				E6B796D22323FEC400DF8731 /* Disk.swift */,
+				E6B796CE2323FEC300DF8731 /* Sector.swift */,
+				E6B796DA232403BF00DF8731 /* AwardDisk.swift */,
 			);
-			path = "抽奖";
+			path = "抽奖转盘";
 			sourceTree = "<group>";
 		};
 		E6716890231965BC004B6A30 /* theme */ = {
@@ -1302,6 +1305,7 @@
 				4B282636227C94F500058419 /* CameraViewController.swift in Sources */,
 				4B931EDE2271871300AA948E /* PresentrAnimation.swift in Sources */,
 				4B931ED92271871300AA948E /* CoverHorizontalAnimation.swift in Sources */,
+				E6B796D82323FEC400DF8731 /* Disk.swift in Sources */,
 				4B931EBA2271871300AA948E /* ESRefreshAnimator.swift in Sources */,
 				4B931ECB2271871300AA948E /* BmoViewPagerNavigationBar.swift in Sources */,
 				4B931EC02271871300AA948E /* ESRefreshProtocol.swift in Sources */,
@@ -1314,13 +1318,13 @@
 				4B931E9F2271871300AA948E /* TabbarContentView.swift in Sources */,
 				4B2825DA227C938B00058419 /* ScheduleViewController.swift in Sources */,
 				4B931E9D2271871300AA948E /* ProfileViewController.swift in Sources */,
-				E650274E23228E3100F6C60C /* SectorCellView.swift in Sources */,
 				4B931EA72271871300AA948E /* PPBadgeView.swift in Sources */,
 				4B931EE72271871300AA948E /* Presentr+Equatable.swift in Sources */,
 				4B931ED72271871300AA948E /* PresentrShadow.swift in Sources */,
 				4B931EE22271871300AA948E /* PresentationType.swift in Sources */,
 				4B931E8A2271871300AA948E /* Helper.swift in Sources */,
 				4B931EF42271871300AA948E /* ESTabBarItemContainer.swift in Sources */,
+				E6B796DB232403BF00DF8731 /* AwardDisk.swift in Sources */,
 				4B931EDF2271871300AA948E /* BackgroundView.swift in Sources */,
 				4B931E8D2271871300AA948E /* UIViewController+Camera.swift in Sources */,
 				4B282630227C94F500058419 /* UIButtonExtensions.swift in Sources */,
@@ -1383,7 +1387,6 @@
 				4B931EF22271871300AA948E /* ESTabBarItemBadgeView.swift in Sources */,
 				4B931EAF2271871300AA948E /* PaddingLabel.swift in Sources */,
 				4B28263A227C94F500058419 /* PermissionsView.swift in Sources */,
-				E65027502322971E00F6C60C /* DiskView.swift in Sources */,
 				4B931ED62271871300AA948E /* Presentr.swift in Sources */,
 				4B931EB72271871300AA948E /* KRProgressHUDViewController.swift in Sources */,
 				4B931F6422718AFF00AA948E /* STPopupControllerTransitioningFade.swift in Sources */,
@@ -1431,6 +1434,7 @@
 				4B931EB42271871300AA948E /* KRProgressHUDIconType.swift in Sources */,
 				4B95E46522E40EEC0098CBB6 /* ChangePwdViewController.swift in Sources */,
 				E6C060942321215400BEA411 /* ThemeTableViewCell.swift in Sources */,
+				E6B796D42323FEC400DF8731 /* Sector.swift in Sources */,
 				4B931EAE2271871300AA948E /* MTHud.swift in Sources */,
 				4B931F6622718AFF00AA948E /* STPopupLeftBarItem.swift in Sources */,
 				4B282627227C94F500058419 /* CroppingParameters.swift in Sources */,
