@@ -145,27 +145,74 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pth-f8-hVs" customClass="AwardDisk" customModule="CampClub" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="40" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="HYU-lL-sKb"/>
                                     <constraint firstAttribute="width" secondItem="Pth-f8-hVs" secondAttribute="height" multiplier="1:1" id="met-LC-JWy"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="IgE-AV-tXv">
+                                <rect key="frame" x="62.5" y="375" width="250" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltx-Fz-8XI">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="44"/>
+                                        <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Zr6-B5-Hxi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="开始抽签">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startDrawingStraws:" destination="cHm-lE-Wnw" eventType="touchUpInside" id="QfZ-kx-dFw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-FP-3bV">
+                                        <rect key="frame" x="175" y="0.0" width="75" height="44"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KLS-Vc-wXK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="清空所有">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0VN-sy-8BG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pth-f8-hVs" firstAttribute="top" secondItem="hH1-Z0-8Zf" secondAttribute="top" constant="20" id="4YO-as-44b"/>
+                            <constraint firstItem="IgE-AV-tXv" firstAttribute="centerX" secondItem="hH1-Z0-8Zf" secondAttribute="centerX" id="Ej0-wy-gjt"/>
+                            <constraint firstItem="IgE-AV-tXv" firstAttribute="top" secondItem="Pth-f8-hVs" secondAttribute="bottom" constant="35" id="T7L-gg-q3v"/>
                             <constraint firstItem="Pth-f8-hVs" firstAttribute="centerX" secondItem="hH1-Z0-8Zf" secondAttribute="centerX" id="Y5Y-dh-Ff5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hH1-Z0-8Zf"/>
                     </view>
                     <connections>
                         <outlet property="awardDiskView" destination="Pth-f8-hVs" id="NXX-nc-KZT"/>
+                        <outlet property="clearAllButton" destination="Ph1-FP-3bV" id="SgU-5G-VF6"/>
+                        <outlet property="startButton" destination="Ltx-Fz-8XI" id="5dE-CV-ycx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmz-sM-yTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="858"/>
+            <point key="canvasLocation" x="-124" y="857.72113943028489"/>
         </scene>
         <!--Reply Info View Controller-->
         <scene sceneID="KBB-tS-YvJ">

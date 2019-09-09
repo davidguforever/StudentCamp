@@ -11,6 +11,8 @@ import UIKit
 class GetReplyOrderViewController: MTBaseViewController {
 
     @IBOutlet weak var awardDiskView: AwardDisk!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var clearAllButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,14 +22,16 @@ class GetReplyOrderViewController: MTBaseViewController {
         //设置导航栏标题
         title = "答辩顺序"
         addNavigationBarLeftButton(self)
-        //测试扇形
-
+        //初始化转盘
         awardDiskView.setup(text: ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"])
-        awardDiskView.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*3))
-        //adisk.setup(text: ["1","2"])
+        //设置开始抽签按钮颜色
+        startButton.backgroundColor = MTTheme.getButtonColor()
+    }
+    //开始抽签
+    @IBAction func startDrawingStraws(_ sender: Any) {
+            awardDiskView.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*3))
     }
     
-
     /*
     // MARK: - Navigation
 
