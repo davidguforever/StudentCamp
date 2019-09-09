@@ -142,9 +142,26 @@
                     <view key="view" contentMode="scaleToFill" id="8Hi-NT-Zzh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pth-f8-hVs" customClass="AwardDisk" customModule="CampClub" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="40" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HYU-lL-sKb"/>
+                                    <constraint firstAttribute="width" secondItem="Pth-f8-hVs" secondAttribute="height" multiplier="1:1" id="met-LC-JWy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pth-f8-hVs" firstAttribute="top" secondItem="hH1-Z0-8Zf" secondAttribute="top" constant="20" id="4YO-as-44b"/>
+                            <constraint firstItem="Pth-f8-hVs" firstAttribute="centerX" secondItem="hH1-Z0-8Zf" secondAttribute="centerX" id="Y5Y-dh-Ff5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hH1-Z0-8Zf"/>
                     </view>
+                    <connections>
+                        <outlet property="awardDiskView" destination="Pth-f8-hVs" id="NXX-nc-KZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmz-sM-yTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,7 +1,7 @@
 
 import UIKit
 
-public var radius:CGFloat = 200
+public var radius:CGFloat = 150
 
 public var angle:Double = Double.pi/6
 public let centerPoint=CGPoint(x: radius,y: radius)

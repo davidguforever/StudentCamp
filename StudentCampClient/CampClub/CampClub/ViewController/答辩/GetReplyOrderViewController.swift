@@ -10,6 +10,7 @@ import UIKit
 
 class GetReplyOrderViewController: MTBaseViewController {
 
+    @IBOutlet weak var awardDiskView: AwardDisk!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,11 +21,9 @@ class GetReplyOrderViewController: MTBaseViewController {
         title = "答辩顺序"
         addNavigationBarLeftButton(self)
         //测试扇形
-        radius=150
-        let adisk=AwardDisk(frame:CGRect(x: view.centerX-radius, y: 20, width: radius*2, height: radius*2))
-        view.addSubview(adisk)
-        adisk.setup(text: ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"])
-        adisk.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*3))
+
+        awardDiskView.setup(text: ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"])
+        awardDiskView.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*3))
         //adisk.setup(text: ["1","2"])
     }
     
