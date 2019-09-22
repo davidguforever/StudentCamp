@@ -10,9 +10,12 @@ import UIKit
 
 class GetReplyOrderViewController: MTBaseViewController {
 
+    
+
     @IBOutlet weak var awardDiskView: AwardDisk!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
+    @IBOutlet weak var listTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +29,9 @@ class GetReplyOrderViewController: MTBaseViewController {
         awardDiskView.setup(text: ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"])
         //设置开始抽签按钮颜色
         startButton.backgroundColor = MTTheme.getButtonColor()
+        //tableViewx初始化
+        listTable.delegate = self
+        listTable.dataSource = self
     }
     //开始抽签
     @IBAction func startDrawingStraws(_ sender: Any) {
@@ -42,4 +48,24 @@ class GetReplyOrderViewController: MTBaseViewController {
     }
     */
 
+}
+
+extension GetReplyOrderViewController:UITableViewDelegate,UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell=listTable.dequeueReusableCell(withIdentifier: "listCell")! as! ListableViewCell
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
+        cell.textLabel?.textColor = UIColor.black
+        //cell左边的文字：自带的
+        cell.textLabel?.text = String(indexPath.row+1)+":"
+        //cell中间的文字
+        cell.listLabel.text = "第"+String(indexPath.row+1)+"组"
+        
+        return cell
+        
+    }
 }

@@ -194,19 +194,51 @@
                                     <constraint firstAttribute="width" constant="250" id="0VN-sy-8BG"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eFz-I2-1Sk">
+                                <rect key="frame" x="0.0" y="429" width="375" height="238"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" id="V5P-Ld-Y40" customClass="ListableViewCell" customModule="CampClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V5P-Ld-Y40" id="G6B-M3-H1c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="735-1H-CRH">
+                                                    <rect key="frame" x="124" y="12" width="127" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="listCell"/>
+                                        <connections>
+                                            <outlet property="listLabel" destination="735-1H-CRH" id="t5a-wi-JhD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pth-f8-hVs" firstAttribute="top" secondItem="hH1-Z0-8Zf" secondAttribute="top" constant="20" id="4YO-as-44b"/>
                             <constraint firstItem="IgE-AV-tXv" firstAttribute="centerX" secondItem="hH1-Z0-8Zf" secondAttribute="centerX" id="Ej0-wy-gjt"/>
+                            <constraint firstItem="eFz-I2-1Sk" firstAttribute="trailing" secondItem="hH1-Z0-8Zf" secondAttribute="trailing" id="F52-YB-PTA"/>
+                            <constraint firstItem="eFz-I2-1Sk" firstAttribute="top" secondItem="IgE-AV-tXv" secondAttribute="bottom" constant="10" id="LGL-RI-qnA"/>
+                            <constraint firstItem="eFz-I2-1Sk" firstAttribute="leading" secondItem="hH1-Z0-8Zf" secondAttribute="leading" id="Pax-e1-Rqu"/>
                             <constraint firstItem="IgE-AV-tXv" firstAttribute="top" secondItem="Pth-f8-hVs" secondAttribute="bottom" constant="35" id="T7L-gg-q3v"/>
                             <constraint firstItem="Pth-f8-hVs" firstAttribute="centerX" secondItem="hH1-Z0-8Zf" secondAttribute="centerX" id="Y5Y-dh-Ff5"/>
+                            <constraint firstItem="eFz-I2-1Sk" firstAttribute="bottom" secondItem="hH1-Z0-8Zf" secondAttribute="bottom" id="aqC-Wj-w5K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hH1-Z0-8Zf"/>
                     </view>
                     <connections>
                         <outlet property="awardDiskView" destination="Pth-f8-hVs" id="NXX-nc-KZT"/>
                         <outlet property="clearAllButton" destination="Ph1-FP-3bV" id="SgU-5G-VF6"/>
+                        <outlet property="listTable" destination="eFz-I2-1Sk" id="GfK-h4-6Hg"/>
                         <outlet property="startButton" destination="Ltx-Fz-8XI" id="5dE-CV-ycx"/>
                     </connections>
                 </viewController>
