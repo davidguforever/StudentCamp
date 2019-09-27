@@ -37,7 +37,6 @@ public class Disk:UIView {
     }
     public func startRotate(rotateAngle:CGFloat){
         let ani=CABasicAnimation(keyPath: "transform.rotation.z")
-        //ani.toValue=CGFloat(rotateAngle.double*180/Double.pi)
         ani.duration=5
         ani.toValue=rotateAngle
         ani.repeatCount=1
@@ -45,6 +44,7 @@ public class Disk:UIView {
         ani.fillMode = CAMediaTimingFillMode.forwards
         ani.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         layer.add(ani, forKey: "test")
+        
     }
     
 }

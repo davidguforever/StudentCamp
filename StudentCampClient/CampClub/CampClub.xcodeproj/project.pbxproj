@@ -228,6 +228,7 @@
 		E60BB3EA2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
 		E60BB3EB2317CCD20008CAE8 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */; };
 		E611A5832337954A009A7894 /* ListableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611A5822337954A009A7894 /* ListableViewCell.swift */; };
+		E611A58523379DAC009A7894 /* PublicVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611A58423379DAC009A7894 /* PublicVar.swift */; };
 		E6B796D42323FEC400DF8731 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796CE2323FEC300DF8731 /* Sector.swift */; };
 		E6B796D82323FEC400DF8731 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796D22323FEC400DF8731 /* Disk.swift */; };
 		E6B796DB232403BF00DF8731 /* AwardDisk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B796DA232403BF00DF8731 /* AwardDisk.swift */; };
@@ -482,6 +483,7 @@
 		E60BB3E52317BD8B0008CAE8 /* MTThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTThemeManager.swift; sourceTree = "<group>"; };
 		E60BB3E92317CCD20008CAE8 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
 		E611A5822337954A009A7894 /* ListableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListableViewCell.swift; path = CampClub/Views/Cell/ListableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		E611A58423379DAC009A7894 /* PublicVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVar.swift; sourceTree = "<group>"; };
 		E6B796CE2323FEC300DF8731 /* Sector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		E6B796D22323FEC400DF8731 /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		E6B796DA232403BF00DF8731 /* AwardDisk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardDisk.swift; sourceTree = "<group>"; };
@@ -1090,6 +1092,7 @@
 				E6B796D22323FEC400DF8731 /* Disk.swift */,
 				E6B796CE2323FEC300DF8731 /* Sector.swift */,
 				E6B796DA232403BF00DF8731 /* AwardDisk.swift */,
+				E611A58423379DAC009A7894 /* PublicVar.swift */,
 			);
 			path = "抽奖转盘";
 			sourceTree = "<group>";
@@ -1418,6 +1421,7 @@
 				4B931EC62271871300AA948E /* UIView+BmoViewPager.swift in Sources */,
 				4B3BAD482297C05D00053CF6 /* AddShareViewController.swift in Sources */,
 				4B931EC12271871300AA948E /* ES.swift in Sources */,
+				E611A58523379DAC009A7894 /* PublicVar.swift in Sources */,
 				4B931EC52271871300AA948E /* String+BmoViewPager.swift in Sources */,
 				4B931EE52271871300AA948E /* ModalCenterPosition.swift in Sources */,
 				4B931EF02271871300AA948E /* ESTabBarItemContentView.swift in Sources */,
