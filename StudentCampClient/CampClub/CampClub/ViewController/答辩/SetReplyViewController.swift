@@ -77,32 +77,14 @@ class SetReplyViewController: MTBaseViewController {
             
             let list = items.map({String($0)}).joined(separator:",")
             
-            MTHUD.showLoading()
-            HttpApi.setDrawlots(String(lun), singlenum: String(gro), drawlist: list) { (res, err) in
-                MTHUD.hide()
-                if let _ = res {
-                    showMessage("设置成功")
-                    self.navigationController?.popViewController(animated: true)
-                } else {
-                    showMessage(err)
-                }
-            }
+
             
         }
     }
     
     @IBAction func next() {
             
-        MTHUD.showLoading()
-        HttpApi.nextTurn({ (res, err) in
-            MTHUD.hide()
-            if let _ = res {
-                showMessage("设置成功")
-            } else {
-                showMessage(err)
-            }
 
-        })
     }
 
 }

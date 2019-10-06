@@ -30,7 +30,7 @@ class GetReplyOrderViewController: MTBaseViewController {
         title = "答辩顺序"
         addNavigationBarLeftButton(self)
         //初始化转盘
-        awardDiskView.setup(text:groupTextList)
+        //awardDiskView.setup(text:groupTextList)
         //设置开始抽签按钮颜色
         startButton.backgroundColor = MTTheme.getButtonColor()
         //tableViewx初始化
@@ -54,12 +54,15 @@ class GetReplyOrderViewController: MTBaseViewController {
         HttpApi.queryDrawlots( { (res, err) in
             MTHUD.hide()
             if let r = res, let list = r["list"]  as? JSONMap {
-                self.groupOrder = (list["drawlist"] as! String).components(separatedBy: ",")
-                print(self.groupOrder)
-                if(self.groupOrder.count>0){
+                let drawlist=list["drawlist"] as! String
+                if(drawlist != ""){
+                    self.groupOrder = drawlist.components(separatedBy: ",")
                     self.listTable.reloadData()
                     self.startButton.isEnabled = false
+                }else{
+                    self.groupOrder.removeAll()
                 }
+                print(self.groupOrder)
                 
             } else {
                 showMessage(err)
@@ -71,13 +74,15 @@ class GetReplyOrderViewController: MTBaseViewController {
         HttpApi.queryGroupMsg( { (res, err) in
             MTHUD.hide()
             if let r = res, let list = r["list"] as? JSONMap {
-                    if let groupNum :Int = list["groupNum"] as? Int{
+                    if let groupNum  = list["groupNum"] as? String{
                         self.groupTextList.removeAll()
-                        for num in 1...groupNum{
+                        let num=Int(groupNum)!
+                        for num in 1...num{
                             self.groupTextList.append(String(num))
-                    }
+                        }
+                        self.awardDiskView.setup(text: self.groupTextList)
                     }else{
-                        
+                        print("??")
                     }
             }else {
                 showMessage(err)
@@ -86,7 +91,31 @@ class GetReplyOrderViewController: MTBaseViewController {
         })
     
     }
-    
+    //清除所有
+    @IBAction func clearAll(_ sender: UIButton) {
+        
+        let alertController=UIAlertController.init(title:"清除所有", message: "这也将清除数据库里的抽签顺序", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "好的", style: UIAlertAction.Style.default,
+                                     handler: {
+                                        action in
+                                        self.initGroupTextList()
+                                        self.groupOrder.removeAll()
+                                        self.listTable.reloadData()
+                                        if(self.groupTextList.count>1){
+                                            self.startButton.isEnabled = true
+                                        }
+                                        //清空数据库
+                                        self.saveToServer()
+                                        
+        })
+        let cencelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.default,
+                                     handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cencelAction)
+        self.present(alertController, animated: false, completion: nil)
+        
+
+    }
     //全局变量，控制抽中的是第几个
     var groupNum:Int = 0
     //开始抽签
@@ -124,7 +153,7 @@ class GetReplyOrderViewController: MTBaseViewController {
                                             self.startButton.isEnabled = false
                                             self.groupOrder.append(self.groupTextList[0])
                                             self.groupTextList.remove(at: 0)
-                                            
+                                            self.saveToServer()
 
                                         }
                                         //刷新列表
@@ -135,6 +164,18 @@ class GetReplyOrderViewController: MTBaseViewController {
         self.present(alertController, animated: false, completion: nil)
         
 
+    }
+    
+    func saveToServer(){
+        HttpApi.setDrawlots(drawlist: String(groupOrder.joined(separator: ",")), handle: {(res,err) in
+            MTHUD.hide()
+            if let _ = res {
+                showMessage("保存到服务器成功")
+                //self.navigationController?.popViewController(animated: true)
+            } else {
+                showMessage(err)
+            }
+        })
     }
     /*
     // MARK: - Navigation

@@ -188,6 +188,9 @@
                                                 <real key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clearAll:" destination="cHm-lE-Wnw" eventType="touchUpInside" id="T48-pE-fke"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

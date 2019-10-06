@@ -22,16 +22,7 @@ class ReplyInfoViewController: MTBaseViewController {
         title = "当前答辩顺序"
         addNavigationBarLeftButton(self)
         
-        MTHUD.showLoading()
-        HttpApi.getTempTurn( { (res, err) in
-            MTHUD.hide()
-            if let r = res, let list = r["list"]  as? String {
-                self.infos = list.components(separatedBy: ",")
-                self.tableView.reloadData()
-            } else {
-                showMessage(err)
-            }
-        })
+
         
     }
     
