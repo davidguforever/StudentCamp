@@ -23,16 +23,15 @@ public interface DrawlotsMapper {
 	   }
 	)
 	List <Drawlots> query();
-	
-	//更新当前轮数 自增 
-	@Update("update drawlots set tmpturn=tmpturn + '1' ")
-	int updateTurn() throws DataAccessException;
-	
+
 	//重新抽签
-	@Update("update drawlots set turnnum=#{turnnum},singlenum=#{singlenum},drawlist=#{drawlist},tmpturn='1'")
-	int reset(@Param("turnnum") String turnnum,@Param("singlenum") String singlenum,@Param("drawlist") String drawlist) throws DataAccessException;
-	
+	@Update("update drawlots set drawlist=#{drawlist}")
+	int reset(@Param("drawlist") String drawlist) throws DataAccessException;
+
 	//插入抽签
-	@Insert("insert into drawlots (turnnum, singlenum, drawlist) values (#{turnnum}, #{singlenum}, #{drawlist})")
-	int insert(@Param("turnnum") String turnnum, @Param("singlenum") String singlenum, @Param("drawlist") String drawlist);
+	@Insert("insert into drawlots (drawlist) values ( #{drawlist})")
+	int insert(@Param("drawlist") String drawlist);
+
+
+
 }

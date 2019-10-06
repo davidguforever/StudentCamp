@@ -27,36 +27,14 @@ public class DrawlotsController {
 	}
 	
 	@RequestMapping(value="/setDrawlots")
-	public Map<String, Object> setDrawlots(String turnnum, String singlenum,String drawlist) {
+	public Map<String, Object> setDrawlots(String drawlist) {
 		try {
-		return drawlotsDao.setDrawlots(turnnum, singlenum,drawlist);
+		return drawlotsDao.setDrawlots(drawlist);
 		}catch (DataAccessException e){
 			drawlotsDao.responseBody.put("result", "ERROR");
 			drawlotsDao.responseBody.put("errorMessage", "更新失败");
             return drawlotsDao.responseBody;
         }
 	}
-	//127.0.0.1:8080/register?userName=Sabistian2&password=123123&typeId=2
-	@RequestMapping(value="/nextTurn")
-	public Map<String, Object> nextTurn() {
-		try {
-			return drawlotsDao.nextTurn();
-		}catch (DataAccessException e){
-			drawlotsDao.responseBody.put("result", "ERROR");
-			drawlotsDao.responseBody.put("errorMessage", "更新失败");
-            return drawlotsDao.responseBody;
-        }
-		
-	}
-	//127.0.0.1:8080/queryUserTypeByUserName?userName=XinQ
-	@RequestMapping(value="/getTempTurn")
-	public Map<String, Object> getTempTurn() {
-		try {
-		return drawlotsDao.getTempTurn();
-		}catch (DataAccessException e){
-			drawlotsDao.responseBody.put("result", "ERROR");
-			drawlotsDao.responseBody.put("errorMessage", "更新失败");
-            return drawlotsDao.responseBody;
-        }
-	}
+
 }

@@ -18,7 +18,7 @@ class GetReplyOrderViewController: MTBaseViewController {
     @IBOutlet weak var listTable: UITableView!
     
     //var groupTextList = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-    var groupTextList = ["1","2","3"]
+    var groupTextList = ["1","2"]
     var groupOrder:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +36,62 @@ class GetReplyOrderViewController: MTBaseViewController {
         //tableViewx初始化
         listTable.delegate = self
         listTable.dataSource = self
+        
+        //从网络上获取groupTextList和groupOrder
+        initGroupOrder()
+        initGroupTextList()
+
         //设置按钮
         startButton.setTitle("抽签完成", for: UIControl.State.disabled)
-    }
-    //开始抽签
-    var groupNum:Int = 0
-    @IBAction func startDrawingStraws(_ sender: Any) {
         if(groupTextList.count<2){
-            let alertController=UIAlertController.init(title:"抽签失败！", message: "当前组数小于2", preferredStyle: UIAlertController.Style.alert)
-            let okAction = UIAlertAction(title: "好的", style: UIAlertAction.Style.default,
-                                         handler: nil)
-            alertController.addAction(okAction)
-            self.present(alertController, animated: false, completion: nil)
-            startButton.isEnabled=false
+            startButton.isEnabled = false
         }
-        
+
+    }
+
+    func initGroupOrder(){
+        MTHUD.showLoading()
+        HttpApi.queryDrawlots( { (res, err) in
+            MTHUD.hide()
+            if let r = res, let list = r["list"]  as? JSONMap {
+                self.groupOrder = (list["drawlist"] as! String).components(separatedBy: ",")
+                print(self.groupOrder)
+                if(self.groupOrder.count>0){
+                    self.listTable.reloadData()
+                    self.startButton.isEnabled = false
+                }
+                
+            } else {
+                showMessage(err)
+            }
+        })
+    }
+    func initGroupTextList(){
+        MTHUD.showLoading()
+        HttpApi.queryGroupMsg( { (res, err) in
+            MTHUD.hide()
+            if let r = res, let list = r["list"] as? JSONMap {
+                    if let groupNum :Int = list["groupNum"] as? Int{
+                        self.groupTextList.removeAll()
+                        for num in 1...groupNum{
+                            self.groupTextList.append(String(num))
+                    }
+                    }else{
+                        
+                    }
+            }else {
+                showMessage(err)
+                
+            }
+        })
+    
+    }
+    
+    //全局变量，控制抽中的是第几个
+    var groupNum:Int = 0
+    //开始抽签
+    @IBAction func startDrawingStraws(_ sender: Any) {
+
         
         groupNum = Int(arc4random())%groupTextList.count
         
