@@ -208,14 +208,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="735-1H-CRH">
-                                                    <rect key="frame" x="124" y="12" width="127" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="735-1H-CRH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="735-1H-CRH" secondAttribute="bottom" id="1KG-7I-jkp"/>
+                                                <constraint firstItem="735-1H-CRH" firstAttribute="top" secondItem="G6B-M3-H1c" secondAttribute="top" id="eRP-ot-LQW"/>
+                                                <constraint firstAttribute="trailing" secondItem="735-1H-CRH" secondAttribute="trailing" id="uM7-PA-PrK"/>
+                                                <constraint firstItem="735-1H-CRH" firstAttribute="leading" secondItem="G6B-M3-H1c" secondAttribute="leading" id="ypU-0v-ZFP"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="listCell"/>
                                         <connections>
