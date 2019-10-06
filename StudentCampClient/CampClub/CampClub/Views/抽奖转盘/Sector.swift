@@ -34,7 +34,7 @@ public class Sector:UIView{
         let label = UILabel(frame: CGRect(x: radius.double-10, y: angle/2, width: 30, height: 30))
         label.text = text
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         addSubview(label)
         
     }

@@ -17,7 +17,9 @@ class GetReplyOrderViewController: MTBaseViewController {
     @IBOutlet weak var clearAllButton: UIButton!
     @IBOutlet weak var listTable: UITableView!
     
-    var groupTextList = ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"]
+    //var groupTextList = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    var groupTextList = ["1","2","3"]
+    var groupOrder:[String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,20 +36,64 @@ class GetReplyOrderViewController: MTBaseViewController {
         //tableViewx初始化
         listTable.delegate = self
         listTable.dataSource = self
+        //设置按钮
+        startButton.setTitle("抽签完成", for: UIControl.State.disabled)
     }
     //开始抽签
     var groupNum:Int = 0
     @IBAction func startDrawingStraws(_ sender: Any) {
+        if(groupTextList.count<2){
+            let alertController=UIAlertController.init(title:"抽签失败！", message: "当前组数小于2", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "好的", style: UIAlertAction.Style.default,
+                                         handler: nil)
+            alertController.addAction(okAction)
+            self.present(alertController, animated: false, completion: nil)
+            startButton.isEnabled=false
+        }
         
-        groupNum = Int(arc4random())%groupTextList.count+1
-        awardDiskView?.startRotate(finishnum:2,completefunc:DrawingStrawsStop)
+        
+        groupNum = Int(arc4random())%groupTextList.count
+        
+        print("随机数："+String(groupNum))
+        awardDiskView?.startRotate(finishnum:groupNum,completefunc:DrawingStrawsStop)
+        
     }
     
     
     
     func DrawingStrawsStop(){
-        let alertController=AlertViewController(title: "抽中组:第"+groupTextList[groupNum]+"组")
+
+        
+        
+        let alertController=UIAlertController.init(title:"抽签结果", message: "抽中组:第"+groupTextList[groupNum]+"组", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "好的", style: UIAlertAction.Style.default,
+                                     handler: {
+                                        action in
+                                        self.groupOrder.append(self.groupTextList[self.groupNum])
+                                        self.groupTextList.remove(at: self.groupNum)
+                                        print("完成")
+                                        
+
+                                        if(self.groupTextList.count>1){
+                                            //初始化转盘
+                                            self.awardDiskView.setup(text:self.groupTextList)
+                                        }
+                                        else{
+                                            //抽签完成
+                                            self.startButton.isEnabled = false
+                                            self.groupOrder.append(self.groupTextList[0])
+                                            self.groupTextList.remove(at: 0)
+                                            
+
+                                        }
+                                        //刷新列表
+                                        self.listTable.reloadData()
+
+        })
+        alertController.addAction(okAction)
         self.present(alertController, animated: false, completion: nil)
+        
+
     }
     /*
     // MARK: - Navigation
@@ -64,7 +110,7 @@ class GetReplyOrderViewController: MTBaseViewController {
 extension GetReplyOrderViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return groupOrder.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,7 +120,7 @@ extension GetReplyOrderViewController:UITableViewDelegate,UITableViewDataSource{
         //cell左边的文字：自带的
         cell.textLabel?.text = String(indexPath.row+1)+":"
         //cell中间的文字
-        cell.listLabel.text = "第"+String(indexPath.row+1)+"组"
+        cell.listLabel.text = "第"+groupOrder[indexPath.row]+"组"
         
         return cell
         
