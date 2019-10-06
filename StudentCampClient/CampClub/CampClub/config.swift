@@ -12,8 +12,8 @@ import MTCobwebs
 
 
     /// API
-let BaseUrl = "http://39.100.87.191:8080/"
-//let BaseUrl = "http://127.0.0.1:8080/"
+//let BaseUrl = "http://39.100.87.191:8080/"
+let BaseUrl = "http://127.0.0.1:8080/"
 public typealias JSONMap = [String: Any]
 
 struct AppConfig {

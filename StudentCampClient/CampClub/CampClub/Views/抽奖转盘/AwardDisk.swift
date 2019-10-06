@@ -40,14 +40,17 @@ class AwardDisk: UIView {
     }
     
     
-    public func startRotate(rotateAngle:CGFloat){
-        disk!.startRotate(rotateAngle: rotateAngle)
+
+    
+    public func startRotate(rotateAngle:CGFloat,completefunc:(()->())?){
+        disk!.startRotate(rotateAngle: rotateAngle, completeFunc: completefunc)
+
+    }
+    public func startRotate(finishnum:Int,completefunc:(()->())?){
+        disk!.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*Double(finishnum)), completeFunc: completefunc)
+
     }
     
-    public func startRotate(rotateAngle:CGFloat,completefunc:(()->())){
-        disk!.startRotate(rotateAngle: rotateAngle)
-        completefunc()
-    }
     public override func draw(_ rect: CGRect) {
         setupCircle()
     }

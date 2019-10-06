@@ -6,7 +6,6 @@ public class Sector:UIView{
     
     public var text: String = "1"
     public var sectorColor = UIColor.red
-    let label = UILabel(frame: CGRect(x: radius.double-10, y: angle/2, width: 30, height: 30))
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +31,7 @@ public class Sector:UIView{
         //aPath.fill() // Draws line 根据坐标点连线，填充
         
         //填充文字
-        
+        let label = UILabel(frame: CGRect(x: radius.double-10, y: angle/2, width: 30, height: 30))
         label.text = text
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 30)
@@ -41,13 +40,9 @@ public class Sector:UIView{
     }
     
     public func rotate(_ angle:CGFloat){
-        //let centerX = bounds.size.width/2
-        //let centerY = bounds.size.height/2
-        //let x=centerPoint.x-centerX
-        //let y=centerPoint.y-centerY
-        //transform = CGAffineTransform(translationX: x, y: y)
+
         transform = CGAffineTransform(rotationAngle: angle)
-        //transform=CGAffineTransform(translationX: x, y: y)
+
         
     }
 }

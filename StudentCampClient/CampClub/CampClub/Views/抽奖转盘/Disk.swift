@@ -1,5 +1,8 @@
 import  UIKit
 public class Disk:UIView {
+    
+    var aniFinishedFunc:(()->())?
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
@@ -35,17 +38,30 @@ public class Disk:UIView {
             sections?.append(sector)
         }
     }
-    public func startRotate(rotateAngle:CGFloat){
+    public func startRotate(rotateAngle:CGFloat,completeFunc:(()->())?){
+        //设置回调函数
+        aniFinishedFunc=completeFunc
+        //设置动画
         let ani=CABasicAnimation(keyPath: "transform.rotation.z")
         ani.duration=5
-        ani.toValue=rotateAngle
+        ani.fromValue=0
+        ani.toValue = -rotateAngle
         ani.repeatCount=1
         ani.isRemovedOnCompletion=false
         ani.fillMode = CAMediaTimingFillMode.forwards
+        ani.delegate = self//设置代理，回调函数
         ani.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        //增加动画
         layer.add(ani, forKey: "test")
         
     }
     
 }
 
+extension Disk:CAAnimationDelegate{
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if let fun=aniFinishedFunc{
+            fun()
+        }
+    }
+}

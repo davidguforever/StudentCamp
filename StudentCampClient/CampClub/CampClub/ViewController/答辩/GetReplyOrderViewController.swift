@@ -16,6 +16,8 @@ class GetReplyOrderViewController: MTBaseViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
     @IBOutlet weak var listTable: UITableView!
+    
+    var groupTextList = ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,7 @@ class GetReplyOrderViewController: MTBaseViewController {
         title = "答辩顺序"
         addNavigationBarLeftButton(self)
         //初始化转盘
-        awardDiskView.setup(text: ["1","2","1","2","1","2","1","2","1","2","1","2","1","8","9"])
+        awardDiskView.setup(text:groupTextList)
         //设置开始抽签按钮颜色
         startButton.backgroundColor = MTTheme.getButtonColor()
         //tableViewx初始化
@@ -34,10 +36,19 @@ class GetReplyOrderViewController: MTBaseViewController {
         listTable.dataSource = self
     }
     //开始抽签
+    var groupNum:Int = 0
     @IBAction func startDrawingStraws(_ sender: Any) {
-            awardDiskView.startRotate(rotateAngle: CGFloat(Double.pi*6+angle*3))
+        
+        groupNum = Int(arc4random())%groupTextList.count+1
+        awardDiskView?.startRotate(finishnum:2,completefunc:DrawingStrawsStop)
     }
     
+    
+    
+    func DrawingStrawsStop(){
+        let alertController=AlertViewController(title: "抽中组:第"+groupTextList[groupNum]+"组")
+        self.present(alertController, animated: false, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
