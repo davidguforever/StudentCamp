@@ -31,7 +31,6 @@
 		4B2825B4227BFFB900058419 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2825AA227BFFB900058419 /* KaedeTextField.swift */; };
 		4B2825B5227BFFB900058419 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2825AB227BFFB900058419 /* AkiraTextField.swift */; };
 		4B2825B6227BFFB900058419 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2825AC227BFFB900058419 /* IsaoTextField.swift */; };
-		4B2825B9227C0B2C00058419 /* SetReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2825B8227C0B2C00058419 /* SetReplyViewController.swift */; };
 		4B2825BB227C0BBC00058419 /* Reply.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2825BA227C0BBC00058419 /* Reply.storyboard */; };
 		4B2825BD227C38D900058419 /* ReplyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2825BC227C38D900058419 /* ReplyInfoViewController.swift */; };
 		4B2825C0227C42BC00058419 /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B2825BF227C42BC00058419 /* Sign.storyboard */; };
@@ -305,7 +304,6 @@
 		4B2825AA227BFFB900058419 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
 		4B2825AB227BFFB900058419 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
 		4B2825AC227BFFB900058419 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
-		4B2825B8227C0B2C00058419 /* SetReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReplyViewController.swift; sourceTree = "<group>"; };
 		4B2825BA227C0BBC00058419 /* Reply.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reply.storyboard; sourceTree = "<group>"; };
 		4B2825BC227C38D900058419 /* ReplyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyInfoViewController.swift; sourceTree = "<group>"; };
 		4B2825BF227C42BC00058419 /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
@@ -580,7 +578,6 @@
 		4B2825B7227C041A00058419 /* 答辩 */ = {
 			isa = PBXGroup;
 			children = (
-				4B2825B8227C0B2C00058419 /* SetReplyViewController.swift */,
 				4B2825BA227C0BBC00058419 /* Reply.storyboard */,
 				4B2825BC227C38D900058419 /* ReplyInfoViewController.swift */,
 				E6C0608F2321109600BEA411 /* GetReplyOrderViewController.swift */,
@@ -1294,7 +1291,6 @@
 				4B2825D5227C8C6800058419 /* ScrollRects.swift in Sources */,
 				4B28259C227BF7E400058419 /* ApplyNumbersViewController.swift in Sources */,
 				4B6EF05A22904A9D00D5CF60 /* TipsAlertViewController.swift in Sources */,
-				4B2825B9227C0B2C00058419 /* SetReplyViewController.swift in Sources */,
 				4B931F6A22718AFF00AA948E /* UIViewController+STPopup.swift in Sources */,
 				4B931EA92271871300AA948E /* PPBadgeLabel.swift in Sources */,
 				E60BB3E62317BD8B0008CAE8 /* MTThemeManager.swift in Sources */,

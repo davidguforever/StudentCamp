@@ -81,10 +81,7 @@ public extension UIStoryboard {
 
         
         // MARK: - 答辩
-        /// 设置答辩信息
-        static var setReply: SetReplyViewController {
-            return UIStoryboard(name: "Reply", bundle: nil).instantiateVC(SetReplyViewController.self)!
-        }
+
         /// 当前答辩顺序
         static var replyInfo: ReplyInfoViewController {
             return UIStoryboard(name: "Reply", bundle: nil).instantiateVC(ReplyInfoViewController.self)!

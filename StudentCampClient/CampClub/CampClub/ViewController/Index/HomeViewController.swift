@@ -340,7 +340,7 @@ class IndexViewController: MTBaseViewController {
             vc.hidesBottomBarWhenPushed = true
             pushVC(vc)
         } else {
-            let vc = UIStoryboard.Scene.getReply
+            let vc = UIStoryboard.Scene.replyInfo
             vc.hidesBottomBarWhenPushed = true
             pushVC(vc)
         }

@@ -15,6 +15,7 @@ class GetReplyOrderViewController: MTBaseViewController {
     @IBOutlet weak var awardDiskView: AwardDisk!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
+    @IBOutlet weak var awardStackView: UIStackView!
     @IBOutlet weak var listTable: UITableView!
     
     //var groupTextList = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
@@ -40,7 +41,10 @@ class GetReplyOrderViewController: MTBaseViewController {
         //从网络上获取groupTextList和groupOrder
         initGroupOrder()
         initGroupTextList()
-
+        
+        
+        //设置显示答辩信息按钮
+        addNavigationBarRightButton(self, action: #selector(showOrder), text: "显示顺序")
         //设置按钮
         startButton.setTitle("抽签完成", for: UIControl.State.disabled)
         if(groupTextList.count<2){
@@ -48,7 +52,12 @@ class GetReplyOrderViewController: MTBaseViewController {
         }
 
     }
-
+    @objc func showOrder(){
+        let vc = UIStoryboard.Scene.replyInfo
+        vc.hidesBottomBarWhenPushed = true
+        pushVC(vc)
+        
+    }
     func initGroupOrder(){
         MTHUD.showLoading()
         HttpApi.queryDrawlots( { (res, err) in
