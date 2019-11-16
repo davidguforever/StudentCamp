@@ -16,6 +16,7 @@ public class Sector:UIView{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override public func draw(_ rect: CGRect) {
         let color = sectorColor
         color.set() // 设置线条颜色
@@ -31,7 +32,7 @@ public class Sector:UIView{
         //aPath.fill() // Draws line 根据坐标点连线，填充
         
         //填充文字
-        let label = UILabel(frame: CGRect(x: radius.double-10, y: angle/2, width: 30, height: 30))
+        let label = UILabel(frame: CGRect(x: radius.double-10, y: angle/2+10, width: 30, height: 30))
         label.text = text
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 24)
