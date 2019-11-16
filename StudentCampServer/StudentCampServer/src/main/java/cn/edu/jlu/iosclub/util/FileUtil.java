@@ -11,7 +11,11 @@ public class FileUtil {
     public static String getPicName(String path){
         String[] suffixnames={"jpg","png","gif","jpeg"};
         File pic_dir = new File(path);
+
         File[] files = pic_dir.listFiles();
+        if(files==null){
+            return null;
+        }
         for(File file:files){
             for(String suf:suffixnames){
                 if(file.getName().endsWith(suf)){

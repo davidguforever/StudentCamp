@@ -17,8 +17,8 @@ import java.util.Map;
 @RestController
 public class UploadDateImg {
     private static final Logger logger = LoggerFactory.getLogger(UploadDateImg.class);
-    private String uploadDir = "/usr/student_camp/pic/";
-
+    //private String uploadDir = "/usr/student_camp/pic/";
+    private String uploadDir = "/Users/hp/student_camp/pic/";
    // private String uploadDir = "/Users/hp/Desktop/Pic/";
     public Map<String, Object> responseBody = new HashMap<String, Object>();
 	public void initres() {
@@ -73,6 +73,9 @@ public class UploadDateImg {
             e.printStackTrace();
         } catch (IOException e) {
         	responseBody.put("errorMessage", "数据异常");
+            e.printStackTrace();
+        }catch (Exception e){
+            responseBody.put("errorMessage", "文件不存在？");
             e.printStackTrace();
         }
         return responseBody;
