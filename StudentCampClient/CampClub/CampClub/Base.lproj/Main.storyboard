@@ -238,7 +238,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-S7-Oc7">
-                                <rect key="frame" x="30" y="500" width="315" height="44"/>
+                                <rect key="frame" x="30" y="465" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="IOh-vy-72t"/>
@@ -257,7 +257,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae1-89-IOb">
-                                <rect key="frame" x="30" y="559" width="315" height="44"/>
+                                <rect key="frame" x="30" y="524" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.33725490200000002" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HAS-bq-fLu"/>
@@ -282,7 +282,7 @@
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="leading" secondItem="d7g-aL-LC5" secondAttribute="leading" id="7bJ-aJ-oTG"/>
                             <constraint firstItem="gIO-3c-5Kd" firstAttribute="top" secondItem="Njj-LT-aHl" secondAttribute="top" id="FGT-Cn-bxJ"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="LgE-Rv-XXg"/>
-                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="40" id="Q7s-gg-okI"/>
+                            <constraint firstItem="QNz-S7-Oc7" firstAttribute="top" secondItem="gIO-3c-5Kd" secondAttribute="bottom" constant="5" id="Q7s-gg-okI"/>
                             <constraint firstItem="Njj-LT-aHl" firstAttribute="trailing" secondItem="gIO-3c-5Kd" secondAttribute="trailing" id="VHB-6h-ySf"/>
                             <constraint firstItem="QNz-S7-Oc7" firstAttribute="centerX" secondItem="d7g-aL-LC5" secondAttribute="centerX" id="hzK-el-USv"/>
                             <constraint firstItem="Ae1-89-IOb" firstAttribute="leading" secondItem="Njj-LT-aHl" secondAttribute="leading" constant="30" id="jcK-d9-oJ9"/>
@@ -512,6 +512,7 @@
                     </view>
                     <connections>
                         <outlet property="nameField" destination="7yl-C8-egt" id="Z6O-AU-6Al"/>
+                        <outlet property="saveButton" destination="Swm-zF-bNB" id="rgQ-3h-oX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Aw-gA-VUX" sceneMemberID="firstResponder"/>
@@ -573,7 +574,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="ccF-QB-JH2">
-                                    <rect key="frame" x="0.0" y="302" width="375" height="230"/>
+                                    <rect key="frame" x="0.0" y="346" width="375" height="230"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyp-v2-iQs">
@@ -624,6 +625,41 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="themeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="themeCell" id="hdL-Tb-pqg" customClass="ThemeTableViewCell" customModule="CampClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="302" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hdL-Tb-pqg" id="BeY-NS-Npt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U3h-49-g4C">
+                                                    <rect key="frame" x="210" y="15" width="150" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="ISB-ON-QCz"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="帅男"/>
+                                                        <segment title="靓女"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="SegmentChange:" destination="hdL-Tb-pqg" eventType="valueChanged" id="Jjd-mf-r6d"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U3h-49-g4C" firstAttribute="centerY" secondItem="BeY-NS-Npt" secondAttribute="centerY" constant="7" id="gn9-hZ-JL4"/>
+                                                <constraint firstAttribute="trailing" secondItem="U3h-49-g4C" secondAttribute="trailing" constant="15" id="x8o-pV-oav"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="segementControl" destination="U3h-49-g4C" id="MOe-fy-Vsh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="CSi-Jw-OYn" id="cQ3-10-8Tq"/>
@@ -643,6 +679,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="aWd-dG-3c9" id="iaw-AN-feR"/>
                         <outlet property="nameLabel" destination="RID-vB-mdr" id="43o-Jp-ik9"/>
+                        <outlet property="signOutButton" destination="yyp-v2-iQs" id="0cb-kX-5fn"/>
                         <outlet property="table" destination="203-50-Kxb" id="4RM-gw-gKz"/>
                     </connections>
                 </viewController>
@@ -816,6 +853,7 @@
                     </view>
                     <connections>
                         <outlet property="pwdField" destination="PkJ-K3-vex" id="Axi-Rm-Uw1"/>
+                        <outlet property="saveButton" destination="hhn-vY-ms0" id="mjg-61-kNm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRq-ub-G4r" sceneMemberID="firstResponder"/>

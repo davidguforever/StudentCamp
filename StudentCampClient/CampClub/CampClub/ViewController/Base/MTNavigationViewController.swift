@@ -18,9 +18,9 @@ class MTNavigationController: UINavigationController {
         navigationBar.barStyle = .default
         
         navigationBar.setBackgroundImage(UIImage.imageWith(MTNavigationBarBackgroundColor), for: .default)
-        navigationBar.tintColor = MTColor.title222
+        navigationBar.tintColor = MTTheme.getTitleColor2()
         let textAttributes = [
-            NSAttributedString.Key.foregroundColor: MTColor.main,
+            NSAttributedString.Key.foregroundColor: MTTheme.getMainColor(),
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 5.0))
             ] as [NSAttributedString.Key : Any]
         

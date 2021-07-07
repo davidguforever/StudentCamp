@@ -21,11 +21,7 @@ extension ESTabBarController {
             }
             return false
         }
-//        tabBarController.didHijackHandler = {
-//            [weak tabBarController] tabbarController, viewController, index in
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//            }
-//        }
+
         
         let v1 = UIStoryboard.Scene.home
         let v2 = UIStoryboard.Scene.share
@@ -39,15 +35,11 @@ extension ESTabBarController {
         n2.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "分享", image: #imageLiteral(resourceName: "cate"), selectedImage: #imageLiteral(resourceName: "cate_s"))
         n3.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "个人", image: #imageLiteral(resourceName: "mine"), selectedImage: #imageLiteral(resourceName: "mine_s"))
         
-        //n1.tabBarItem.titlePositionAdjustment = UIOffsetMake(0.0, -10)
         tabBarController.viewControllers = [n1, n2, n3]
-        //if let tabBar = tabBarController.tabBar as? ESTabBar {
-            //tabBar.itemCustomPositioning = .fillIncludeSeparator
-        //}
+
         tabBarController.tabBar.shadowImage = #imageLiteral(resourceName: "Transparent")
-        //tabBarController.tabBar.backgroundImage = #imageLiteral(resourceName: "background_dark")
         tabBarController.tabBar.backgroundImage = UIImage.image(withColor: .white)
-        //tabBarController.tabBar.applyPlainShadow()
+
         
         return tabBarController
     }
@@ -61,10 +53,9 @@ class MTBasicContentView: ESTabBarItemContentView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        textColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.00)
-        highlightTextColor = UIColor(red:0.60, green:0.60, blue:0.60, alpha:1.00)
-        //iconColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.00)
-        //highlightIconColor = MTNavigationBarBackgroundColor
+        textColor = MTTheme.getFontColor()
+        highlightTextColor = MTTheme.getFontColor()
+
         
         backdropColor = .white
         highlightBackdropColor = .white
@@ -81,8 +72,7 @@ class BasicContentView: ESTabBarItemContentView {
         super.init(frame: frame)
         textColor = UIColor.red
         highlightTextColor = UIColor.red
-        //iconColor = UIColor.init(white: 175.0 / 255.0, alpha: 1.0)
-        //highlightIconColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
+
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -124,18 +114,20 @@ class BouncesContentView: BasicContentView {
 }
 
 
-class IrregularityBasicContentView: BouncesContentView {
+class IrregularityBasicContentView: BouncesContentView,ThemeProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        addThemeObserver()
         textColor = UIColor(hex: 0x666666)
-        highlightTextColor = MTColor.main
-        //iconColor = UIColor(red:0.61, green:0.61, blue:0.61, alpha:1.00)
-        //highlightIconColor = MTNavigationBarBackgroundColor
+        highlightTextColor = MTTheme.getFontColor()
         backdropColor = .white
         highlightBackdropColor = .white
         renderingMode = .alwaysOriginal     //render mode
+    }
+    override func updateTheme() {
+        super.updateTheme()
+        highlightTextColor = MTTheme.getFontColor()
     }
     
     public required init?(coder aDecoder: NSCoder) {

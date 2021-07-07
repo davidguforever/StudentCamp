@@ -20,6 +20,13 @@ class SetApplyingViewController: MTBaseViewController {
     
     @IBOutlet weak var startApplyButton: UIButton!
     
+    
+    override func setColors() {
+        startApplyButton.backgroundColor=MTTheme.getButtonColor()
+        numberFiled.borderActiveColor=MTTheme.getFontColor()
+        schoolNumberFiled.borderActiveColor=MTTheme.getFontColor()
+        endTimeFiled.borderActiveColor=MTTheme.getFontColor()
+    }
     var finishButton: UIButton!
     
     override func viewDidLoad() {

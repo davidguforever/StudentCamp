@@ -132,11 +132,13 @@ extension UIViewController {
         let image = UIImage(named: "push_msg")
         let attributes = Presets.bottomAlertAttributes
         
-        //showPopupMessage(attributes: attributes, title: title, titleColor: MTColor.title222, description: description, descriptionColor: MTColor.des999, buttonTitleColor: .white, buttonBackgroundColor: MTColor.mainX, image: image)
-        let titleColor = MTColor.title222
-        let descriptionColor = MTColor.des666
+
+        let titleColor = MTTheme.getTitleColor2()
+        let descriptionColor = MTTheme.getDarkGray()
         let buttonTitleColor = UIColor.white
-        let buttonBackgroundColor = MTColor.mainX
+        //let buttonBackgroundColor = MTTheme.getMainColor()X //没见到过这个界面。。。。先整能用了再说
+        let buttonBackgroundColor = UIColor(hex: 0xFF4F00)
+
         
         var themeImage: EKPopUpMessage.ThemeImage?
         

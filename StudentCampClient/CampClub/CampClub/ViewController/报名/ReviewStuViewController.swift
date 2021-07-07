@@ -26,6 +26,19 @@ class ReviewStuViewController: MTBaseViewController {
     
     var confirmButton: UIButton!
     
+    
+    override func setColors() {
+        submitButton.backgroundColor = MTTheme.getButtonColor()
+        nameField.borderActiveColor=MTTheme.getFontColor()
+        sexField.borderActiveColor=MTTheme.getFontColor()
+        gradeField.borderActiveColor=MTTheme.getFontColor()
+        schoolField.borderActiveColor=MTTheme.getFontColor()
+        mobileNoField.borderActiveColor=MTTheme.getFontColor()
+        goodAtField.borderActiveColor=MTTheme.getFontColor()
+        emailField.borderActiveColor=MTTheme.getFontColor()
+        clubSchoolField.borderActiveColor=MTTheme.getFontColor()
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

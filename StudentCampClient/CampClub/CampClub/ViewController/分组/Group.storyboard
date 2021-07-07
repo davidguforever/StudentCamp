@@ -472,6 +472,8 @@
                         <viewLayoutGuide key="safeArea" id="0qV-zJ-nm3"/>
                     </view>
                     <connections>
+                        <outlet property="confirmGroupButton" destination="dNq-Cz-VtV" id="pYD-GB-pNz"/>
+                        <outlet property="resetGroupButton" destination="Dif-3I-ZCM" id="uX2-Eb-qUD"/>
                         <outlet property="tableView" destination="Khx-sM-Vl0" id="FjE-9G-eQ1"/>
                     </connections>
                 </viewController>

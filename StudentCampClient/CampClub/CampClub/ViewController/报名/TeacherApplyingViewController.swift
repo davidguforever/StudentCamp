@@ -15,6 +15,10 @@ class TeacherApplyingViewController: MTBaseViewController {
     @IBOutlet weak var numberFiled: HoshiTextField!
     
     
+    @IBOutlet weak var startApplyButton: UIButton!
+    override func setColors() {
+        startApplyButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -632,6 +632,7 @@
                     <connections>
                         <outlet property="numberFiled" destination="eIw-F3-Sbp" id="LDt-r6-bUv"/>
                         <outlet property="schoolFiled" destination="YLW-mf-y63" id="nWY-GH-AHs"/>
+                        <outlet property="startApplyButton" destination="AOx-7g-a4e" id="08Q-Fa-3kj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f77-5Q-DRy" userLabel="First Responder" sceneMemberID="firstResponder"/>

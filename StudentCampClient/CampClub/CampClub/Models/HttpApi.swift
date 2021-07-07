@@ -548,10 +548,10 @@ extension HttpApi {
     // MARK: - 答辩
     
     /// 组织者-设置答辩
-    static func setDrawlots(_ turnnum: String, singlenum: String, drawlist: String,
+    static func setDrawlots( drawlist: String,
                             handle: @escaping ((_ info: JSONMap?, _ error: String?)->())) {
         Alamofire.request(BaseUrl + "setDrawlots", method: .post ,
-                          parameters: ["turnnum": turnnum, "singlenum": singlenum, "drawlist": drawlist])
+                          parameters: ["drawlist": drawlist])
             .responseJSON { (dataRequest) in
                 if let JSON = dataRequest.result.value as? JSONMap {
                     
@@ -586,46 +586,6 @@ extension HttpApi {
         }
     }
     
-    
-    
-    /// 组织者，教师，学生 - 拿到当前答辩顺序
-    static func getTempTurn(_ handle: @escaping ((_ info: JSONMap?, _ error: String?)->())) {
-        Alamofire.request(BaseUrl + "getTempTurn", method: .post ,
-                          parameters: nil)
-            .responseJSON { (dataRequest) in
-                if let JSON = dataRequest.result.value as? JSONMap {
-                    
-                    print(JSON)
-                    if let result = JSON["result"] as? String, result == "SUCCESS" {
-                        handle(JSON, nil)
-                    } else {
-                        handle(nil , JSON["errorMessage"] as? String)
-                    }
-                } else {
-                    handle(nil , dataRequest.description)
-                }
-        }
-    }
-    
-    
-    /// 组织者-下一轮(更新tmpTurn)
-    static func nextTurn(_ handle: @escaping ((_ info: JSONMap?, _ error: String?)->())) {
-        Alamofire.request(BaseUrl + "nextTurn", method: .post ,
-                          parameters: nil)
-            .responseJSON { (dataRequest) in
-                if let JSON = dataRequest.result.value as? JSONMap {
-                    
-                    print(JSON)
-                    if let result = JSON["result"] as? String, result == "SUCCESS" {
-                        handle(JSON, nil)
-                    } else {
-                        handle(nil , JSON["errorMessage"] as? String)
-                    }
-                } else {
-                    handle(nil , dataRequest.description)
-                }
-        }
-    }
 }
 
 

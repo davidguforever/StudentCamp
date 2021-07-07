@@ -13,6 +13,10 @@ class ChangePwdViewController: MTBaseViewController {
     
     @IBOutlet weak var pwdField: UITextField!
     
+    @IBOutlet weak var saveButton: UIButton!
+    override func setColors() {
+        saveButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)

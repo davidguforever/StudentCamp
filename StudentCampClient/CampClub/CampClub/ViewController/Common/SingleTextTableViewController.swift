@@ -46,7 +46,7 @@ extension UIViewController {
         let blurEffect = UIBlurEffect(style: .dark)
         popupController.backgroundView = UIVisualEffectView(effect: blurEffect)
         popupController.backgroundView?.alpha = 0.5
-        popupController.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: MTColor.main, NSAttributedString.Key.font: pingFang_SC.medium(16)]
+        popupController.navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: MTTheme.getMainColor(), NSAttributedString.Key.font: pingFang_SC.medium(16)]
         
         popupController.style = .bottomSheet
         popupController.present(in: self)
@@ -113,7 +113,7 @@ class SingleTextTableViewController: UITableViewController {
 //        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: cellHeight))
 //        label.backgroundColor = .white
 //        label.textAlignment = .center
-//        label.textColor = MTColor.main
+//        label.textColor = MTTheme.getMainColor()
 //        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
 //        view.addSubview(label)
         return view
@@ -137,13 +137,13 @@ class SingleTextTableViewController: UITableViewController {
         cell.textLabel?.text = array[indexPath.row]
         
         if indexPath.row == selectedIndex {
-            cell.textLabel?.textColor = MTColor.main
+            cell.textLabel?.textColor = MTTheme.getMainColor()
         } else {
-            cell.textLabel?.textColor = MTColor.des666
+            cell.textLabel?.textColor = MTTheme.getDarkGray()
         }
         
         let line = UIView(frame: CGRect(x: 0, y: cellHeight - 1, width: view.width, height: 1))
-        line.backgroundColor = MTColor.pageback
+        line.backgroundColor = MTTheme.getPageBack()
         cell.contentView.addSubview(line)
         return cell
     }

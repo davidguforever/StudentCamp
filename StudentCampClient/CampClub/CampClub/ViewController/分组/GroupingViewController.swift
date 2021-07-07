@@ -16,6 +16,13 @@ class GroupingViewController: MTBaseViewController {
     
     var students: [Int : [JSONMap]] = [:]
     
+    @IBOutlet weak var resetGroupButton: UIButton!
+    @IBOutlet weak var confirmGroupButton: UIButton!
+    
+    override func setColors() {
+        resetGroupButton.backgroundColor=MTTheme.getButtonColor()
+        confirmGroupButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -157,7 +164,7 @@ extension GroupingViewController : UITableViewDataSource {
         view.backgroundColor = .clear
         
         let groupLabel = UILabel(frame: CGRect(x: 20, y: 0, width: 300, height: 30))
-        groupLabel.textColor = MTColor.main
+        groupLabel.textColor = MTTheme.getMainColor()
         groupLabel.font = UIFont.systemFont(ofSize: 14)
         let key = groups[section]
         groupLabel.text = "\(key)组"
@@ -192,7 +199,7 @@ class GroupStuCell: UITableViewCell {
     func setInfo(_ info: JSONMap) {
 
         if let v = info["stuName"] as? String {
-            coverImgView.image = UIImage(named: "学生")
+            coverImgView.image = UIImage(named: "学生")?.imageWithTintColor(color: MTTheme.getMainColor())
             stuNameLabel.text = v
         }
     }

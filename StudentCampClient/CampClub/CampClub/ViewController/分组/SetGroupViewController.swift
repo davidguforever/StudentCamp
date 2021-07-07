@@ -22,6 +22,18 @@ class SetGroupViewController: MTBaseViewController {
     
     @IBOutlet weak var beginButton: UIButton!
     
+    
+    override func setColors() {
+        beginButton.backgroundColor=MTTheme.getButtonColor()
+        groupNoField.borderActiveColor=MTTheme.getFontColor()
+        maxNoField.borderActiveColor=MTTheme.getFontColor()
+        schoolTypeField.borderActiveColor=MTTheme.getFontColor()
+        sexField.borderActiveColor=MTTheme.getFontColor()
+        ageField.borderActiveColor=MTTheme.getFontColor()
+        goodAtField.borderActiveColor=MTTheme.getFontColor()
+       
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,10 +67,10 @@ class SetGroupViewController: MTBaseViewController {
     
     @objc func divide() {
         MTHUD.showLoading()
-        HttpApi.queryCampusManager { (res, error) in
+        HttpApi.resetDivide() { (res, error) in
             MTHUD.hide()
-            if let r = res, let _ = r["list"] as? JSONMap {
-                showMessage("已经开始")
+            if let r = res, let _ = r as? JSONMap {
+                showMessage("分组完成")
                 delay(1, work: {
                     self.popVC()
                 })

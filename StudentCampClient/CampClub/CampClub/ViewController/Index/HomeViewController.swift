@@ -21,6 +21,9 @@ class HomeViewController: MTBaseViewController {
     
     @IBOutlet weak var viewPager: BmoViewPager!
     
+    override func setColors() {
+        viewPagerNavigationBar.reloadData()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -39,7 +42,7 @@ class HomeViewController: MTBaseViewController {
 //        button.setImage(UIImage(named: "message")!, for: .normal)
 //        button.addTarget(self, action: #selector(messgae(_:)), for: .touchUpInside)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
-//        self.navigationItem.leftBarButtonItem?.tintColor = MTColor.title222
+//        self.navigationItem.leftBarButtonItem?.tintColor = MTTheme.getTitleColor2()
         
         addNavigationBarRightButton(self, action: #selector(messgae(_:)), image:UIImage(named: "menu")!)
         
@@ -151,13 +154,12 @@ extension HomeViewController: BmoViewPagerDataSource {
         return [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: UIFont.Weight(rawValue: 2)),
             NSAttributedString.Key.foregroundColor : UIColor(hex: 0xbbbbbb)
-            //NSForegroundColorAttributeName : UIColor.groupTableViewBackground
         ]
     }
     @objc func bmoViewPagerDataSourceNaviagtionBarItemHighlightedAttributed(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> [NSAttributedString.Key : Any]? {
         return [
             NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 20.0),
-            NSAttributedString.Key.foregroundColor : MTColor.main
+            NSAttributedString.Key.foregroundColor : MTTheme.getFontColor()
         ]
     }
     
@@ -172,8 +174,7 @@ extension HomeViewController: BmoViewPagerDataSource {
     }
     
     @objc func bmoViewPagerDataSourceNaviagtionBarItemSize(_ viewPager: BmoViewPager, navigationBar: BmoViewPagerNavigationBar, forPageListAt page: Int) -> CGSize {
-        //let str =  Titles[page]
-        //return CGSize(width: str.widthWithFont(font: UIFont.boldSystemFont(ofSize: 16)) + 16 , height: navigationBar.height)
+
         return CGSize(width: 70 , height: navigationBar.height)
     }
     
@@ -210,6 +211,11 @@ class IndexViewController: MTBaseViewController {
     var endLine: Date?  /// 结束日期
     
     var xy: (Float,Float) = (0.0, 0.0)
+    
+    override func setColors() {
+        signButton.backgroundColor = MTTheme.getButtonColor()
+        dabianButton.backgroundColor = MTTheme.getButtonColor()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -330,7 +336,7 @@ class IndexViewController: MTBaseViewController {
     
     @IBAction func dabian() {
         if User.shared.role == .manager {
-            let vc = UIStoryboard.Scene.setReply
+            let vc = UIStoryboard.Scene.getReply
             vc.hidesBottomBarWhenPushed = true
             pushVC(vc)
         } else {
@@ -409,9 +415,9 @@ extension IndexViewController {
     func handleCellColor(cell: TestRangeSelectionViewControllerCell, cellState: CellState) {
         /// 判断在当月及大于今日
         if cellState.dateBelongsTo == .thisMonth {
-            cell.label.textColor = MTColor.title222
+            cell.label.textColor = MTTheme.getTitleColor2()
         } else {
-            cell.label.textColor = MTColor.des999
+            cell.label.textColor = MTTheme.getLightGray()
         }
         
         if cellState.dateBelongsTo == .thisMonth {

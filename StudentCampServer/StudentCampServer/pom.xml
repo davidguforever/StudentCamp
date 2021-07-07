@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<artifactId>StudentCampServer</artifactId>
+	<version>1.01</version>
+	<name>StudentCampServer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -53,9 +53,15 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
 
-	</dependencies>
+    </dependencies>
 <build>
    <plugins>
 	<plugin>

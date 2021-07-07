@@ -20,6 +20,9 @@ class ShareIndexViewController: MTBaseViewController {
         
     }
     
+    override func setColors() {
+        table.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,7 +101,7 @@ extension ShareIndexViewController : UITableViewDataSource {
 }
 
 
-class ShareCell: UITableViewCell {
+class ShareCell: UITableViewCell ,ThemeProtocol{
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -112,8 +115,15 @@ class ShareCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        updateTheme()
+        addThemeObserver()
     }
     
+    override func updateTheme() {
+        super.updateTheme()
+        nameLabel.textColor=MTTheme.getFontColor()
+        
+    }
     var info: JSONMap? {
         didSet {
             if let m = info {
@@ -123,11 +133,11 @@ class ShareCell: UITableViewCell {
                 textDesLabel.text = m["content"] as? String
                 if let role = m["type_id"] as? String {
                     if role == "3" {
-                        coverImageView.image = UIImage(named: "manager_")
+                        coverImageView.image = UIImage(named: "manager_")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }else  if role == "2" {
-                        coverImageView.image = UIImage(named: "teacher_")
+                        coverImageView.image = UIImage(named: "teacher_")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }else  if role == "1" {
-                        coverImageView.image = UIImage(named: "学生")
+                        coverImageView.image = UIImage(named: "学生")?.imageWithTintColor(color: MTTheme.getMainColor())
                     }
                 }
             }

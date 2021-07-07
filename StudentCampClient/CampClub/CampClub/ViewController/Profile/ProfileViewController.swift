@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let titles: [String] = [ "权限变更", "修改密码"]
+private let titles: [String] = [ "权限变更", "修改密码","更换皮肤"]
 
 class ProfileViewController: MTBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
@@ -16,8 +16,6 @@ class ProfileViewController: MTBaseViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         
-//        nameLabel.text = "Name: "
-//        ageLabel.text = "Age: "
         
         if let user = UserDefaults(suiteName: groupShare)?.dictionary(forKey: kUserInfo) {
             if let v =  user["username"] as? String {
@@ -29,6 +27,7 @@ class ProfileViewController: MTBaseViewController {
         }
     }
     
+    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var topImageView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -36,6 +35,13 @@ class ProfileViewController: MTBaseViewController {
         
     @IBOutlet weak var table: UITableView!
     
+    
+    override func setColors() {
+        for cell in table.visibleCells{
+            cell.textLabel?.textColor=MTTheme.getFontColor()
+        }
+        signOutButton.backgroundColor=MTTheme.getButtonColor()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor  = .white
@@ -87,10 +93,16 @@ extension ProfileViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell:UITableViewCell
+        switch indexPath.row {
+        case 2:
+            cell=tableView.dequeueReusableCell(withIdentifier: "themeCell")!
+        default:
+            cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
-        cell.textLabel?.textColor = MTColor.main
+        cell.textLabel?.textColor = MTTheme.getMainColor()
         
         cell.textLabel?.text = titles[indexPath.row]
         
